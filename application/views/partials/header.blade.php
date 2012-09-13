@@ -83,5 +83,42 @@
 		<script type="text/javascript" src="js/eight-col-slider.js"></script>
 		<!-- ENDS eight column slider -->
 
+		<!-- css transitions -->
+		<script type="text/javascript" src="js/css-trans.js"></script>
+		<!-- ENDS css transitions -->
+
 	</head>
 <body>
+
+
+
+<!-- HEADER -->
+	<div id="header">
+		<!-- wrapper-header -->
+		<div class="wrapper">
+			<!-- logo placeholder
+			<a href="index.html"><img id="logo" src="img/logo.png" alt="Nova" /></a>
+			-->
+			<!-- search -->
+			<div class="top-search">
+				<form  method="get" id="searchform" action="#">
+					<div>
+						<input type="text" value="Search..." name="s" id="s" onfocus="defaultInput(this)" onblur="clearInput(this)" />
+						<input type="submit" id="searchsubmit" value=" " />
+					</div>
+				</form>
+			</div>
+			<!-- ENDS search -->
+			<!-- Navigation -->
+				<ul id="nav" class="sf-menu">
+					<li class="current-menu-item"><a href="index.html">HOME PAGE</a></li>
+					<li><a href="features.html">FIND A PROPERTY</a></li>
+					<li><a href="blog.html">ABOUT US</a></li>
+					<li><a href="portfolio.html">PROPERTY NEWS</a></li>
+					<li><a href="gallery.html">CONTACT US</a></li>
+				</ul>
+				<!-- Navigation -->
+		</div>
+		<!-- ENDS wrapper-header -->					
+	</div>
+	<!-- ENDS HEADER -->
