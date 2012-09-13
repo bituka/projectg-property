@@ -37,4 +37,13 @@ return array(
 
 	'docs' => array('handles' => 'docs'),
 
+	// aware bundle
+	'aware' => array(
+	  'autoloads' => array(
+	    'map' => array(
+	      'Aware' => '(:bundle)/model.php'
+	    ),
+	  )
+	),
+
 );
