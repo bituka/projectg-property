@@ -1,8 +1,13 @@
 body { background: black; } /* remove this! */
 
-#ecs-con { position: relative; width: 670px; margin: 0 auto; margin-top: 10px; }
-	#ecs { width: 670px; background: black; /*margin: 0 auto;*/ height: 332px; /*overflow: hidden;*/ position: relative; }
-		#ecs .slides { position: absolute; }
-			#ecs div.images { float: left; margin-left: 6px; margin-bottom: 4px;  }
-			#ecs div.first-image { margin-left: 0; }
+#ecs-con { position: relative; width: 670px; margin: 0 auto; margin-top: 7px; z-index: 11; }
 	
+	#ecs { width: 670px; background: black; /*margin: 0 auto;*/ height: 332px; overflow: hidden; position: relative; }
+		#ecs .slides { position: absolute; }
+			#ecs div.images { float: left; margin-left: 6px; margin-bottom: 4px; }
+			#ecs div.first-image { margin-left: 0; }
+			
+	#ecs-nav { position: absolute; right: 0; top: -30px; }
+	#ecs-nav > button { cursor: pointer; border: none; outline: none; text-indent: -9999px; }
+		#ecs-nav button#prev-btn { background: url('../img/eight-col-slider/prev-btn.jpg'); height: 16px; width: 95px; }
+		#ecs-nav button#next-btn { background: url('../img/eight-col-slider/next-btn.jpg'); height: 16px; width: 60px; }

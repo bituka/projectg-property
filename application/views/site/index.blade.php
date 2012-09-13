@@ -145,8 +145,8 @@
 	</div><!-- ecs -->
 
 	<div id="ecs-nav">
-		<button data-dir="prev">previous</button>
-		<button data-dir="next">next</button>
+		<button id="prev-btn" data-dir="prev">previous</button>
+		<button id="next-btn" data-dir="next">next</button>
 	</div>
 
 </div><!-- ecs-con -->
