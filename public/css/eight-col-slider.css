@@ -1,0 +1,5 @@
+#eight-col-slider-con { width: 670px; background: black; margin: 0 auto; height: 332px; /*overflow: hidden;*/ position: relative; }
+	#eight-col-slider-con .slides { position: absolute; }
+		#eight-col-slider-con div.images { float: left; margin-left: 6px; margin-bottom: 4px;  }
+		#eight-col-slider-con div.first-image { margin-left: 0; }
+	

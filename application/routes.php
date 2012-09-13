@@ -32,12 +32,20 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('home.index');
-});
+/**
+ * register controllers here
+ */
+Route::controller( array(
+	'site',
+	'properties',
+) );
 
-Route::get('properties', array('uses' => 'properties@index'));
+Route::get('/', array('uses' => 'site@index')); // default route, for home page
+
+/**
+ * register custom routes here
+ */
+// Route::get('(:any)', array('uses' => 'site@index')); // sample custom route
 
 /*
 |--------------------------------------------------------------------------

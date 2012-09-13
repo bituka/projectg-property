@@ -11,5 +11,6 @@ class Properties_Controller extends Base_Controller{
     $this->layout->title = "Linq Property: Home";
     $this->layout->main = $view;
   }	  
+
   	
 }
