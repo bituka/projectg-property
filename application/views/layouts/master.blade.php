@@ -92,7 +92,7 @@
 
 
 
-<!-- HEADER -->
+	<!-- HEADER -->
 	<div id="header">
 		<!-- wrapper-header -->
 		<div class="wrapper">
@@ -122,3 +122,16 @@
 		<!-- ENDS wrapper-header -->					
 	</div>
 	<!-- ENDS HEADER -->
+
+
+	  @yield('content')
+	
+
+
+	<!-- footer -->
+
+
+	<!-- ENDS footer -->
+
+	</body>
+<html>

@@ -1,5 +1,7 @@
-@include('partials.header')
+@layout('layouts.master')
 
-@include('sliders.eight-col-slider')
+@section('content')
 
-@include('partials.footer')
+	@include('sliders.eight-col-slider')
+
+@endsection
