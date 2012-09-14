@@ -1252,7 +1252,8 @@ h6{ font-size: 20px; }
 	line-height: 1.5em;
 	line-height: 60px;
 	color: #868686;
-	background: #222426 url(../img/bottom-shadow.png) repeat-x;
+	background: black;
+	margin-top: 30px;
 }
 
 #bottom #bottom-text{
