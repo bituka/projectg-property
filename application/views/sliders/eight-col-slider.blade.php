@@ -143,8 +143,8 @@
 	</div><!-- ecs -->
 
 	<div id="ecs-nav">
-		<button id="prev-btn" class="with-hover" data-dir="prev">< previous</button>
-		<button id="next-btn" class="with-hover" data-dir="next">next ></button>
+		<button id="prev-btn" class="with-hover" data-dir="prev">&lt; previous</button>
+		<button id="next-btn" class="with-hover" data-dir="next">next &gt;</button>
 	</div>
 
 </div><!-- ecs-con -->
