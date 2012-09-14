@@ -6,21 +6,21 @@
 
 	$(function() {
 
-		console.log('working');
+		// console.log('working');
 
 		var sliderUL = $('div#ecs').children('ul'),
 			slidesLength = sliderUL.find('li.slides').length,
 			current = 1;
 
-		console.log(sliderUL);
-		console.log(slidesLength);
-		console.log(current);
+		// console.log(sliderUL);
+		// console.log(slidesLength);
+		// console.log(current);
 
 
 		$('#ecs-nav').show().find('button').on('click', function() {
 			var direction = $(this).data('dir');
 
-			console.log(direction);
+			// console.log(direction);
 
 			// update current value
 			( direction === 'next') ? ++current : --current;
@@ -33,7 +33,7 @@
 			}
 
 
-			console.log(current);
+			// console.log(current);
 
 			// animate, lets show the current slide!
 			sliderUL.find('li.slides').hide(); // hide the slides
@@ -60,17 +60,19 @@
 		// ----------------------------------------------------------------------
 	   	//	animate the nav buttons on hover ####################################
 	   	// ----------------------------------------------------------------------
-	   	$('div#ecs-nav > button').removeClass('with-hover'); // remove the css hover event if js is on or supported by the browser
+	   	var sliderNavBtn = $('div#ecs-nav > button');
+
+	   	sliderNavBtn.removeClass('with-hover'); // remove the css hover event if js is on or supported by the browser
 
 	   	// lets animate the colors baby!
-		$('div#ecs-nav > button').hover(function() {
-			console.log('hovered');
+		sliderNavBtn.hover(function() {
+			// console.log('hovered');
 			$this = $(this);
-			console.log($this);
-			$this.stop().animate({ color : 'red' }, 1000);
+			// console.log($this);
+			$this.stop().animate({ color : '#d84691' }, 600);
 		}, function() {
-			console.log('out');
-			$this.stop().animate({ color : '#b9b9b9' }, 1000);		
+			// console.log('out');
+			$this.stop().animate({ color : '#b9b9b9' }, 600);		
 		});
 
 

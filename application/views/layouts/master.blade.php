@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>STATIC TITLE REPLACE THIS WITH THE TITLE OF THE SITE</title>
+		<title>LINQ Property</title>
 		
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
@@ -87,6 +87,10 @@
 		<script type="text/javascript" src="js/css-trans.js"></script>
 		<!-- ENDS css transitions -->
 
+		<!-- site master script -->
+		<script type="text/javascript" src="js/site.js"></script>
+		<!-- ENDS site master script -->
+
 	</head>
 <body>
 
@@ -111,11 +115,11 @@
 			<!-- ENDS search -->
 			<!-- Navigation -->
 				<ul id="nav" class="sf-menu">
-					<li class="current-menu-item"><a href="index.html">HOME PAGE</a></li>
-					<li><a href="features.html">FIND A PROPERTY</a></li>
-					<li><a href="blog.html">ABOUT US</a></li>
-					<li><a href="portfolio.html">PROPERTY NEWS</a></li>
-					<li><a href="gallery.html">CONTACT US</a></li>
+					<li><a class="with-hover <?php echo ( $current_page === 'home' ? 'current-menu-item' : '' ); ?>" href="index.html">HOME PAGE</a></li>
+					<li><a class="with-hover <?php echo ( $current_page === 'find a property' ? 'current-menu-item' : '' ); ?>" href="features.html">FIND A PROPERTY</a></li>
+					<li><a class="with-hover <?php echo ( $current_page === 'about us' ? 'current-menu-item' : '' ); ?>" href="blog.html">ABOUT US</a></li>
+					<li><a class="with-hover <?php echo ( $current_page === 'property news' ? 'current-menu-item' : '' ); ?>" href="portfolio.html">PROPERTY NEWS</a></li>
+					<li><a class="with-hover <?php echo ( $current_page === 'contact us' ? 'current-menu-item' : '' ); ?>" href="gallery.html">CONTACT US</a></li>
 				</ul>
 				<!-- Navigation -->
 		</div>

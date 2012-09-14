@@ -138,7 +138,7 @@ body {
 	display: block;
 	position: absolute;
 	top: 160px;
-	left: 180px;
+	left: 100px;
 	height: 79px;
 	width: 906px;
 }
@@ -154,11 +154,13 @@ body {
 
 #nav>li:first-child{}
 
-#nav>li>a{
+#nav li a{
 	display: block;
 	font-size: 12px;
 	color: black;
 	text-decoration: none;
+	font-weight: bold;
+	letter-spacing: 1px;
 	
 }
 
@@ -170,13 +172,15 @@ body {
 	margin-top: 10px;
 }
 
-#nav>li.current-menu-item{
+#nav li a.current-menu-item{
 	color: #d84691;
+
 }
 
 
-#nav>li:hover>a{
-	color: gray;
+#nav>li a.with-hover:hover{
+	/*color: gray;*/
+	color: #d84691;
 }
 
 /* sub navigation */

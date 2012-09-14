@@ -7,7 +7,7 @@ body { background: black; } /* remove this! */
 			#ecs div.images { float: left; margin-left: 6px; margin-bottom: 4px; }
 			#ecs div.first-image { margin-left: 0; }
 			
-	#ecs-nav { position: absolute; right: 0; top: -30px; }
+	#ecs-nav { position: absolute; right: -7px; top: -30px; }
 	#ecs-nav > button { cursor: pointer; font-family: arial; font-size: 15px; text-transform: uppercase; outline: none; border: none; color: #b9b9b9; background: black; font-weight: bold; }
 		#ecs-nav > button.with-hover:hover { color: red; }
 
