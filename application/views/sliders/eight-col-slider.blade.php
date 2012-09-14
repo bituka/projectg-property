@@ -129,7 +129,7 @@
 				</div>
 				<div class="images">
 					<a href="#">
-						<img src="img/eight-col-slider/sample.jpg" width="163" height="163">
+						<img src="img/eight-col-slider/sample.jpg" width="163" height="163"> 
 					</a>
 				</div>
 				
@@ -143,8 +143,8 @@
 	</div><!-- ecs -->
 
 	<div id="ecs-nav">
-		<button id="prev-btn" data-dir="prev">previous</button>
-		<button id="next-btn" data-dir="next">next</button>
+		<button id="prev-btn" class="with-hover" data-dir="prev">< previous</button>
+		<button id="next-btn" class="with-hover" data-dir="next">next ></button>
 	</div>
 
 </div><!-- ecs-con -->

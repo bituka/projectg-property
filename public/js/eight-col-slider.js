@@ -57,6 +57,23 @@
 		});
 
 
+		// ----------------------------------------------------------------------
+	   	//	animate the nav buttons on hover ####################################
+	   	// ----------------------------------------------------------------------
+	   	$('div#ecs-nav > button').removeClass('with-hover'); // remove the css hover event if js is on or supported by the browser
+
+	   	// lets animate the colors baby!
+		$('div#ecs-nav > button').hover(function() {
+			console.log('hovered');
+			$this = $(this);
+			console.log($this);
+			$this.stop().animate({ color : 'red' }, 1000);
+		}, function() {
+			console.log('out');
+			$this.stop().animate({ color : '#b9b9b9' }, 1000);		
+		});
+
+
 	
 
 

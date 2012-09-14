@@ -8,6 +8,10 @@ body { background: black; } /* remove this! */
 			#ecs div.first-image { margin-left: 0; }
 			
 	#ecs-nav { position: absolute; right: 0; top: -30px; }
-	#ecs-nav > button { cursor: pointer; border: none; outline: none; text-indent: -9999px; }
-		#ecs-nav button#prev-btn { background: url('../img/eight-col-slider/prev-btn.jpg'); height: 16px; width: 95px; }
-		#ecs-nav button#next-btn { background: url('../img/eight-col-slider/next-btn.jpg'); height: 16px; width: 60px; }
+	#ecs-nav > button { cursor: pointer; font-family: arial; font-size: 15px; text-transform: uppercase; outline: none; border: none; color: #b9b9b9; background: black; font-weight: bold; }
+		#ecs-nav > button.with-hover:hover { color: red; }
+
+
+	/*#ecs-nav > button { cursor: pointer; border: none; outline: none; text-indent: -9999px; }*/
+		/*#ecs-nav button#prev-btn { background: url('../img/eight-col-slider/prev-btn.jpg'); height: 16px; width: 95px; }
+		#ecs-nav button#next-btn { background: url('../img/eight-col-slider/next-btn.jpg'); height: 16px; width: 60px; }*/
