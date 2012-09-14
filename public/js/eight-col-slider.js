@@ -18,7 +18,7 @@
 
 		sliderUL.find('li.slides').hide(); // hide the slides
 
-		sliderUL.find('#slide-' + current).fadeIn(5000); // show the first slide on 1st page load
+		sliderUL.find('#slide-' + current).show(); // show the first slide on 1st page load
 
 		$('#ecs-nav').show().find('button').on('click', function() {
 			var direction = $(this).data('dir');
