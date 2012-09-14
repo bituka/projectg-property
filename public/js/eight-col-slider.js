@@ -16,6 +16,9 @@
 		// console.log(slidesLength);
 		// console.log(current);
 
+		sliderUL.find('li.slides').hide(); // hide the slides
+
+		sliderUL.find('#slide-' + current).fadeIn(5000); // show the first slide on 1st page load
 
 		$('#ecs-nav').show().find('button').on('click', function() {
 			var direction = $(this).data('dir');
@@ -38,7 +41,7 @@
 			// animate, lets show the current slide!
 			sliderUL.find('li.slides').hide(); // hide the slides
 
-			sliderUL.find('#slide-' + current).fadeIn(2000); // fadeIn the current slide
+			sliderUL.find('#slide-' + current).fadeIn(1000); // fadeIn the current slide
 
 		});
 
@@ -51,7 +54,7 @@
 	   	// ----------------------------------------------------------------------
 		$('.images').hover(function() {
 			$this = $(this);
-			$this.stop().transition({ scale: 1.04 }, 200).css('z-index', '999');
+			$this.stop().transition({ scale: 1.02 }, 200).css('z-index', '999');
 		}, function() {
 			$this.stop().transition({ scale: 1 }, 200).css('z-index', '1');
 		});
@@ -69,10 +72,10 @@
 			// console.log('hovered');
 			$this = $(this);
 			// console.log($this);
-			$this.stop().animate({ color : '#d84691' }, 600);
+			$this.stop().animate({ color : '#d84691' }, 300);
 		}, function() {
 			// console.log('out');
-			$this.stop().animate({ color : '#b9b9b9' }, 600);		
+			$this.stop().animate({ color : '#b9b9b9' }, 300);		
 		});
 
 

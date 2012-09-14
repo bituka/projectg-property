@@ -23,7 +23,7 @@
 			if ( !$this.hasClass('current-menu-item') ) {
 
 				// console.log($this);
-				$this.stop().animate({ color : '#d84691' }, 600);
+				$this.stop().animate({ color : '#d84691' }, 300);
 
 			}
 
@@ -33,7 +33,7 @@
 			if ( !$this.hasClass('current-menu-item') ) {
 
 				// console.log('out');
-				$this.stop().animate({ color : '#010101' }, 600);		
+				$this.stop().animate({ color : '#010101' }, 300);		
 
 			}
 

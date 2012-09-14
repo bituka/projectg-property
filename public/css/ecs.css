@@ -3,7 +3,7 @@ body { background: black; } /* remove this! */
 #ecs-con { position: relative; width: 670px; margin: 0 auto; margin-top: 7px; z-index: 11; }
 	
 	#ecs { width: 670px; background: black; /*margin: 0 auto;*/ height: 332px; overflow: hidden; position: relative; }
-		#ecs .slides { position: absolute; }
+		#ecs .slides { position: absolute; /*display: none;*/ }
 			#ecs div.images { float: left; margin-left: 6px; margin-bottom: 4px; }
 			#ecs div.first-image { margin-left: 0; }
 			

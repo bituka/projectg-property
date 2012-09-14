@@ -12,32 +12,32 @@
 				</div>
 				<div class="images">
 					<a href="#">
-						<img src="img/eight-col-slider/sample.jpg" width="163" height="163">
+						<img src="img/eight-col-slider/sample-002.jpg" width="163" height="163">
 					</a>
 				</div>
 				<div class="images">
 					<a href="#">
-						<img src="img/eight-col-slider/sample.jpg" width="163" height="163">
+						<img src="img/eight-col-slider/sample-003.jpg" width="163" height="163">
 					</a>
 				</div>
 				<div class="images">
 					<a href="#">
-						<img src="img/eight-col-slider/sample.jpg" width="163" height="163">
+						<img src="img/eight-col-slider/sample-004.jpg" width="163" height="163">
 					</a>
 				</div>
 				<div class="images first-image">
 					<a href="#">
-						<img src="img/eight-col-slider/sample.jpg" width="163" height="163">
+						<img src="img/eight-col-slider/sample-004.jpg" width="163" height="163">
 					</a>
 				</div>
 				<div class="images">
 					<a href="#">
-						<img src="img/eight-col-slider/sample.jpg" width="163" height="163">
+						<img src="img/eight-col-slider/sample-003.jpg" width="163" height="163">
 					</a>
 				</div>
 				<div class="images">
 					<a href="#">
-						<img src="img/eight-col-slider/sample.jpg" width="163" height="163">
+						<img src="img/eight-col-slider/sample-002.jpg" width="163" height="163">
 					</a>
 				</div>
 				<div class="images">
@@ -60,7 +60,7 @@
 				</div>
 				<div class="images">
 					<a href="#">
-						<img src="img/eight-col-slider/sample.jpg" width="163" height="163">
+						<img src="img/eight-col-slider/sample-002.jpg" width="163" height="163">
 					</a>
 				</div>
 				<div class="images">
