@@ -10,8 +10,19 @@ class Site_Controller extends Base_Controller {
 	 public function get_index() 
 	 {
 		$view = View::make('site.index');
+		$view['title']  = 'Linq Property: Home';	
 		$view['current_page']  = 'home';		
 		return $view;
 	 }
-
+	
+	public function get_find_prop() 
+	 {
+		$view = View::make('site.find_prop');
+		$view['title']  = 'Linq Property: Find a Property';
+		$view['current_page']  = 'find a property';		
+		return $view;
+	 }
+	 
+	 
+	 
 }

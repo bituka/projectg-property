@@ -26,7 +26,7 @@
 | It's easy to allow URI wildcards using (:num) or (:any):
 |
 |		Route::put('hello/(:any)', function($name)
-|		{
+|		{	
 |			return "Welcome, $name.";
 |		});
 |
@@ -41,7 +41,8 @@ Route::controller( array(
 ) );
 
 Route::get('/', array('uses' => 'site@index')); // default route, for home page
-
+Route::get('find_prop', array('uses' => 'site@find_prop'));
+		
 /**
  * register custom routes here
  */
