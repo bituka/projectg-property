@@ -70,7 +70,7 @@ return array(
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => 'localhost',
-			'database' => 'linq_db',
+			'database' => 'property_site',
 			'username' => 'root',
 			'password' => '',
 			'charset'  => 'utf8',
