@@ -13,6 +13,25 @@
 		<!-- ENDS CSS -->	
 
 
+
+
+
+
+
+		<!-- bootstrap, this conflict with the front end css so this layout shoud only be used in the backend -->
+		{{ Asset::container('bootstrapper')->styles(); }}
+		{{ Asset::container('bootstrapper')->scripts(); }}
+		<!-- ENDS bootstrap -->
+
+
+
+
+
+
+
+
+
+
 		<!-- GOOGLE FONTS 
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>-->
 		
@@ -93,52 +112,16 @@
 		<!-- ENDS site master script -->
 
 	</head>
-<body id="{{ $current_page }}">
+	<body id="{{ $current_page }}">
 
 
 
-	<!-- HEADER -->
-	<div id="header">
-		<!-- wrapper-header -->
-		<div class="wrapper">
-			<!-- logo placeholder
-			<a href="index.html"><img id="logo" src="img/logo.png" alt="Nova" /></a>
-			-->
-			<!-- search -->
-			<div class="top-search">
-				<form  method="get" id="searchform" action="#">
-					<div>
-						<input type="text" value="Search..." name="s" id="s" onfocus="defaultInput(this)" onblur="clearInput(this)" />
-						<input type="submit" id="searchsubmit" value=" " />
-					</div>
-				</form>
-			</div>
-			<!-- ENDS search -->
-			<!-- Navigation -->
-				<ul id="nav" class="sf-menu">
-					<li><a class="with-hover <?php echo ( $current_page === 'home' ? 'current-menu-item' : '' ); ?>" href="index.html">HOME PAGE</a></li>
-					<li><a class="with-hover <?php echo ( $current_page === 'find a property' ? 'current-menu-item' : '' ); ?>" href="features.html">FIND A PROPERTY</a></li>
-					<li><a class="with-hover <?php echo ( $current_page === 'about us' ? 'current-menu-item' : '' ); ?>" href="blog.html">ABOUT US</a></li>
-					<li><a class="with-hover <?php echo ( $current_page === 'property news' ? 'current-menu-item' : '' ); ?>" href="portfolio.html">PROPERTY NEWS</a></li>
-					<li><a class="with-hover <?php echo ( $current_page === 'contact us' ? 'current-menu-item' : '' ); ?>" href="gallery.html">CONTACT US</a></li>
-				</ul>
-				<!-- Navigation -->
-		</div>
-		<!-- ENDS wrapper-header -->					
-	</div>
-	<!-- ENDS HEADER -->
 
-
-	  @yield('content')
+		@yield('content')
 	
 
 
-	<!-- footer -->
-		<div id="footer">
-			<div class="wrapper">
-				<p>&copy;LinQ Property Pty Ltd All rights reserved</p>
-			</div>
-		</div>
+	
 		
 	<!-- ENDS footer -->
 

@@ -38,6 +38,7 @@
 Route::controller( array(
 	'site',
 	'properties',
+	'admin.dashboard',
 ) );
 // --- register conrollers ends --- //
 
@@ -54,9 +55,7 @@ Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
 Route::post('login', array('as' => 'login', 'uses' => 'site@login'));
 
 // dashboard for admin
-Route::get('dashboard', array('as' => 'dashboard', function() {
-	echo 'welcome to the dashboard';
-}));
+Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' => 'admin.dashboard@index'));
 
 
 // routes that are just for development environment, remove or uncomment this when in production -------- //
