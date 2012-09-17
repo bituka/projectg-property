@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="css/ecs.css" media="all"  type="text/css"/> 
-
-
 <div id="ecs-con">
 	<div id="ecs">
 		<ul>

@@ -7,6 +7,7 @@
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/social-icons.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/ecs.css" media="all"  type="text/css"/>
 		<!--[if IE 8]>
 			<link rel="stylesheet" type="text/css" media="screen" href="css/ie8-hacks.css" />
 		<![endif]-->
@@ -94,8 +95,6 @@
 	</head>
 <body id="{{ $current_page }}">
 
-
-
 	<!-- HEADER -->
 	<div id="header">
 		<!-- wrapper-header -->
@@ -113,10 +112,18 @@
 				</form>
 			</div>
 			<!-- ENDS search -->
+			<!-- Contact Section -->
+			<div class="contact-header">
+				Suite 104, 163-169 Inkerman Street
+				St Kilda, Victoria, 3182 Australia
+	 <span style="font-size: medium; ">Telephone: 03 9041 5502</span>
+			</div>
+			
+			<!-- End Contact Section -->
 			<!-- Navigation -->
 				<ul id="nav" class="sf-menu">
-					<li><a class="with-hover <?php echo ( $current_page === 'home' ? 'current-menu-item' : '' ); ?>" href="index.html">HOME PAGE</a></li>
-					<li><a class="with-hover <?php echo ( $current_page === 'find a property' ? 'current-menu-item' : '' ); ?>" href="features.html">FIND A PROPERTY</a></li>
+					<li><a class="with-hover <?php echo ( $current_page === 'home' ? 'current-menu-item' : '' ); ?>" href="<?php echo URL::to('/'); ?>">HOME PAGE</a></li>
+					<li><a class="with-hover <?php echo ( $current_page === 'find a property' ? 'current-menu-item' : '' ); ?>" href="<?php echo URL::to('find_prop'); ?>">FIND A PROPERTY</a></li>
 					<li><a class="with-hover <?php echo ( $current_page === 'about us' ? 'current-menu-item' : '' ); ?>" href="blog.html">ABOUT US</a></li>
 					<li><a class="with-hover <?php echo ( $current_page === 'property news' ? 'current-menu-item' : '' ); ?>" href="portfolio.html">PROPERTY NEWS</a></li>
 					<li><a class="with-hover <?php echo ( $current_page === 'contact us' ? 'current-menu-item' : '' ); ?>" href="gallery.html">CONTACT US</a></li>
@@ -126,12 +133,12 @@
 		<!-- ENDS wrapper-header -->					
 	</div>
 	<!-- ENDS HEADER -->
-
+   <div class="wrapper">
 
 	  @yield('content')
 	
 
-
+   </div>
 	<!-- footer -->
 		<div id="footer">
 			<div class="wrapper">

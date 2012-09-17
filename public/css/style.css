@@ -38,6 +38,7 @@ body {
 	width: 766px;
 	margin: 0px auto;
 	position: relative;
+	color:white;
 }
 
 #header{
@@ -178,9 +179,10 @@ body {
 	background: transparent;
 }
 
+
 /* FOOTER ----------------------------------------------- */
 #footer { text-align: center; height: 50px; }
-	#footer p { font-family: arial; font-size: 12px; color: #B9B9B9; line-height: 50px; }
+#footer p { font-family: arial; font-size: 12px; color: #B9B9B9; line-height: 50px; }
 
 /* -------------------------------------------------------------------------------- */
 /* PUT STYLES FOR SPECIFIC PAGES HERE ############################################# */
@@ -190,9 +192,42 @@ body {
 #home #bottom-content { position: relative; height: 368px; /* background: red;*/ }
 #home #image-001 { position: absolute; top: 6px; left: 46px; background: url('../img/image-001.jpg') no-repeat; width: 221px; height: 362px; }
 
+.contact-header{
+	display: block;
+	width: 220px;
+	text-align: right;
+	top: 60px;
+	position: absolute;
+	right: 50px;
+	font-size:small;
+}
 
+.find_prop{
+	margin: 30px 100px;
+}
 
+.find_prop hr{
+	color: #bb8930;
+	background-color: #bb8930;
+	height: 2px;
+	border: 0px;
+}
 
-
+#searchform #f{
+	color: #7e7e7e;
+	font-size: 10px;
+	width: 522px;
+	height: 28px;
+	padding: 0px 35px 0px 30px;
+	background: url(../img/big-search.png) no-repeat white;	
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+    -webkit-box-shadow: 0px 0px 4px 0px #756f75;
+    border: 1px; 
+    border-color:gray;
+    border-style:solid;
+	border-width:2px;
+}
 
 
