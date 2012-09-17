@@ -195,4 +195,29 @@ return array(
 		'View'       	=> 'Laravel\\View',
 	),
 
+
+	// bootstrap
+	'Alert'                 => 'Bootstrapper\\Alert',
+	'Badges'                => 'Bootstrapper\\Badges',
+	'Breadcrumbs'           => 'Bootstrapper\\Breadcrumbs',
+	'Buttons'               => 'Bootstrapper\\Buttons',
+	'ButtonGroup'           => 'Bootstrapper\\ButtonGroup',
+	'ButtonToolbar'         => 'Bootstrapper\\ButtonToolbar',
+	'Carousel'              => 'Bootstrapper\\Carousel',
+	'DropdownButton'        => 'Bootstrapper\\DropdownButton',
+	'Form'                  => 'Bootstrapper\\Form',
+	'Helpers'               => 'Bootstrapper\\Helpers',
+	'Icons'                 => 'Bootstrapper\\Icons',
+	'Labels'                => 'Bootstrapper\\Labels',
+	'Navbar'                => 'Bootstrapper\\Navbar',
+	'Navigation'            => 'Bootstrapper\\Navigation',
+	'Paginator'             => 'Bootstrapper\\Paginator',
+	'Progress'              => 'Bootstrapper\\Progress',
+	'SplitDropdownButton'   => 'Bootstrapper\\SplitDropdownButton',
+	'Tabbable'              => 'Bootstrapper\\Tabbable',
+	'Tables'                => 'Bootstrapper\\Tables',
+	'Typeahead'             => 'Bootstrapper\\Typeahead', 
+
+
+
 );
