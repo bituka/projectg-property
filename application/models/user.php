@@ -9,11 +9,11 @@ class User extends Aware {
 	 */
 	public static $rules = array(
 		'username' => 'required|min:5|unique:users',
-		'password' => 'required|email|min:5',
+		'password' => 'required|min:5',
 		'email' => 'required|email|unique:users',
 		'first_name' => 'required|max:100',
 		'last_name' => 'required|max:100',
-		'group_id' => 'required|integer',
+		'group_id' => 'required|integer|exists:groups,id',
 	);
 
 

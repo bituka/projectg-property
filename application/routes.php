@@ -42,6 +42,144 @@ Route::controller( array(
 
 Route::get('/', array('uses' => 'site@index')); // default route, for home page
 Route::get('find_prop', array('uses' => 'site@find_prop'));
+
+Route::get('test_models', function() {
+
+	// ---- test cases (PASSED) ----- //
+
+	// insert group
+	// $group = new Group;
+
+	// $group->name = 'admin';
+	// $group->description = 'administrator';
+
+	// if ($group->save())
+	// {
+	// 	echo 'save successful';	
+	// }
+	// else
+	// {
+	// 	echo 'error!';
+	// 	var_dump($group->errors->all());
+	// }
+
+
+	// insert user
+	// $user = new User;
+
+	// $user->username = 'admins';
+	// $user->password = 'administrator';
+	// $user->email = 'admin@gmails.com';
+	// $user->first_name = 'administrator';
+	// $user->last_name = 'admin';
+	// $user->group_id = '2';
+
+	// if ($user->save())
+	// {
+	// 	echo 'save successful';	
+	// }
+	// else
+	// {
+	// 	echo 'error!';
+	// 	var_dump($user->errors->all());
+	// }
+
+
+	// insert categories
+	// $category = new Category;
+
+	// $category->name = 'houses';
+
+	// if ($category->save())
+	// {
+	// 	echo 'save successful';	
+	// }
+	// else
+	// {
+	// 	echo 'error!';
+	// 	var_dump($category->errors->all());
+	// }
+
+
+	// insert states
+	// $state = new State;
+
+	// $state->name = 'legazpi';
+
+	// if ($state->save())
+	// {
+	// 	echo 'save successful';	
+	// }
+	// else
+	// {
+	// 	echo 'error!';
+	// 	var_dump($state->errors->all());
+	// }
+
+
+	// insert news
+	// $news = new News;
+
+	// $news->title = 'hehe';
+	// $news->content = 'haha';
+
+	// if ($news->save())
+	// {
+	// 	echo 'save successful';	
+	// }
+	// else
+	// {
+	// 	echo 'error!';
+	// 	var_dump($news->errors->all());
+	// }
+
+
+	// insert properties
+	// $property = new Property;
+
+	// $property->title = 'hehe';
+	// $property->description = 'haha';
+	// $property->location = 'haha';
+	// $property->rooms = '2';
+	// $property->price = '3000';
+	// $property->state_id = '1';
+	// $property->category_id = '1';
+	// $property->date_sold = 'haha';
+	// $property->post_code = 'haha';
+
+	// if ($property->save())
+	// {
+	// 	echo 'save successful';	
+	// }
+	// else
+	// {
+	// 	echo 'error!';
+	// 	var_dump($property->errors->all());
+	// }
+
+
+	// insert property image
+	// $prop_img = new PropertyImage;
+
+	// $prop_img->name = 'image002';
+	// $prop_img->property_id = '2';
+
+	// if ($prop_img->save())
+	// {
+	// 	echo 'save successful';	
+	// }
+	// else
+	// {
+	// 	echo 'error!';
+	// 	var_dump($prop_img->errors->all());
+	// }
+
+
+
+
+});
+
+
 		
 /**
  * register custom routes here

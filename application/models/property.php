@@ -13,9 +13,8 @@ class Property extends Aware {
 		'location' => 'required',
 		'rooms' => 'required|integer',
 		'price' => 'required|integer',
-		'state_id' => 'integer',
-		'category_id' => 'required|integer',
-		'date_sold' => '',
+		'state_id' => 'integer|integer|exists:states,id',
+		'category_id' => 'required|integer|exists:categories,id',
 		'post_code' => 'required',
 	);
 

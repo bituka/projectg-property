@@ -1,6 +1,6 @@
 <?php
 
-class Property_images extends Aware {
+class PropertyImage extends Aware {
 	
 	public static $table = 'property_images';
 
@@ -10,8 +10,8 @@ class Property_images extends Aware {
 	 * Aware validation rules
 	 */
 	public static $rules = array(
-		'name' => 'required',
-		'property_id' => 'required|integer',
+		'name' => 'required|unique:property_images',
+		'property_id' => 'required|integer|exists:properties,id',
 
 	);
 
