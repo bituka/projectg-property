@@ -39,10 +39,24 @@ Route::controller( array(
 	'site',
 	'properties',
 ) );
+// --- register conrollers ends --- //
+
+
+/**
+ *	custom routes
+ */
 
 Route::get('/', array('uses' => 'site@index')); // default route, for home page
 Route::get('find_prop', array('uses' => 'site@find_prop'));
 
+// login page
+Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
+Route::post('login', array('as' => 'login', 'uses' => 'site@login'));
+
+// dashboard for admin
+Route::get('dashboard', array('as' => 'dashboard', function() {
+	echo 'welcome to the dashboard';
+}));
 
 
 // routes that are just for development environment, remove or uncomment this when in production -------- //
@@ -76,7 +90,7 @@ Route::get('test_models', function() {
 	// $user->email = 'admin@gmails.com';
 	// $user->first_name = 'administrator';
 	// $user->last_name = 'admin';
-	// $user->group_id = '2';
+	// $user->group_id = '4';
 
 	// if ($user->save())
 	// {

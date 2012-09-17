@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost/linqp_lav/public',
+	'url' => '',	// no need to set this. laravel automagically detects the url
 
 	/*
 	|--------------------------------------------------------------------------
