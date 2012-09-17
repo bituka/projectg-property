@@ -46,4 +46,8 @@ return array(
 	  )
 	),
 
+	// bootstrap
+    'bootstrapper' => array('auto' => true),
+
+
 );
