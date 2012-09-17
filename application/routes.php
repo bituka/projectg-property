@@ -43,9 +43,13 @@ Route::controller( array(
 Route::get('/', array('uses' => 'site@index')); // default route, for home page
 Route::get('find_prop', array('uses' => 'site@find_prop'));
 
+
+
+// routes that are just for development environment, remove or uncomment this when in production -------- //
+
 Route::get('test_models', function() {
 
-	// ---- test cases (PASSED) ----- //
+	// ---- insert and inserting validations for models (PASSED) ----- //
 
 	// insert group
 	// $group = new Group;
