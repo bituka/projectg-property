@@ -29,6 +29,12 @@
                 <input type="text" id="property-rooms-field" class="span4" name="rooms" placeholder="rooms">
                 <input type="text" id="property-price-field" class="span4" name="price" placeholder="price">
 
+
+                {{ Form::select('state', $states_array) }}
+
+                {{ Form::select('category', $categories_array) }}
+
+
                 <input type="text" id="property-post-code-field" class="span4" name="post_code" placeholder="post code">
               
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
