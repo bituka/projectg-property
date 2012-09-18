@@ -2,6 +2,9 @@
 
 @section('content')
 	
-	<p>dashboard<p>
+	welcome to the dashboard!
+
+	{{ HTML::link_to_route('logout', 'Logout') }}
+
 	
 @endsection

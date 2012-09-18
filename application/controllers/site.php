@@ -29,10 +29,20 @@ class Site_Controller extends Base_Controller {
 	*/
 	public function get_login() 
 	{
-		$view = View::make('site.login');
-		$view['title']  = 'Linq Property: Login';	
-		$view['current_page']  = 'login';		
-		return $view;
+
+		if (Auth::check())
+		{
+		    return Redirect::to_route('dashboard');		 
+		}
+		else
+		{
+			$view = View::make('site.login');
+			$view['title']  = 'Linq Property: Login';	
+			$view['current_page']  = 'login';		
+			return $view;
+		}
+
+	
 	}
 
 	/**
@@ -64,7 +74,15 @@ class Site_Controller extends Base_Controller {
 
 
 	}
-	 
-	 
+
+
+	/**
+	* logout
+	*/
+	public function get_logout() 
+	{
+	 	Auth::logout();
+	 	return Redirect::to_route('login');
+	}
 	 
 }
