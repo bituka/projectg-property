@@ -7,15 +7,13 @@ class Admin_Dashboard_Controller extends Base_Controller {
 	/**
 	 * render the home page of the admin panel
 	 */
-	 public function get_index() 
-	 {
+	public function get_index() 
+	{
 		$view = View::make('admin.dashboard');
 		$view['title']  = 'Linq Property: Admin Dashboard';	
 		$view['current_page']  = 'Admin Dashboard';		
 		return $view;
-	 
-
-	 }
+	}
 
 
 

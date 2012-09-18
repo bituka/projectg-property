@@ -39,6 +39,7 @@ Route::controller( array(
 	'site',
 	'properties',
 	'admin.dashboard',
+	'admin.properties',
 ) );
 // --- register conrollers ends --- //
 
@@ -47,10 +48,13 @@ Route::controller( array(
  *	custom routes
  */
 
-Route::get('/', array('uses' => 'site@index')); // default route, for home page
+// default route, for home page
+Route::get('/', array('uses' => 'site@index')); 
+
+// find property
 Route::get('find_prop', array('uses' => 'site@find_prop'));
 
-// login page
+// login
 Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
 Route::post('login', array('as' => 'login', 'uses' => 'site@login'));
 
@@ -59,6 +63,12 @@ Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' =>
 
 // logout
 Route::get('logout', array('as' => 'logout', 'uses' => 'site@logout'));
+
+// state
+Route::get('state/add', array('as' => 'add_state', 'uses' => 'admin.properties@add_state'));
+Route::post('state/add', array('uses' => 'admin.properties@add_state'));
+
+
 
 // routes that are just for development environment, remove or uncomment this when in production -------- //
 
