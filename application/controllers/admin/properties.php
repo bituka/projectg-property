@@ -14,11 +14,22 @@ class Admin_Properties_Controller extends Base_Controller {
 
 	public function post_add_state() 
 	{
-		echo 'adding state';
-		// $view = View::make('admin.dashboard');
-		// $view['title']  = 'Linq Property: Admin Dashboard';	
-		// $view['current_page']  = 'Admin Dashboard';		
-		// return $view;
+		// get POST data
+	    $name = Input::get('name');
+
+	    $state = new State;
+		$state->name = $name;
+
+		if ($state->save()) {
+			return Redirect::back()->with('success', 'State successfuly added!');
+		} else {
+			return Redirect::back()->with_errors( $state->errors->all() );
+		}
+
+		
+
+
+
 	}
 
 

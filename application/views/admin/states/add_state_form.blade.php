@@ -7,7 +7,17 @@
     <div class="row">
         <div class="span4 offset4 well">
             <legend>Add State</legend>
-            
+        
+            @if(Session::has('errors'))
+               @foreach(Session::get('errors') as $error)         
+                   {{ $error }}
+               @endforeach
+            @endif
+         
+            @if(Session::has('success'))   
+                {{ Session::get('success') }}
+            @endif
+
             @if (Session::has('login_errors'))
                 <div class="alert alert-error">
                     <a class="close" data-dismiss="alert" href="#">×</a>Incorrect Username or Password!

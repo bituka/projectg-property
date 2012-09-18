@@ -9,7 +9,6 @@ class State extends Aware {
 	 */
 	public static $rules = array(
 		'name' => 'required|unique:states',
-
 	);
 
 	public function properties()
