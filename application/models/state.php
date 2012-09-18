@@ -12,6 +12,14 @@ class State extends Aware {
 
 	);
 
+	/**
+	 * Aware custom messages
+	 */
+	public static $messages = array(
+   		'name_required' => 'State name is required!',
+   		'name_unique' => 'The state name already exists!',
+	);
+
 	public function properties()
 	{
 		return $this->has_many('Property');
