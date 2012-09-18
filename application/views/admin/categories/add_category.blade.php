@@ -23,6 +23,7 @@
             @endif
 
             <form method="Post" action="add" accept-charset="UTF-8">
+            {{ Form::token() }} 
             <input type="text" id="state-name-field" class="span4" name="name" placeholder="name">
             <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
             </form>    

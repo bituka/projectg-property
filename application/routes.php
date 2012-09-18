@@ -60,7 +60,7 @@ Route::get('find_prop', array('uses' => 'site@find_prop'));
 
 // login
 Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
-Route::post('login', array('as' => 'login', 'uses' => 'site@login'));
+Route::post('login', array('as' => 'login', 'before' => 'csrf', 'uses' => 'site@login'));
 
 // logout
 Route::get('logout', array('as' => 'logout', 'uses' => 'site@logout'));
@@ -69,16 +69,16 @@ Route::get('logout', array('as' => 'logout', 'uses' => 'site@logout'));
 Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' => 'admin.dashboard@index'));
 
 // states
-Route::get('states/add', array('as' => 'add_state', 'uses' => 'admin.states@add'));
-Route::post('states/add', array('uses' => 'admin.states@add'));
+Route::get('states/add', array('as' => 'add_state', 'before' => 'auth', 'uses' => 'admin.states@add'));
+Route::post('states/add', array('before' => 'auth|csrf', 'uses' => 'admin.states@add'));
 
 // categories
-Route::get('categories/add', array('as' => 'add_category', 'uses' => 'admin.categories@add'));
-Route::post('categories/add', array('uses' => 'admin.categories@add'));
+Route::get('categories/add', array('as' => 'add_category', 'before' => 'auth', 'uses' => 'admin.categories@add'));
+Route::post('categories/add', array('before' => 'auth|csrf', 'uses' => 'admin.categories@add'));
 
 // properties
-Route::get('properties/add', array('as' => 'add_property', 'uses' => 'admin.properties@add'));
-Route::post('properties/add', array('uses' => 'admin.properties@add'));
+Route::get('properties/add', array('as' => 'add_property', 'before' => 'auth', 'uses' => 'admin.properties@add'));
+Route::post('properties/add', array('before' => 'auth|csrf', 'uses' => 'admin.properties@add'));
 
 
 
