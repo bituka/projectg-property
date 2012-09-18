@@ -70,7 +70,7 @@ body {
 	float: left;
 	padding: 10px 10px 0px 10px;
 	height: 20%;
-	border-right: 1px solid;
+	border-right: 1px solid black;
 	margin-top: 20px;
 }
 
@@ -176,7 +176,7 @@ body {
 	width: 30px;
 	height: 25px;
 	border: 0px;
-	background: transparent;
+	background: url(../img/search.png) no-repeat transparent;
 }
 
 
@@ -193,6 +193,7 @@ body {
 #home #image-001 { position: absolute; top: 6px; left: 46px; background: url('../img/image-001.jpg') no-repeat; width: 221px; height: 362px; }
 
 .contact-header{
+	color: gray;
 	display: block;
 	width: 220px;
 	text-align: right;
@@ -216,7 +217,7 @@ body {
 #searchform #f{
 	color: #7e7e7e;
 	font-size: 10px;
-	width: 522px;
+	width: 495px;
 	height: 28px;
 	padding: 0px 35px 0px 30px;
 	background: url(../img/big-search.png) no-repeat white;	
@@ -230,4 +231,23 @@ body {
 	border-width:2px;
 }
 
+.find_prop #playbutton{
+	border: 0px;
+	background: url(../img/submit-playbtn.jpg) no-repeat transparent;
+}
 
+#filter-menu{
+	border: 2px solid #bb8930;
+	font-size: 12px;
+	display:block;
+}
+
+#filter-menu li {
+	display:inline;
+	padding: 10px 5px;
+}
+/*
+#filter-menu ul {
+	padding: 10px 5px;
+}
+*/
