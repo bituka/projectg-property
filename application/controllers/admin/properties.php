@@ -25,6 +25,7 @@ class Admin_Properties_Controller extends Base_Controller {
 		} else {
 			return Redirect::back()->with_errors( $state->errors->all() );
 		}
+
 	}
 
 	public function get_add_category() 
@@ -48,8 +49,32 @@ class Admin_Properties_Controller extends Base_Controller {
 		} else {
 			return Redirect::back()->with_errors( $category->errors->all() );
 		}
+
 	}
 
+	public function get_add_property() 
+	{
+		$view = View::make('admin.properties.add_property');
+		$view['title']  = 'Linq Property: Admin Add Property';	
+		$view['current_page']  = 'add-property';		
+		return $view;
+	}
+
+	public function post_add_property() 
+	{
+		// get POST data
+	    $name = Input::get('name');
+
+	    $property = new Property;
+		$property->name = $name;
+
+		if ($property->save()) {
+			return Redirect::back()->with('success', 'Property successfuly added!');
+		} else {
+			return Redirect::back()->with_errors( $property->errors->all() );
+		}
+
+	}
 
 
 

@@ -72,6 +72,10 @@ Route::post('states/add', array('uses' => 'admin.properties@add_state'));
 Route::get('categories/add', array('as' => 'add_category', 'uses' => 'admin.properties@add_category'));
 Route::post('categories/add', array('uses' => 'admin.properties@add_category'));
 
+// properties
+Route::get('properties/add', array('as' => 'add_category', 'uses' => 'admin.properties@add_property'));
+Route::post('properties/add', array('uses' => 'admin.properties@add_property'));
+
 
 
 
