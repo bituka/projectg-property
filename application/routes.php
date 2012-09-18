@@ -40,6 +40,10 @@ Route::controller( array(
 	'properties',
 	'admin.dashboard',
 	'admin.properties',
+	'admin.categories',
+	'admin.states',
+
+
 ) );
 // --- register conrollers ends --- //
 
@@ -58,23 +62,23 @@ Route::get('find_prop', array('uses' => 'site@find_prop'));
 Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
 Route::post('login', array('as' => 'login', 'uses' => 'site@login'));
 
-// dashboard for admin
-Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' => 'admin.dashboard@index'));
-
 // logout
 Route::get('logout', array('as' => 'logout', 'uses' => 'site@logout'));
 
+// dashboard for admin
+Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' => 'admin.dashboard@index'));
+
 // states
-Route::get('states/add', array('as' => 'add_state', 'uses' => 'admin.properties@add_state'));
-Route::post('states/add', array('uses' => 'admin.properties@add_state'));
+Route::get('states/add', array('as' => 'add_state', 'uses' => 'admin.states@add'));
+Route::post('states/add', array('uses' => 'admin.states@add'));
 
 // categories
-Route::get('categories/add', array('as' => 'add_category', 'uses' => 'admin.properties@add_category'));
-Route::post('categories/add', array('uses' => 'admin.properties@add_category'));
+Route::get('categories/add', array('as' => 'add_category', 'uses' => 'admin.categories@add'));
+Route::post('categories/add', array('uses' => 'admin.categories@add'));
 
 // properties
-Route::get('properties/add', array('as' => 'add_category', 'uses' => 'admin.properties@add_property'));
-Route::post('properties/add', array('uses' => 'admin.properties@add_property'));
+Route::get('properties/add', array('as' => 'add_property', 'uses' => 'admin.properties@add'));
+Route::post('properties/add', array('uses' => 'admin.properties@add'));
 
 
 
