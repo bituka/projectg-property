@@ -64,9 +64,14 @@ Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' =>
 // logout
 Route::get('logout', array('as' => 'logout', 'uses' => 'site@logout'));
 
-// state
-Route::get('state/add', array('as' => 'add_state', 'uses' => 'admin.properties@add_state'));
-Route::post('state/add', array('uses' => 'admin.properties@add_state'));
+// states
+Route::get('states/add', array('as' => 'add_state', 'uses' => 'admin.properties@add_state'));
+Route::post('states/add', array('uses' => 'admin.properties@add_state'));
+
+// categories
+Route::get('categories/add', array('as' => 'add_category', 'uses' => 'admin.properties@add_category'));
+Route::post('categories/add', array('uses' => 'admin.properties@add_category'));
+
 
 
 
