@@ -6,7 +6,7 @@
     <div class="container">
     <div class="row">
         <div class="span4 offset4 well">
-            <legend>Add State</legend>
+            <legend>Add Property</legend>
         
             @if(Session::has('errors'))
                @foreach(Session::get('errors') as $error)         
