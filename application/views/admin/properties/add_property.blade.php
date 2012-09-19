@@ -23,6 +23,9 @@
             @endif
 
             <form method="Post" action="add" accept-charset="UTF-8">
+
+                {{ Form::token() }}
+                
                 <input type="text" id="property-name-field" class="span4" name="title" placeholder="title">
                 <input type="text" id="property-description-field" class="span4" name="description" placeholder="description">
                 <input type="text" id="property-location-field" class="span4" name="location" placeholder="location">
