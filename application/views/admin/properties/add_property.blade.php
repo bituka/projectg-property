@@ -41,7 +41,11 @@
 
                 <input type="text" id="property-post-code-field" class="span4" name="post_code" placeholder="post code">
               
-                {{ Form::file('picture') }}
+                {{ Form::file('picture[]') }}
+                {{ Form::file('picture[]') }}
+                {{ Form::file('picture[]') }}
+                {{ Form::file('picture[]') }}
+                {{ Form::file('picture[]') }}
 
 
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
