@@ -30,7 +30,7 @@ class Property extends Aware {
 
 	public function images()
 	{
-		return $this->has_many('Property_images');
+		return $this->has_many('PropertyImage');
 	}
 
 
