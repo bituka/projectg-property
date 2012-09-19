@@ -80,6 +80,9 @@ Route::post('categories/add', array('before' => 'auth|csrf', 'uses' => 'admin.ca
 Route::get('properties/add', array('as' => 'add_property', 'before' => 'auth', 'uses' => 'admin.properties@add'));
 Route::post('properties/add', array('before' => 'auth|csrf', 'uses' => 'admin.properties@add'));
 
+Route::get('hash', function() {
+	echo $pass = Hash::make('kebs');
+});
 
 
 

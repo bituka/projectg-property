@@ -22,7 +22,8 @@
                 </div>
             @endif
 
-            <form method="Post" action="add" accept-charset="UTF-8">
+            <form action="add" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+            <!-- <form method="Post" action="add" accept-charset="UTF-8"> -->
 
                 {{ Form::token() }}
                 
@@ -40,8 +41,17 @@
 
                 <input type="text" id="property-post-code-field" class="span4" name="post_code" placeholder="post code">
               
+                {{ Form::file('picture[]') }}
+                {{ Form::file('picture[]') }}
+                {{ Form::file('picture[]') }}
+                {{ Form::file('picture[]') }}
+                {{ Form::file('picture[]') }}
+
+
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
             </form>    
+
+            {{ Form::open_for_files('problems/new', "POST", array("class" => "form-horizontal"))}}
         </div>
     </div>
 </div>
