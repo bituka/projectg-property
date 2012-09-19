@@ -60,7 +60,7 @@ Route::get('find_prop', array('uses' => 'site@find_prop'));
 
 // login
 Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
-Route::post('login', array('as' => 'login', 'before' => 'csrf', 'uses' => 'site@login'));
+Route::post('login', array('before' => 'csrf', 'uses' => 'site@login'));
 
 // logout
 Route::get('logout', array('as' => 'logout', 'uses' => 'site@logout'));
