@@ -84,7 +84,7 @@
 		                </ul>
 		              </li><!-- dropdown -->
 		            </ul>
-		            <form method="GET" action="site/logout" class="navbar-form pull-right">
+		            <form method="GET" action="{{ route('logout') }}" class="navbar-form pull-right">
 		              <button type="submit" class="btn btn-primary">Logout</button>
 		            </form>
 		          </div><!--/.nav-collapse -->
