@@ -6,7 +6,7 @@
     <div class="container">
     <div class="row">
         <div class="span4 offset4 well">
-            <legend>Please Sign In</legend>
+            <h2 class="text-info">Please Sign In</h2>
             
             @if (Session::has('login_errors'))
                 <div class="alert alert-error">
