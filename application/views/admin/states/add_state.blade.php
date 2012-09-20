@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="span4 offset4 well">
-            <legend>Add State</legend>
+            <h2 class="text-info">Add State</h2>
         
             @if(Session::has('errors'))
                @foreach(Session::get('errors') as $error)         

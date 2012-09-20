@@ -3,6 +3,8 @@
 
 @section('content')
 
+	<h2 class="text-info">Manage States</h2>
+
    @if(Session::has('errors'))
        @foreach(Session::get('errors') as $error)         
             <div class="alert alert-error">
@@ -25,7 +27,7 @@
           <th width="40%">Title</th>
           <th width="17.5%">Created at</th>
           <th width="17.5%">Last Update</th>   
-          <th width="20%">Actions</th>                                          
+          <th width="15%">Actions</th>                                          
       </tr>
   </thead>   
   <tbody>
@@ -72,11 +74,9 @@
   </tbody>
 </table>
 
-
-
-
-
 </div>
+
+<div class="clear"></div>
 
 {{ $states->links() }}
 
