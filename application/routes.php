@@ -72,6 +72,8 @@ Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' =>
 Route::get('states/add', array('as' => 'add_state', 'before' => 'auth', 'uses' => 'admin.states@add'));
 Route::post('states/add', array('before' => 'auth|csrf', 'uses' => 'admin.states@add'));
 
+Route::get('states', array('as' => 'statea', 'before' => 'auth', 'uses' => 'admin.states@index'));
+
 // categories
 Route::get('categories/add', array('as' => 'add_category', 'before' => 'auth', 'uses' => 'admin.categories@add'));
 Route::post('categories/add', array('before' => 'auth|csrf', 'uses' => 'admin.categories@add'));

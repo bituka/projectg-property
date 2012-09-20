@@ -28,4 +28,15 @@ class Admin_States_Controller extends Base_Controller {
 
 	}
 
+	public function get_index()
+	{
+		$view = View::make('admin.states.index');
+		$view['title']  = 'Linq Property: Admin Manage States';	
+		$view['current_page']  = 'manage-states';
+		$view['states'] = DB::table('states')->paginate(2);
+		return $view;
+
+		
+	}
+
 }
