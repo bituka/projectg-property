@@ -71,6 +71,11 @@ Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' =>
 // states
 Route::get('states/add', array('as' => 'add_state', 'before' => 'auth', 'uses' => 'admin.states@add'));
 Route::post('states/add', array('before' => 'auth|csrf', 'uses' => 'admin.states@add'));
+Route::get('states/(:any)/edit', array('as' => 'edit_state', 'before' => 'auth', 'uses' => 'admin.states@edit'));
+Route::post('states/(:any)/edit', array('before' => 'auth', 'uses' => 'admin.states@edit'));
+Route::get('states/(:any)/delete', array('as' => 'delete_state', 'before' => 'auth', 'uses' => 'admin.states@delete'));
+
+Route::get('states', array('as' => 'states', 'before' => 'auth', 'uses' => 'admin.states@index'));
 
 // categories
 Route::get('categories/add', array('as' => 'add_category', 'before' => 'auth', 'uses' => 'admin.categories@add'));

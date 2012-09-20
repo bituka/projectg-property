@@ -39,8 +39,9 @@ return array(
 	|
 	*/
 
-	'index' => 'index.php',
-
+	//'index' => 'index.php',
+	'index' => '',
+	
 	/*
 	|--------------------------------------------------------------------------
 	| Application Key
