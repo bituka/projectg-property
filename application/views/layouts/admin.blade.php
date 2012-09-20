@@ -42,6 +42,60 @@
 	</head>
 	<body id="{{ $current_page }}">
 
+		@if($current_page !== 'login')
+		    
+			<div class="navbar navbar-inverse navbar-fixed-top">
+		      <div class="navbar-inner">
+		        <div class="container">
+		          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </a>
+		          <a class="brand" href="{{ URL::to_route('dashboard') }}">Dashboard</a>
+		          <div class="nav-collapse">
+		            <ul class="nav">
+		              <li class="active"><a href="{{ URL::to_route('dashboard') }}">Home</a></li>
+		              <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Properties <b class="caret"></b></a>
+		                <ul class="dropdown-menu">
+		                  <li class="nav-header">Actions</li>
+		                  <li><a href="{{ URL::to_route('add_property') }}">Add</a></li>
+		                  <li><a href="#">Manage</a></li>
+	  
+		                </ul>
+		              </li><!-- dropdown -->
+		              <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+		                <ul class="dropdown-menu">
+		                  <li class="nav-header">Actions</li>
+		                  <li><a href="{{ URL::to_route('add_category') }}">Add</a></li>
+		                  <li><a href="#">Manage</a></li>
+
+		                </ul>
+		              </li><!-- dropdown -->
+		              <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">States <b class="caret"></b></a>
+		                <ul class="dropdown-menu">
+		                  <li class="nav-header">Actions</li>
+		                  <li><a href="{{ URL::to_route('add_state') }}">Add</a></li>
+		                  <li><a href="#">Manage</a></li>
+	  
+		                </ul>
+		              </li><!-- dropdown -->
+		            </ul>
+		            <form method="GET" action="site/logout" class="navbar-form pull-right">
+		              <button type="submit" class="btn btn-primary">Logout</button>
+		            </form>
+		          </div><!--/.nav-collapse -->
+		        </div>
+		      </div>
+		    </div>
+
+		@endif
+
+		
+
 
 
 		@yield('content')
