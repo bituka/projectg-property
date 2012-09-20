@@ -1,11 +1,11 @@
 @layout('layouts.admin')
 
+
 @section('content')
 
-
-    <div class="row">
+	<div class="row">
         <div class="span4 offset4 well">
-            <legend>Add State</legend>
+            <legend>Now editing {{ $state->name }} ...</legend>
         
             @if(Session::has('errors'))
                @foreach(Session::get('errors') as $error)         
@@ -21,15 +21,16 @@
                 </div>
             @endif
 
-            <form method="Post" action="add" accept-charset="UTF-8">
+            <form method="Post" action="{{ url('states/' . $state->id . '/edit') }}" accept-charset="UTF-8">
                 {{ Form::token() }}
-                <input type="text" id="state-name-field" class="span4" name="name" placeholder="name">
+                <input type="hidden" name="id" value="{{ $state->id }}">
+                <input type="text" id="state-name-field" class="span4" name="name" placeholder="new name">
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
             </form>    
         </div>
     </div>
 
 
+
     
 @endsection
-

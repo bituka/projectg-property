@@ -10,13 +10,13 @@
 		<!-- ENDS CSS -->	
 
 
-
+		
 		<!-- bootstrap, this conflict with the front end css so this layout shoud only be used in the backend -->
 		{{ Asset::container('bootstrapper')->styles(); }}
 		{{ Asset::container('bootstrapper')->scripts(); }}
 		<!-- ENDS bootstrap -->
 
-
+		<link rel="stylesheet" type="text/css" href="{{ URL::to_asset('css/admin.css') }}">
 		
 		<!-- JS -->
 		<!--<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>-->
@@ -55,7 +55,7 @@
 		          <a class="brand" href="{{ URL::to_route('dashboard') }}">Dashboard</a>
 		          <div class="nav-collapse">
 		            <ul class="nav">
-		              <li class="active"><a href="{{ URL::to_route('dashboard') }}">Home</a></li>
+		<!--               <li class="active"><a href="{{ URL::to_route('dashboard') }}">Home</a></li> -->
 		              <li class="dropdown">
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Properties <b class="caret"></b></a>
 		                <ul class="dropdown-menu">
@@ -79,13 +79,13 @@
 		                <ul class="dropdown-menu">
 		                  <li class="nav-header">Actions</li>
 		                  <li><a href="{{ URL::to_route('add_state') }}">Add</a></li>
-		                  <li><a href="#">Manage</a></li>
+		                  <li><a href="{{ URL::to_route('states') }}">Manage</a></li>
 	  
 		                </ul>
 		              </li><!-- dropdown -->
 		            </ul>
 		            <form method="GET" action="{{ route('logout') }}" class="navbar-form pull-right">
-		              <button type="submit" class="btn btn-primary">Logout</button>
+		              <button type="submit" class="btn btn-info">Logout</button>
 		            </form>
 		          </div><!--/.nav-collapse -->
 		        </div>
@@ -95,15 +95,16 @@
 		@endif
 
 		
+		<div class="container">
 
 
-
-		@yield('content')
+			@yield('content')
 	
 
+		</div>
 
 		
 	<!-- ENDS footer -->
 
 	</body>
-<html>
+</html>

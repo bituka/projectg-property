@@ -8,9 +8,9 @@ class Property extends Aware {
 	 * Aware validation rules
 	 */
 	public static $rules = array(
-		'title' => 'required',
-		'description' => 'required',
-		'location' => 'required',
+		'title' => 'required|max:60',
+		'description' => 'required|max:1000',
+		'location' => 'required|max:60',
 		'rooms' => 'required|integer',
 		'price' => 'required|integer',
 		'state_id' => 'integer|integer|exists:states,id',
