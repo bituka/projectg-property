@@ -28,6 +28,39 @@ class Admin_Categories_Controller extends Base_Controller {
 
 	}
 
+	public function get_index()
+	{
+		$view = View::make('admin.categories.index');
+		$view['title']  = 'Linq Property: Admin Manage Categories';	
+		$view['current_page']  = 'manage-categories';
+		// $view['categories'] = DB::table('categories')->paginate(10);
+		$view['categories'] = Category::paginate(10);
+		return $view;
+	}
+
+	public function get_edit($id)
+	{
+		$view = View::make('admin.categories.edit');
+		$view['title']  = 'Linq Property: Admin Edit Category';	
+		$view['current_page']  = 'edit-category';
+		$view['category'] = Category::find($id);
+		return $view;
+	}
+
+	public function post_edit()
+	{
+		$category = Category::find(Input::get('id'));
+
+		$category->name = Input::get('name');
+
+		if ($category->save()) {
+			return Redirect::back()->with('success', 'Category successfully updated!');
+		}
+
+		return Redirect::back()->with_errors( $category->errors->all() );
+		
+	}
+
 
 
 }

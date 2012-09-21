@@ -70,7 +70,7 @@
 		                <ul class="dropdown-menu">
 		                  <li class="nav-header">Actions</li>
 		                  <li><a href="{{ URL::to_route('add_category') }}">Add</a></li>
-		                  <li><a href="#">Manage</a></li>
+		                  <li><a href="{{ URL::to_route('categories') }}">Manage</a></li>
 
 		                </ul>
 		              </li><!-- dropdown -->

@@ -1,12 +1,19 @@
 .clear { clear: both; }
 
-#manage-states .span12 { margin-left: 0; }
 
+/* states */
+#manage-states .span12 { margin-left: 0; }
 
 table#states-table { /*width: 940px;*/ width: 100%; table-layout: fixed; }
 	table#states-table th {  }
 
 	table#states-table td.title { word-wrap: break-word;  }
+
+/* categories */
+table#categories-table { /*width: 940px;*/ width: 100%; table-layout: fixed; }
+  table#categories-table th {  }
+
+  table#categories-table td.title { word-wrap: break-word;  }
 
 .current, .previous_page, .next_page
 {

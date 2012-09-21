@@ -56,6 +56,7 @@ Route::controller( array(
 Route::get('/', array('uses' => 'site@index')); 
 
 // find property
+Route::get('properties', array('as' => 'properties', 'before' => 'auth', 'uses' => 'admin.properties@index'));
 Route::get('find_prop', array('uses' => 'site@find_prop'));
 
 // login
@@ -69,17 +70,24 @@ Route::get('logout', array('as' => 'logout', 'uses' => 'site@logout'));
 Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' => 'admin.dashboard@index'));
 
 // states
+Route::get('states', array('as' => 'states', 'before' => 'auth', 'uses' => 'admin.states@index'));
 Route::get('states/add', array('as' => 'add_state', 'before' => 'auth', 'uses' => 'admin.states@add'));
 Route::post('states/add', array('before' => 'auth|csrf', 'uses' => 'admin.states@add'));
 Route::get('states/(:any)/edit', array('as' => 'edit_state', 'before' => 'auth', 'uses' => 'admin.states@edit'));
 Route::post('states/(:any)/edit', array('before' => 'auth', 'uses' => 'admin.states@edit'));
 Route::get('states/(:any)/delete', array('as' => 'delete_state', 'before' => 'auth', 'uses' => 'admin.states@delete'));
 
-Route::get('states', array('as' => 'states', 'before' => 'auth', 'uses' => 'admin.states@index'));
+
 
 // categories
+Route::get('categories', array('as' => 'categories', 'before' => 'auth', 'uses' => 'admin.categories@index'));
 Route::get('categories/add', array('as' => 'add_category', 'before' => 'auth', 'uses' => 'admin.categories@add'));
 Route::post('categories/add', array('before' => 'auth|csrf', 'uses' => 'admin.categories@add'));
+Route::get('categories/(:any)/edit', array('as' => 'edit_category', 'before' => 'auth', 'uses' => 'admin.categories@edit'));
+Route::post('categories/(:any)/edit', array('before' => 'auth', 'uses' => 'admin.categories@edit'));
+Route::get('categories/(:any)/delete', array('as' => 'delete_category', 'before' => 'auth', 'uses' => 'admin.categories@delete'));
+
+
 
 // properties
 Route::get('properties/add', array('as' => 'add_property', 'before' => 'auth', 'uses' => 'admin.properties@add'));
