@@ -22,6 +22,8 @@ table#categories-table { /*width: 940px;*/ width: 100%; table-layout: fixed; fon
 
   table#categories-table td.title { word-wrap: break-word;  }
 
+
+/* twitter bootstrap pagination */
 .current, .previous_page, .next_page
 {
   float: left;
