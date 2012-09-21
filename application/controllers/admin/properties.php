@@ -197,6 +197,16 @@ class Admin_Properties_Controller extends Base_Controller {
 
 	}
 
+	public function get_index()
+	{
+		$view = View::make('admin.properties.index');
+		$view['title']  = 'Linq Property: Admin Manage properties';	
+		$view['current_page']  = 'manage-properties';
+		// $view['categories'] = DB::table('categories')->paginate(10);
+		$view['properties'] = Property::paginate(10);
+		return $view;
+	}
+
 
 
 
