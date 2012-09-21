@@ -8,7 +8,7 @@ class News extends Aware {
 	 * Aware validation rules
 	 */
 	public static $rules = array(
-		'title' => 'required',
+		'title' => 'required|max:30',
 		'content' => 'required',
 
 	);

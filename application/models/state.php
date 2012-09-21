@@ -8,7 +8,7 @@ class State extends Aware {
 	 * Aware validation rules
 	 */
 	public static $rules = array(
-		'name' => 'required|unique:states',
+		'name' => 'required|unique:states|max:60',
 
 	);
 

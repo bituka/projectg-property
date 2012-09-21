@@ -7,7 +7,7 @@
         <table id="properties-table" class="table table-striped table-hover">
             <thead>
               <tr>
-                  <th width="2%">ID</th>
+                  <th width="5%">ID</th>
                   <th width="16%">Title</th>
                   <th width="16%">Description</th>
                   <th width="8%">Location</th>
@@ -47,7 +47,7 @@
 
 	<div class="row">
         <div class="span4 offset4 well">
-            <h4 class="text-info">Now editing property id #{{ $property->id }}</h4>
+            <h4 class="text-info">Input new details</h4>
            
         
             @if(Session::has('errors'))

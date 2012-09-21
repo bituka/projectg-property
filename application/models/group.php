@@ -8,8 +8,8 @@ class Group extends Aware {
 	 * Aware validation rules
 	 */
 	public static $rules = array(
-		'name' => 'required|unique:groups',
-		'description' => 'required',
+		'name' => 'required|unique:groups|max:20',
+		'description' => 'required|max:100',
 	
 	);
 
