@@ -61,6 +61,19 @@ class Admin_Categories_Controller extends Base_Controller {
 		
 	}
 
+	public function get_delete($id)
+	{
+		$category = Category::find($id);
+
+		if (is_null($category)) {
+			return Response::error('404');
+		}
+
+		$category->delete();
+
+		return Redirect::back()->with('success', 'Category successfully deleted!');
+	}
+
 
 
 }

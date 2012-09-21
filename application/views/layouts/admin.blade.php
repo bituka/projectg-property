@@ -61,7 +61,7 @@
 		                <ul class="dropdown-menu">
 		                  <li class="nav-header">Actions</li>
 		                  <li><a href="{{ URL::to_route('add_property') }}">Add</a></li>
-		                  <li><a href="#">Manage</a></li>
+		                  <li><a href="{{ URL::to_route('properties') }}">Manage</a></li>
 	  
 		                </ul>
 		              </li><!-- dropdown -->

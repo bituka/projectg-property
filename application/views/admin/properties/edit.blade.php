@@ -64,17 +64,22 @@
                 </div>
             @endif
 
-            <form method="Post" action="{{ url('categories/' . $property->id . '/edit') }}" accept-charset="UTF-8">
+            <form method="post" action="{{ url('properties/' . $property->id . '/edit') }}" accept-charset="UTF-8">
                 {{ Form::token() }}
                 <input type="hidden" name="id" value="{{ $property->id }}">
-                <input type="text" id="property-name-field" class="span4" name="name" placeholder="new title">
-                <input type="text" id="property-name-field" class="span4" name="name" placeholder="new description">
-                <input type="text" id="property-name-field" class="span4" name="name" placeholder="new location">
-                <input type="text" id="property-name-field" class="span4" name="name" placeholder="new rooms">
-                <input type="text" id="property-name-field" class="span4" name="name" placeholder="new price">
-                {{ Form::select('state', $states_array) }}
-                {{ Form::select('category', $categories_array) }}
-                <input type="text" id="property-name-field" class="span4" name="name" placeholder="new post code">
+                <input type="text" id="property-name-field" class="span4" name="title" value="{{ $property->title }}" placeholder="new title">
+                <input type="text" id="property-name-field" class="span4" name="description" value="{{ $property->description }}" placeholder="new description">
+                <input type="text" id="property-name-field" class="span4" name="location" value="{{ $property->location }}" placeholder="new location">
+                <input type="text" id="property-name-field" class="span4" name="rooms" value="{{ $property->rooms }}" placeholder="new rooms">
+                <input type="text" id="property-name-field" class="span4" name="price" value="{{ $property->price }}" placeholder="new price">
+                
+                <?php $state = State::find($property->state_id); ?>
+                {{ Form::select('state', $states_array, $state->name  ) }}
+
+                <?php $category = Category::find($property->category_id); ?>
+                {{ Form::select('category', $categories_array, $category->name ) }}
+
+                <input type="text" id="property-name-field" class="span4" name="post_code" value="{{ $property->post_code }}" placeholder="new post code">
 
             
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
