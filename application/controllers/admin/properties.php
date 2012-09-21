@@ -278,6 +278,19 @@ class Admin_Properties_Controller extends Base_Controller {
 		return Redirect::back()->with_errors( $property->errors->all() );
 	}
 
+	public function get_delete($id)
+	{
+		$property = Property::find($id);
+
+		if (is_null($property)) {
+			return Response::error('404');
+		}
+
+		$property->delete();
+
+		return Redirect::back()->with('success', 'Property successfully deleted!');
+	}
+
 
 
 
