@@ -1,5 +1,8 @@
 .clear { clear: both; }
 
+/* properties */
+#manage-properties .span12 { margin-left: 0; }
+
 table#properties-table { /*width: 940px;*/ width: 100%; table-layout: fixed;  font-size: 12px; }
 
 
@@ -12,6 +15,8 @@ table#states-table { /*width: 940px;*/ width: 100%; table-layout: fixed; font-si
 	table#states-table td.title { word-wrap: break-word;  }
 
 /* categories */
+#manage-categories .span12 { margin-left: 0; }
+
 table#categories-table { /*width: 940px;*/ width: 100%; table-layout: fixed; font-size: 12px; }
   table#categories-table th {  }
 

@@ -93,7 +93,12 @@ Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' =>
 // -- custom routes that uses NESTED CONTROLLERS ENDS -- //
 
 
+Route::get('test', function(){
 
+	$p = Property::find(1);
+	$p->title = 'testing';
+	$p->save();
+});
 
 
 

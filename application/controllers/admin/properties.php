@@ -249,13 +249,33 @@ class Admin_Properties_Controller extends Base_Controller {
 			$view['categories_array'] = $categories_array;
 		}
 
-
-
-
-
-
-
 		return $view;
+	}
+
+	public function post_edit()
+	{
+		$state = State::where_name(Input::get('state'))->first();
+		$category = Category::where_name(Input::get('category'))->first();
+
+		// get the property model
+		$property = Property::find(Input::get('id'));
+
+		// asign values
+		$property->title = Input::get('title');
+		$property->description = Input::get('description');
+		$property->location = Input::get('location');
+		$property->rooms = Input::get('rooms');
+		$property->price = Input::get('price');
+		$property->state_id = $state->id;
+		$property->category_id = $category->id;
+		$property->post_code = Input::get('post_code');
+
+		// save
+		if ($property->save()) {
+			return Redirect::back()->with('success', 'Property successfully updated!');
+		}
+
+		return Redirect::back()->with_errors( $property->errors->all() );
 	}
 
 
