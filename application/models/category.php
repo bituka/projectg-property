@@ -8,7 +8,7 @@ class Category extends Aware {
 	 * Aware validation rules
 	 */
 	public static $rules = array(
-		'name' => 'required|unique:categories',
+		'name' => 'required|unique:categories|max:30',
 
 	);
 

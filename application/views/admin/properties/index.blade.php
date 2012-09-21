@@ -3,7 +3,7 @@
 
 @section('content')
 
-	<h2 class="text-info">Manage properties</h2>
+	<h2 class="text-info">Manage Properties</h2>
 
    @if(Session::has('errors'))
        @foreach(Session::get('errors') as $error)         
@@ -23,15 +23,14 @@
 <table id="properties-table" class="table table-striped table-hover">
 	  <thead>
       <tr>
-          <th width="2%">ID</th>
+          <th width="5%">ID</th>
           <th width="16%">Title</th>
-          <th width="16%">Description</th>
-          <th width="8%">Location</th>
+          <th width="14%">Location</th>
           <th width="8%">Rooms</th>
           <th width="8%">Price</th>
           <th width="8%">State</th>
-          <th width="8%">Category</th>
-          <th width="8%">Post Code</th>  
+          <th width="7%">Category</th>
+          <th width="7%">Post Code</th>  
           <th width="15%">Actions</th>                                          
       </tr>
   </thead>   
@@ -43,7 +42,6 @@
 	    <tr>
 	        <td class="center">{{ $property->id }}</td>
 	        <td class="center title">{{ $property->title }}</td>
-	        <td class="center">{{ $property->description }}</td>
 	        <td class="center">{{ $property->location }}</td>
 	        <td class="center">{{ $property->rooms }}</td>
 	        <td class="center">{{ $property->price }}</td>

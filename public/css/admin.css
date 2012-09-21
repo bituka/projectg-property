@@ -3,24 +3,24 @@
 /* properties */
 #manage-properties .span12 { margin-left: 0; }
 
-table#properties-table { /*width: 940px;*/ width: 100%; table-layout: fixed;  font-size: 12px; }
+table#properties-table { /*width: 940px;*/ width: 100%; table-layout: fixed;  font-size: 12px; word-wrap: break-word;  }
 
 
 /* states */
 #manage-states .span12 { margin-left: 0; }
 
-table#states-table { /*width: 940px;*/ width: 100%; table-layout: fixed; font-size: 12px; }
+table#states-table { /*width: 940px;*/ width: 100%; table-layout: fixed; font-size: 12px; word-wrap: break-word; }
 	table#states-table th {  }
 
-	table#states-table td.title { word-wrap: break-word;  }
+	table#states-table td.title { /*word-wrap: break-word; */ }
 
 /* categories */
 #manage-categories .span12 { margin-left: 0; }
 
-table#categories-table { /*width: 940px;*/ width: 100%; table-layout: fixed; font-size: 12px; }
+table#categories-table { /*width: 940px;*/ width: 100%; table-layout: fixed; font-size: 12px; word-wrap: break-word;  }
   table#categories-table th {  }
 
-  table#categories-table td.title { word-wrap: break-word;  }
+  table#categories-table td.title { /*word-wrap: break-word;*/  }
 
 
 /* twitter bootstrap pagination */
