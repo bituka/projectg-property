@@ -32,42 +32,39 @@
 |
 */
 
+
+
+
 /**
- * register controllers here
+ * register NESTED controllers here
  */
 Route::controller( array(
-	'site',
-	'properties',
 	'admin.dashboard',
 	'admin.properties',
 	'admin.categories',
 	'admin.states',
 
-
 ) );
-// --- register conrollers ends --- //
+// --- register NESTED controllers here ENDS --- //
+
+
+
+
 
 
 /**
- *	custom routes
+ *	custom routes that uses NESTED CONTROLLERS
  */
 
-// default route, for home page
-Route::get('/', array('uses' => 'site@index')); 
-
-// find property
+// properties
 Route::get('properties', array('as' => 'properties', 'before' => 'auth', 'uses' => 'admin.properties@index'));
-Route::get('find_prop', array('uses' => 'site@find_prop'));
+Route::get('properties/add', array('as' => 'add_property', 'before' => 'auth', 'uses' => 'admin.properties@add'));
+Route::post('properties/add', array('before' => 'auth|csrf', 'uses' => 'admin.properties@add'));
+Route::get('properties/(:any)/edit', array('as' => 'edit_property', 'before' => 'auth', 'uses' => 'admin.properties@edit'));
+Route::post('properties/(:any)/edit', array('before' => 'auth', 'uses' => 'admin.properties@edit'));
+Route::get('properties/(:any)/delete', array('as' => 'delete_property', 'before' => 'auth', 'uses' => 'admin.properties@delete'));
 
-// login
-Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
-Route::post('login', array('before' => 'csrf', 'uses' => 'site@login'));
 
-// logout
-Route::get('logout', array('as' => 'logout', 'uses' => 'site@logout'));
-
-// dashboard for admin
-Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' => 'admin.dashboard@index'));
 
 // states
 Route::get('states', array('as' => 'states', 'before' => 'auth', 'uses' => 'admin.states@index'));
@@ -89,17 +86,58 @@ Route::get('categories/(:any)/delete', array('as' => 'delete_category', 'before'
 
 
 
-// properties
-Route::get('properties/add', array('as' => 'add_property', 'before' => 'auth', 'uses' => 'admin.properties@add'));
-Route::post('properties/add', array('before' => 'auth|csrf', 'uses' => 'admin.properties@add'));
+// dashboard for admin
+Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', 'uses' => 'admin.dashboard@index'));
+
+
+// -- custom routes that uses NESTED CONTROLLERS ENDS -- //
+
+
+
+
+
+
+
+/**
+ * register NOT NESTED controllers here
+ */
+Route::controller( array(
+	'site',
+	'properties',
+
+) );
+// -- register NOT NESTED controllers here ENDS -- //
+
+
+
+
+
+
+/**
+ *	custom routes that uses NOT NESTED CONTROLLERS
+ */
+
+// find property
+Route::get('find_prop', array('uses' => 'site@find_prop'));
+
+
+
+// login
+Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
+Route::post('login', array('before' => 'csrf', 'uses' => 'site@login'));
+
+
+
+// logout
+Route::get('logout', array('as' => 'logout', 'uses' => 'site@logout'));
+
+
 
 Route::get('hash', function() {
 	echo $pass = Hash::make('kebs');
 });
 
 
-
-// routes that are just for development environment, remove or uncomment this when in production -------- //
 
 Route::get('test_models', function() {
 
@@ -232,17 +270,26 @@ Route::get('test_models', function() {
 	// 	var_dump($prop_img->errors->all());
 	// }
 
-
-
-
 });
 
 
-		
-/**
- * register custom routes here
- */
-// Route::get('(:any)', array('uses' => 'site@index')); // sample custom route
+
+// default route, for home page
+Route::get('/', array('uses' => 'site@index')); 
+
+	
+
+
+
+
+
+// --- custom routes that uses NOT NESTED CONTROLLERS ENDS --- //
+
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -300,6 +347,12 @@ Event::listen('500', function()
 Route::filter('before', function()
 {
 	// Do stuff before every request to your application...
+
+
+	// if (URI::segment(1) == 'properties' AND URI::segment(3) == 'edit' ) {
+	// 	return Controller::call('admin.properties@edit', array(URI::segment(2)));
+	// }
+
 });
 
 Route::filter('after', function($response)
