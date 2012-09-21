@@ -55,10 +55,6 @@ Route::controller( array(
 // default route, for home page
 Route::get('/', array('uses' => 'site@index')); 
 
-// find property
-Route::get('properties', array('as' => 'properties', 'before' => 'auth', 'uses' => 'admin.properties@index'));
-Route::get('find_prop', array('uses' => 'site@find_prop'));
-
 // login
 Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
 Route::post('login', array('before' => 'csrf', 'uses' => 'site@login'));
@@ -88,16 +84,26 @@ Route::post('categories/(:any)/edit', array('before' => 'auth', 'uses' => 'admin
 Route::get('categories/(:any)/delete', array('as' => 'delete_category', 'before' => 'auth', 'uses' => 'admin.categories@delete'));
 
 
+// find property
+Route::get('properties', array('as' => 'properties', 'before' => 'auth', 'uses' => 'admin.properties@index'));
 
-// properties
 Route::get('properties/add', array('as' => 'add_property', 'before' => 'auth', 'uses' => 'admin.properties@add'));
 Route::post('properties/add', array('before' => 'auth|csrf', 'uses' => 'admin.properties@add'));
+Route::get('properties/(:any)/edit', array('as' => 'edit_property', 'before' => 'auth', 'uses' => 'admin.properties@edit'));
+Route::post('properties/(:any)/edit', array('before' => 'auth', 'uses' => 'admin.properties@edit'));
+Route::get('properties/(:any)/delete', array('as' => 'delete_property', 'before' => 'auth', 'uses' => 'admin.properties@delete'));
+
+
+
+
+
 
 Route::get('hash', function() {
 	echo $pass = Hash::make('kebs');
 });
 
 
+Route::get('find_prop', array('uses' => 'site@find_prop'));
 
 // routes that are just for development environment, remove or uncomment this when in production -------- //
 
@@ -300,6 +306,12 @@ Event::listen('500', function()
 Route::filter('before', function()
 {
 	// Do stuff before every request to your application...
+
+	
+	if (URI::segment(1) == 'properties' AND URI::segment(3) == 'edit' ) {
+		return Controller::call('admin.properties@edit', array(URI::segment(2)));
+	}
+
 });
 
 Route::filter('after', function($response)

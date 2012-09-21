@@ -1,16 +1,18 @@
 .clear { clear: both; }
 
+table#properties-table { /*width: 940px;*/ width: 100%; table-layout: fixed;  font-size: 12px; }
+
 
 /* states */
 #manage-states .span12 { margin-left: 0; }
 
-table#states-table { /*width: 940px;*/ width: 100%; table-layout: fixed; }
+table#states-table { /*width: 940px;*/ width: 100%; table-layout: fixed; font-size: 12px; }
 	table#states-table th {  }
 
 	table#states-table td.title { word-wrap: break-word;  }
 
 /* categories */
-table#categories-table { /*width: 940px;*/ width: 100%; table-layout: fixed; }
+table#categories-table { /*width: 940px;*/ width: 100%; table-layout: fixed; font-size: 12px; }
   table#categories-table th {  }
 
   table#categories-table td.title { word-wrap: break-word;  }

@@ -207,6 +207,58 @@ class Admin_Properties_Controller extends Base_Controller {
 		return $view;
 	}
 
+	public function get_edit($id)
+	{
+		//echo 'working';
+		//echo $id;
+		$view = View::make('admin.properties.edit');
+		$view['title']  = 'Linq Property: Admin Edit Property';	
+		$view['current_page']  = 'edit-property';
+		$view['property'] = Property::find($id);
+
+
+
+		$view['categories'] = Category::all();
+
+		// states
+		$states_array = array();
+
+		// categories
+		$categories_array = array();
+
+		$states = State::all();
+		$categories = Category::all();
+
+		// check if states and catogies exist, because if there is none, lets abort displaying the form
+		if (count($states) === 0) {
+			return 'no states in the database yet, please add a state first';
+		} elseif (count($categories) === 0) {
+			return 'no categories in the database yet, please add a state first';
+		} else {
+
+			foreach ($states as $state) {
+				$states_array[ $state->name ] = $state->name;
+			}
+
+			$view['states_array'] = $states_array;
+
+			foreach ($categories as $category) {
+				 $categories_array[ $category->name ] = $category->name;
+			}
+
+			$view['categories_array'] = $categories_array;
+		}
+
+
+
+
+
+
+
+		return $view;
+	}
+
+
 
 
 
