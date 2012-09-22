@@ -42,7 +42,8 @@ Route::controller( array(
 
 Route::get('/', array('uses' => 'site@index')); // default route, for home page
 Route::get('find_prop', array('uses' => 'site@find_prop'));
-		
+Route::get('about', array('uses' => 'site@about'));		
+
 /**
  * register custom routes here
  */

@@ -23,6 +23,12 @@ class Site_Controller extends Base_Controller {
 		return $view;
 	 }
 	 
-	 
+	public function get_about() 
+	 {
+		$view = View::make('site.about');
+		$view['title']  = 'Linq Property: About';
+		$view['current_page']  = 'about us';		
+		return $view;
+	 } 
 	 
 }
