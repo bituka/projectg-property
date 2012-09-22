@@ -46,4 +46,11 @@ return array(
 	  )
 	),
 
+	// bootstrap
+    'bootstrapper' => array('auto' => true),
+
+    // image resizer
+    'resizer' => array( 'auto' => true ),
+
+
 );

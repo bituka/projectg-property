@@ -22,6 +22,7 @@ class Site_Controller extends Base_Controller {
 		$view['current_page']  = 'find a property';		
 		return $view;
 	 }
+
 	 
 	public function get_about() 
 	 {
@@ -30,5 +31,66 @@ class Site_Controller extends Base_Controller {
 		$view['current_page']  = 'about us';		
 		return $view;
 	 } 
+
+
+	/**
+	* render login page
+	*/
+	public function get_login() 
+	{
+
+		if (Auth::check())
+		{
+		    return Redirect::to_route('dashboard');		 
+		}
+		else
+		{
+			$view = View::make('site.login');
+			$view['title']  = 'Linq Property: Login';	
+			$view['current_page']  = 'login';		
+			return $view;
+		}
+
+	
+	}
+
+	/**
+	* process login
+	*/
+	public function post_login() 
+	{
+		// to hash a password
+		// echo $pass = Hash::make('admin');
+
+		// get POST data
+	    $username = Input::get('username');
+	    $password = Input::get('password');
+
+		$credentials = array(
+			'username' => $username, 
+			'password' => $password,
+		);
+
+		if (Auth::attempt($credentials))
+		{
+			return Redirect::to_route('dashboard');		 
+		}
+		else
+		{
+			return Redirect::to_route('login')
+            	->with('login_errors', true);
+		}
+
+
+	}
+
+	/**
+	* logout
+	*/
+	public function get_logout() 
+	{
+	 	Auth::logout();
+	 	return Redirect::to_route('login');
+	}
 	 
 }

@@ -39,8 +39,17 @@ return array(
 	|
 	*/
 
+>>>>>>>>>>>>>>>>>>>> File 1
 	'index' => '',
 
+>>>>>>>>>>>>>>>>>>>> File 2
+	'index' => 'index.php',
+
+>>>>>>>>>>>>>>>>>>>> File 3
+	//'index' => 'index.php',
+	'index' => '',
+	
+<<<<<<<<<<<<<<<<<<<<
 	/*
 	|--------------------------------------------------------------------------
 	| Application Key
@@ -67,7 +76,13 @@ return array(
 	|
 	*/
 
+>>>>>>>>>>>>>>>>>>>> File 1
 	'profiler' => false,
+>>>>>>>>>>>>>>>>>>>> File 2
+	'profiler' => false,
+>>>>>>>>>>>>>>>>>>>> File 3
+	'profiler' => true,
+<<<<<<<<<<<<<<<<<<<<
 
 	/*
 	|--------------------------------------------------------------------------
@@ -194,5 +209,30 @@ return array(
 		'Validator'  	=> 'Laravel\\Validator',
 		'View'       	=> 'Laravel\\View',
 	),
+
+
+	// bootstrap
+	'Alert'                 => 'Bootstrapper\\Alert',
+	'Badges'                => 'Bootstrapper\\Badges',
+	'Breadcrumbs'           => 'Bootstrapper\\Breadcrumbs',
+	'Buttons'               => 'Bootstrapper\\Buttons',
+	'ButtonGroup'           => 'Bootstrapper\\ButtonGroup',
+	'ButtonToolbar'         => 'Bootstrapper\\ButtonToolbar',
+	'Carousel'              => 'Bootstrapper\\Carousel',
+	'DropdownButton'        => 'Bootstrapper\\DropdownButton',
+	'Form'                  => 'Bootstrapper\\Form',
+	'Helpers'               => 'Bootstrapper\\Helpers',
+	'Icons'                 => 'Bootstrapper\\Icons',
+	'Labels'                => 'Bootstrapper\\Labels',
+	'Navbar'                => 'Bootstrapper\\Navbar',
+	'Navigation'            => 'Bootstrapper\\Navigation',
+	'Paginator'             => 'Bootstrapper\\Paginator',
+	'Progress'              => 'Bootstrapper\\Progress',
+	'SplitDropdownButton'   => 'Bootstrapper\\SplitDropdownButton',
+	'Tabbable'              => 'Bootstrapper\\Tabbable',
+	'Tables'                => 'Bootstrapper\\Tables',
+	'Typeahead'             => 'Bootstrapper\\Typeahead', 
+
+
 
 );
