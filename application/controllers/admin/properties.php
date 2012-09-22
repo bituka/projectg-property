@@ -152,7 +152,7 @@ class Admin_Properties_Controller extends Base_Controller {
 
 					// save the full image
 					$success = Resizer::open( $img )
-						->save( 'uploads/properties/' . $new_file_name , 100 );
+						->save( 'public/uploads/properties/' . $new_file_name , 100 );
 
 				    if ( !$success ) {
 				        // echo 'failed to upload the image! Property not saved!';
@@ -291,8 +291,106 @@ class Admin_Properties_Controller extends Base_Controller {
 		return Redirect::back()->with('success', 'Property successfully deleted!');
 	}
 
+	public function get_manage_imgs($id)
+	{
+		$view = View::make('admin.properties.manage_images');
+		$view['title']  = 'Linq Property: Admin Manage Images of Property';	
+		$view['current_page']  = 'manage-images-of-property';
+
+		$view['imgs']  = PropertyImage::where_property_id($id)->get();	
+
+		return $view;
+	}
+
+	public function post_delete_img()
+	{
+		$img = PropertyImage::find(Input::get('img_id'));
+
+		if (is_null($img)) {
+			return Response::error('404');
+		}
+
+		$img->delete();
+
+		File::delete('public/uploads/properties/' . $img->name);
+
+		return Redirect::back()->with('success', 'Image successfully deleted!');
+	}
+
+	public function post_add_img()
+	{
+
+		// validate if the property id is valid
+		$property = Property::find(Input::get('property_id'));
+
+		// kill the script if property id is invalid or doesn't exist
+		if (is_null($property)) {
+			return 'property id doesnt exist! are you cheating?!';
+		}
 
 
+		// check if there is a file in the array
+        if(!is_uploaded_file($_FILES['picture']['tmp_name']))
+        {
+			// no file upload so do nothing
+        }
+        else
+        {
+        	// pass the current array item to a associative array w/c will hold the current uploaded images
+        	// this is done because the resizer bundle only supports 1 image upload at a time
+        	// so we need to trick it ;)
+       		$converted_file['name'] = $_FILES['picture']['name'];
+       		$converted_file['type'] = $_FILES['picture']['type'];
+       		$converted_file['tmp_name'] = $_FILES['picture']['tmp_name'];
+       		$converted_file['error'] = $_FILES['picture']['error'];
+       		$converted_file['size'] = $_FILES['picture']['size'];
+
+       		// print_r($converted_file);
+
+         	// pass the current image
+			$img = $converted_file;
+
+			// print_r($img);
+
+		 	$file_type = File::extension($converted_file['name']);
+			$timestamp = date("m/d/Y h:i:s a", time());
+			$random_chars = Str::random(32);
+
+			// generate a unique filename
+			$new_file_name = md5($timestamp . $img['name'] . $random_chars) . '.' .$file_type;
+
+			// save the full image
+			$success = Resizer::open( $img )
+				->save( 'public/uploads/properties/' . $new_file_name , 100 );
+
+		    if ( !$success ) {
+		        // echo 'failed to upload the image! Property not saved!';
+		        echo 'FATAL ERROR: failed uploading the image!';
+		        $error_msgs[] = 'FATAL ERROR: failed uploading the image!';
+
+		    } else {
+		    	// if all goes well, lets save a record of the image in the database!
+		    	$property_image = new PropertyImage;
+		    	$property_image->name = $new_file_name;
+		    	$property_image->property_id = $property->id;
+
+		    	if ($property_image->save()) {
+		    		// saving the image record to the dbase success, so lets do nothing
+		    	}
+		    	else {
+		    		// delete the property that has been saved? or ignore it? undecided ryt now,
+		    		// maybe lets just deal w/ this next tym, so for now lets just redirect back and show some errors
+		    		// but the property recored is saved, not rollbacked, atleast FOR NOW.
+		    		$error_msgs[] = 'upload failed';
+		    	}
+		    	
+		    	return Redirect::back()->with('success', 'Image successfully added!');
+		    
+		    }
+        }
+
+
+	}
 
 
 

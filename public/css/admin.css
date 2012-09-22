@@ -1,7 +1,10 @@
 .clear { clear: both; }
 
 /* properties */
-#manage-properties .span12 { margin-left: 0; }
+body#manage-properties .span12 { margin-left: 0; }
+
+
+body#manage-images-of-property .btn-info { margin-bottom: 10px; }
 
 table#properties-table { /*width: 940px;*/ width: 100%; table-layout: fixed;  font-size: 12px; word-wrap: break-word;  }
 

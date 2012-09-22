@@ -63,7 +63,10 @@ Route::post('properties/add', array('before' => 'auth|csrf', 'uses' => 'admin.pr
 Route::get('properties/(:any)/edit', array('as' => 'edit_property', 'before' => 'auth', 'uses' => 'admin.properties@edit'));
 Route::post('properties/(:any)/edit', array('before' => 'auth', 'uses' => 'admin.properties@edit'));
 Route::get('properties/(:any)/delete', array('as' => 'delete_property', 'before' => 'auth', 'uses' => 'admin.properties@delete'));
-
+// properties -- images
+Route::get('properties/(:any)/images', array('as' => 'manage_imgs', 'before' => 'auth', 'uses' => 'admin.properties@manage_imgs'));
+Route::post('properties/image/delete', array('as' => 'delete_img', 'before' => 'auth', 'uses' => 'admin.properties@delete_img'));
+Route::post('properties/image/add', array('as' => 'add_img', 'before' => 'auth', 'uses' => 'admin.properties@add_img'));
 
 
 // states
