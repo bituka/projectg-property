@@ -45,9 +45,10 @@
 	        <td class="center">{{ $property->location }}</td>
 	        <td class="center">{{ $property->rooms }}</td>
 	        <td class="center">{{ $property->price }}</td>
-	        <td class="center">{{ $property->state_id }}</td>
-	        <td class="center">{{ $property->category_id }}</td>
+	        <td class="center">{{ $property->state->name }}</td>
+	        <td class="center">{{ $property->category->name }}</td>
 	        <td class="center">{{ $property->post_code }}</td>
+
 
 	        <td class="center">
 	     
