@@ -2,6 +2,13 @@
 
 class Admin_Properties_Controller extends Base_Controller {
 	
+	public function __construct()
+	{
+	    parent::__construct();
+	    $this->filter('before', 'csrf')->on('post');
+	    $this->filter('before', 'auth');
+	}
+
 	public $restful = true; 
 
 	public function get_add() 
@@ -152,7 +159,7 @@ class Admin_Properties_Controller extends Base_Controller {
 
 					// save the full image
 					$success = Resizer::open( $img )
-						->save( 'uploads/properties/' . $new_file_name , 100 );
+						->save( 'public/uploads/properties/' . $new_file_name , 100 );
 
 				    if ( !$success ) {
 				        // echo 'failed to upload the image! Property not saved!';

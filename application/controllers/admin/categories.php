@@ -2,6 +2,13 @@
 
 class Admin_Categories_Controller extends Base_Controller {
 	
+	public function __construct()
+	{
+	    parent::__construct();
+	    $this->filter('before', 'csrf')->on('post');
+	    $this->filter('before', 'auth');
+	}
+
 	public $restful = true; 
 
 	public function get_add() 

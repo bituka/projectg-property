@@ -52,16 +52,16 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </a>
-		          <a class="brand" href="{{ URL::to_route('dashboard') }}">Dashboard</a>
+		          <a class="brand" href="{{ url('admin/dashboard') }}">Dashboard</a>
 		          <div class="nav-collapse">
 		            <ul class="nav">
-		<!--               <li class="active"><a href="{{ URL::to_route('dashboard') }}">Home</a></li> -->
+	
 		              <li class="dropdown">
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Properties <b class="caret"></b></a>
 		                <ul class="dropdown-menu">
 		                  <li class="nav-header">Actions</li>
-		                  <li><a href="{{ URL::to_route('add_property') }}">Add</a></li>
-		                  <li><a href="{{ URL::to_route('properties') }}">Manage</a></li>
+		                  <li><a href="{{ url('admin/properties/add') }}">Add</a></li>
+		                  <li><a href="{{ url('admin/properties') }}">Manage</a></li>
 	  
 		                </ul>
 		              </li><!-- dropdown -->
@@ -69,8 +69,8 @@
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
 		                <ul class="dropdown-menu">
 		                  <li class="nav-header">Actions</li>
-		                  <li><a href="{{ URL::to_route('add_category') }}">Add</a></li>
-		                  <li><a href="{{ URL::to_route('categories') }}">Manage</a></li>
+		                  <li><a href="{{ url('admin/categories/add') }}">Add</a></li>
+		                  <li><a href="{{ url('admin/categories') }}">Manage</a></li>
 
 		                </ul>
 		              </li><!-- dropdown -->
@@ -78,8 +78,8 @@
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">States <b class="caret"></b></a>
 		                <ul class="dropdown-menu">
 		                  <li class="nav-header">Actions</li>
-		                  <li><a href="{{ URL::to_route('add_state') }}">Add</a></li>
-		                  <li><a href="{{ URL::to_route('states') }}">Manage</a></li>
+		                  <li><a href="{{ url('admin/states/add') }}">Add</a></li>
+		                  <li><a href="{{ url('admin/states') }}">Manage</a></li>
 	  
 		                </ul>
 		              </li><!-- dropdown -->

@@ -2,6 +2,12 @@
 
 class Site_Controller extends Base_Controller {
 	
+	public function __construct()
+	{
+	    parent::__construct();
+	    $this->filter('before', 'csrf')->on('post');
+	}
+
 	public $restful = true; 
 
 	/**
@@ -41,7 +47,7 @@ class Site_Controller extends Base_Controller {
 
 		if (Auth::check())
 		{
-		    return Redirect::to_route('dashboard');		 
+		   return Redirect::to('admin/dashboard');	 
 		}
 		else
 		{
@@ -73,7 +79,7 @@ class Site_Controller extends Base_Controller {
 
 		if (Auth::attempt($credentials))
 		{
-			return Redirect::to_route('dashboard');		 
+			return Redirect::to('admin/dashboard');		 
 		}
 		else
 		{
