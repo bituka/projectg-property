@@ -1,7 +1,11 @@
 .clear { clear: both; }
 
 /* properties */
-#manage-properties .span12 { margin-left: 0; }
+body#manage-properties .span12 { margin-left: 0; }
+
+body#manage-images-of-property #add-more-img-btn { margin-bottom: 20px; }
+
+body#manage-images-of-property .thumbnail { margin-bottom: 5px; }
 
 table#properties-table { /*width: 940px;*/ width: 100%; table-layout: fixed;  font-size: 12px; word-wrap: break-word;  }
 

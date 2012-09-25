@@ -94,9 +94,7 @@ Route::get('find_prop', array('uses' => 'site@find_prop'));
 
 
 // login
-Route::get('login', array('as' => 'login', 'uses' => 'site@login'));
-Route::post('login', array('before' => 'csrf', 'uses' => 'site@login'));
-
+Route::any('login', 'site@login');
 
 
 // logout
@@ -110,8 +108,6 @@ Route::get('hash', function() {
 
 
 
-//Route::get('/', array('uses' => 'site@index')); // default route, for home page
-//Route::get('find_prop', array('uses' => 'site@find_prop'));
 //Route::get('about', array('uses' => 'site@about'));	
 
 
@@ -209,5 +205,5 @@ Route::filter('csrf', function()
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::to_route('login');
+	if (Auth::guest()) return Redirect::to_action('site@login');
 });
