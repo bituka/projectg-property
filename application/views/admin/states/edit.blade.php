@@ -52,7 +52,7 @@
                 </div>
             @endif
 
-            <form method="Post" action="{{ url('states/' . $state->id . '/edit') }}" accept-charset="UTF-8">
+            <form method="Post" action="{{ action('admin.states@edit', array($state->id)) }}" accept-charset="UTF-8">
                 {{ Form::token() }}
                 <input type="hidden" name="id" value="{{ $state->id }}">
                 <input type="text" id="state-name-field" class="span4" name="name" value="{{ $state->name }}" placeholder="new name">

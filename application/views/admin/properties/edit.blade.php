@@ -83,7 +83,7 @@
 
             
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
-                <a href="#" class="btn btn-info btn-block">Manage Images</a>
+                <a href="{{ action('admin.properties@manage_imgs', array($property->id)) }}" class="btn btn-info btn-block">Manage Images</a>
             </form>    
         </div>
     </div>
