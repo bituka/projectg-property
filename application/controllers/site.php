@@ -83,7 +83,7 @@ class Site_Controller extends Base_Controller {
 		}
 		else
 		{
-			return Redirect::to_route('login')
+			return Redirect::to_action('site@login')
             	->with('login_errors', true);
 		}
 
@@ -96,7 +96,7 @@ class Site_Controller extends Base_Controller {
 	public function get_logout() 
 	{
 	 	Auth::logout();
-	 	return Redirect::to_route('login');
+	 	return Redirect::to_action('site@login');
 	}
 	 
 }
