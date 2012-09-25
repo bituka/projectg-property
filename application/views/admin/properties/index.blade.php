@@ -39,18 +39,16 @@
 
     @foreach($properties->results as $property)
 
-    	<?php $state = State::find($property->state_id); ?>
-    	<?php $category = Category::find($property->category_id); ?>
-
 	    <tr>
 	        <td class="center">{{ $property->id }}</td>
 	        <td class="center title">{{ $property->title }}</td>
 	        <td class="center">{{ $property->location }}</td>
 	        <td class="center">{{ $property->rooms }}</td>
 	        <td class="center">{{ $property->price }}</td>
-	        <td class="center">{{ $state->name }}</td>
-	        <td class="center">{{ $category->name }}</td>
+	        <td class="center">{{ $property->state->name }}</td>
+	        <td class="center">{{ $property->category->name }}</td>
 	        <td class="center">{{ $property->post_code }}</td>
+
 
 	        <td class="center">
 	     
