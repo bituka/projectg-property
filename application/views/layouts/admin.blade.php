@@ -16,6 +16,10 @@
 		{{ Asset::container('bootstrapper')->scripts(); }}
 		<!-- ENDS bootstrap -->
 
+
+
+		<link rel="stylesheet" type="text/css" href="{{ URL::to_asset('css/jquery.lightbox-0.5.css') }}">
+
 		<link rel="stylesheet" type="text/css" href="{{ URL::to_asset('css/admin.css') }}">
 		
 		<!-- JS -->
@@ -27,6 +31,7 @@
 		<script type="text/javascript" src="{{ URL::to_asset('js/jquery-ui-1.8.13.custom.min.js') }}"></script>
 		<script type="text/javascript" src="{{ URL::to_asset('js/easing.js') }}"></script>
 		<script type="text/javascript" src="{{ URL::to_asset('js/css-trans.js') }}"></script>
+				<script type="text/javascript" src="{{ URL::to_asset('js/jquery.lightbox-0.5.js') }}"></script>
 
 
 

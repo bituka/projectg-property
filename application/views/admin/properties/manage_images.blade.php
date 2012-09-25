@@ -53,7 +53,7 @@
   <ul class="thumbnails">
       @foreach($imgs as $img)  
           <li class="span4">
-              <a href="#" class="thumbnail">
+              <a href="{{ asset('uploads/properties/' . $img->name ) }}" class="thumbnail">
                 <img src="{{ asset('uploads/properties/' . $img->name ) }}" width="290">
               </a>
 
@@ -95,8 +95,14 @@
   </ul>
 
 
-      
-
+<!-- jquery lightbox plugin -->
+<script type="text/javascript">
+$(function() {
+  console.log('jquery lightbox working!');
+  $('.thumbnails a.thumbnail').lightBox({fixedNavigation:true});
+});
+</script>
+<!-- jquery lightbox plugin ENDS -->
 
 
     

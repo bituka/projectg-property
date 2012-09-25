@@ -299,6 +299,12 @@ class Admin_Properties_Controller extends Base_Controller {
 	{
 		$property = Property::find($id);
 
+		// delete all the images related to this property
+		foreach ($property->images as $img) {
+			$img->delete(); // delete image record 
+			File::delete('public/uploads/properties/' . $img->name); // delete the image
+		}
+
 		if (is_null($property)) {
 			return Response::error('404');
 		}
