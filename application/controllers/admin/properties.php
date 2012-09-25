@@ -11,6 +11,9 @@ class Admin_Properties_Controller extends Base_Controller {
 
 	public $restful = true; 
 
+	/**
+	* render add property page
+	*/
 	public function get_add() 
 	{
 		$view = View::make('admin.properties.add_property');
@@ -48,11 +51,11 @@ class Admin_Properties_Controller extends Base_Controller {
 
 			return $view;
 		}
-
-
-		
 	}
 
+	/**
+	* process add property
+	*/
 	public function post_add() 
 	{
 		$error_msgs = array(); // this will hold the error messages generated manually
@@ -78,7 +81,7 @@ class Admin_Properties_Controller extends Base_Controller {
 
 		//print_r($input);
 
-		// manually add the rules for validating insert using create, because aware doesn't recognize it
+		// manually add the rules for validating insert using create, because aware bundle doesn't recognize it
 		$rules = array(
 		    'title' => 'required',
 			'description' => 'required',
@@ -174,8 +177,7 @@ class Admin_Properties_Controller extends Base_Controller {
 
 				    	if ($property_image->save()) {
 				    		// saving the image record to the dbase success, so lets do nothing
-				    	}
-				    	else {
+				    	} else {
 				    		// delete the property that has been saved? or ignore it? undecided ryt now,
 				    		// maybe lets just deal w/ this next tym, so for now lets just redirect back and show some errors
 				    		// but the property recored is saved, not rollbacked, atleast FOR NOW.
@@ -204,6 +206,9 @@ class Admin_Properties_Controller extends Base_Controller {
 
 	}
 
+	/**
+	* render manage properties page
+	*/
 	public function get_index()
 	{
 		$view = View::make('admin.properties.index');
@@ -214,16 +219,15 @@ class Admin_Properties_Controller extends Base_Controller {
 		return $view;
 	}
 
+	/**
+	* render edit property page
+	*/
 	public function get_edit($id)
 	{
-		//echo 'working';
-		//echo $id;
 		$view = View::make('admin.properties.edit');
 		$view['title']  = 'Linq Property: Admin Edit Property';	
 		$view['current_page']  = 'edit-property';
 		$view['property'] = Property::find($id);
-
-
 
 		$view['categories'] = Category::all();
 
@@ -259,6 +263,9 @@ class Admin_Properties_Controller extends Base_Controller {
 		return $view;
 	}
 
+	/**
+	* process edit property
+	*/
 	public function post_edit()
 	{
 		$state = State::where_name(Input::get('state'))->first();
@@ -285,6 +292,10 @@ class Admin_Properties_Controller extends Base_Controller {
 		return Redirect::back()->with_errors( $property->errors->all() );
 	}
 
+	/**
+	* process delete property
+	* REMINDER: change this function to post instead of get to add security.
+	*/
 	public function get_delete($id)
 	{
 		$property = Property::find($id);

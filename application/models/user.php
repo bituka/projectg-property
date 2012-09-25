@@ -16,7 +16,6 @@ class User extends Aware {
 		'group_id' => 'required|integer|exists:groups,id',
 	);
 
-
 	public function group()
 	{
 		return $this->belongs_to('Group');

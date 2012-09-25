@@ -11,6 +11,9 @@ class Admin_Categories_Controller extends Base_Controller {
 
 	public $restful = true; 
 
+	/**
+	* render add category page
+	*/
 	public function get_add() 
 	{
 		$view = View::make('admin.categories.add_category');
@@ -19,6 +22,9 @@ class Admin_Categories_Controller extends Base_Controller {
 		return $view;
 	}
 
+	/**
+	* process add category
+	*/
 	public function post_add() 
 	{
 		// get POST data
@@ -32,19 +38,23 @@ class Admin_Categories_Controller extends Base_Controller {
 		} else {
 			return Redirect::back()->with_errors( $category->errors->all() );
 		}
-
 	}
 
+	/**
+	* render manage categories page
+	*/
 	public function get_index()
 	{
 		$view = View::make('admin.categories.index');
 		$view['title']  = 'Linq Property: Admin Manage Categories';	
 		$view['current_page']  = 'manage-categories';
-		// $view['categories'] = DB::table('categories')->paginate(10);
 		$view['categories'] = Category::paginate(10);
 		return $view;
 	}
 
+	/**
+	* render edit category page
+	*/
 	public function get_edit($id)
 	{
 		$view = View::make('admin.categories.edit');
@@ -54,6 +64,9 @@ class Admin_Categories_Controller extends Base_Controller {
 		return $view;
 	}
 
+	/**
+	* process edit category
+	*/
 	public function post_edit()
 	{
 		$category = Category::find(Input::get('id'));
@@ -65,9 +78,12 @@ class Admin_Categories_Controller extends Base_Controller {
 		}
 
 		return Redirect::back()->with_errors( $category->errors->all() );
-		
 	}
 
+	/**
+	* process delete category
+	* REMINDER: change this function to post instead of get to add security.
+	*/
 	public function get_delete($id)
 	{
 		$category = Category::find($id);

@@ -11,6 +11,9 @@ class Admin_States_Controller extends Base_Controller {
 	
 	public $restful = true; 
 
+	/**
+	* render add state page
+	*/
 	public function get_add() 
 	{
 		$view = View::make('admin.states.add_state');
@@ -19,6 +22,9 @@ class Admin_States_Controller extends Base_Controller {
 		return $view;
 	}
 
+	/**
+	* process add state
+	*/
 	public function post_add() 
 	{
 		// get POST data
@@ -32,9 +38,11 @@ class Admin_States_Controller extends Base_Controller {
 		} else {
 			return Redirect::back()->with_errors( $state->errors->all() );
 		}
-
 	}
 
+	/**
+	* render manage states page
+	*/
 	public function get_index()
 	{
 		$view = View::make('admin.states.index');
@@ -44,6 +52,9 @@ class Admin_States_Controller extends Base_Controller {
 		return $view;
 	}
 
+	/**
+	* render edit state page
+	*/
 	public function get_edit($id)
 	{
 		$view = View::make('admin.states.edit');
@@ -53,6 +64,9 @@ class Admin_States_Controller extends Base_Controller {
 		return $view;
 	}
 
+	/**
+	* process edit state
+	*/
 	public function post_edit()
 	{
 		$state = State::find(Input::get('id'));
@@ -64,9 +78,12 @@ class Admin_States_Controller extends Base_Controller {
 		}
 
 		return Redirect::back()->with_errors( $state->errors->all() );
-		
 	}
 
+	/**
+	* process delete state
+	* REMINDER: change this function to post instead of get to add security.
+	*/
 	public function get_delete($id)
 	{
 		$state = State::find($id);
