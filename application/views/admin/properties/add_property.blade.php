@@ -24,7 +24,6 @@
             @endif
 
             <form action="add" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
-            <!-- <form method="Post" action="add" accept-charset="UTF-8"> -->
 
                 {{ Form::token() }}
                 
