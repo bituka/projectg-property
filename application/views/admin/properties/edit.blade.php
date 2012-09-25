@@ -64,7 +64,7 @@
                 </div>
             @endif
 
-            <form method="post" action="{{ url('properties/' . $property->id . '/edit') }}" accept-charset="UTF-8">
+            <form method="post" action="{{ url('admin/properties/edit/' . $property->id) }}" accept-charset="UTF-8">
                 {{ Form::token() }}
                 <input type="hidden" name="id" value="{{ $property->id }}">
                 <input type="text" id="property-name-field" class="span4" name="title" value="{{ $property->title }}" placeholder="new title">

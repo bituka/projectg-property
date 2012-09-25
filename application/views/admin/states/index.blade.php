@@ -41,11 +41,10 @@
 	        <td class="center">{{ $state->created_at }}</td>
 	        <td class="center">{{ $state->updated_at }}</td>
 	        <td class="center">
-	            <!-- <span class="label label-success">Active</span> -->
-	           <!--  <a href="states/{{ $state->id }}/edit" class="btn btn-info">Edit</a> -->
-	           <a href="{{ route('edit_state', array($state->id)) }}" class="btn btn-info">Edit</a>
+	    
+	           <a href="{{ url('admin/states/edit/' . $state->id) }}" class="btn btn-info">Edit</a>
 	           
-	            <!-- <a href="{{ route('delete_state', array($state->id)) }}" class="btn btn-danger">Delete</a> -->
+	           
 	            <a href="#myModal-{{ $state->id }}" role="button" class="btn btn-danger" data-toggle="modal">Delete</a>
 
 	            <div class="modal hide" id="myModal-{{ $state->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -57,8 +56,8 @@
 				
 				  <div class="modal-footer">
 				    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-				   <!--  <button class="btn btn-primary">Save changes</button> -->
-				    <a href="{{ route('delete_state', array($state->id)) }}" class="btn btn-danger">Confirm Delete</a> 
+	
+				    <a href="{{ url('admin/states/delete/' . $state->id) }}" class="btn btn-danger">Confirm Delete</a> 
 				  </div>
 				</div>
 
