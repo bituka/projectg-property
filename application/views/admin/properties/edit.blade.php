@@ -32,9 +32,7 @@
                     <td class="center">{{ $property->category->name }}</td>
                     <td class="center">{{ $property->post_code }}</td>                                                       
                 </tr>
-
-    
-                              
+                            
             </tbody>
         </table>
 
@@ -63,7 +61,9 @@
             @endif
 
             <form method="post" action="{{ url('admin/properties/edit/' . $property->id) }}" accept-charset="UTF-8">
+              
                 {{ Form::token() }}
+
                 <input type="hidden" name="id" value="{{ $property->id }}">
                 <input type="text" id="property-name-field" class="span4" name="title" value="{{ $property->title }}" placeholder="new title">
                 <input type="text" id="property-name-field" class="span4" name="description" value="{{ $property->description }}" placeholder="new description">
@@ -71,14 +71,13 @@
                 <input type="text" id="property-name-field" class="span4" name="rooms" value="{{ $property->rooms }}" placeholder="new rooms">
                 <input type="text" id="property-name-field" class="span4" name="price" value="{{ $property->price }}" placeholder="new price">
                 
-                <input type="text" id="property-state-field" class="span4" name="state" placeholder="state">
+                <input type="text" id="property-state-field" class="span4" name="state" value="{{ $property->state }}" placeholder="state">
 
                 <?php $category = Category::find($property->category_id); ?>
                 {{ Form::select('category', $categories_array, $category->name ) }}
 
                 <input type="text" id="property-name-field" class="span4" name="post_code" value="{{ $property->post_code }}" placeholder="new post code">
 
-            
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
                 <a href="{{ action('admin.properties@manage_imgs', array($property->id)) }}" class="btn btn-info btn-block">Manage Images</a>
             </form>    

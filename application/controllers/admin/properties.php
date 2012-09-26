@@ -21,41 +21,15 @@ class Admin_Properties_Controller extends Base_Controller {
 		$view['current_page']  = 'add-property';		
 		$view['categories'] = Category::all();
 
-		// states
-		$states_array = array();
-
 		// categories
 		$categories_array = array();
 
 		// $states = State::all();
 		$categories = Category::all();
 
-		// // check if states and catogies exist, because if there is none, lets abort displaying the form
-		// if (count($states) === 0) {
-		// 	return 'no states in the database yet, please add a state first';
-		// } elseif (count($categories) === 0) {
-		// 	return 'no categories in the database yet, please add a state first';
-		// } else {
-
-		// 	foreach ($states as $state) {
-		// 		$states_array[ $state->name ] = $state->name;
-		// 	}
-
-		// 	$view['states_array'] = $states_array;
-
-		// 	foreach ($categories as $category) {
-		// 		 $categories_array[ $category->name ] = $category->name;
-		// 	}
-
-		// 	$view['categories_array'] = $categories_array;
-
-		// 	return $view;
-		// }
-
-
-		// check if states and catogies exist, because if there is none, lets abort displaying the form
+		// check if catogories exist, because if there is none, lets abort displaying the form
 		if (count($categories) === 0) {
-			return 'no states in the database yet, please add a state first';
+			return 'no categories in the database yet, please add a category first';
 		} else {
 
 			foreach ($categories as $category) {
@@ -75,7 +49,6 @@ class Admin_Properties_Controller extends Base_Controller {
 	{
 		$error_msgs = array(); // this will hold the error messages generated manually
 
-		// $state = State::where_name(Input::get('state'))->first(); // retrieve the state model
 		$category = Category::where_name(Input::get('category'))->first(); // retrieve the category model
 
 		// -------------------------------------------------------------------------- //
@@ -245,41 +218,16 @@ class Admin_Properties_Controller extends Base_Controller {
 
 		$view['categories'] = Category::all();
 
-		// states
-		$states_array = array();
-
 		// categories
 		$categories_array = array();
 
-		// $states = State::all();
 		$categories = Category::all();
 
-		// check if states and catogies exist, because if there is none, lets abort displaying the form
-		// if (count($states) === 0) {
-		// 	return 'no states in the database yet, please add a state first';
-		// } elseif (count($categories) === 0) {
-		// 	return 'no categories in the database yet, please add a state first';
-		// } else {
-
-		// 	foreach ($states as $state) {
-		// 		$states_array[ $state->name ] = $state->name;
-		// 	}
-
-		// 	$view['states_array'] = $states_array;
-
-		// 	foreach ($categories as $category) {
-		// 		 $categories_array[ $category->name ] = $category->name;
-		// 	}
-
-		// 	$view['categories_array'] = $categories_array;
-		// }
-
-		// check if states and catogies exist, because if there is none, lets abort displaying the form
+		// check if categories exist, because if there is none, lets abort displaying the form
 		if (count($categories) === 0) {
-			return 'no categories in the database yet, please add a state first';
+			return 'no categories in the database yet, please add a category first';
 		} else {
 
-	
 			foreach ($categories as $category) {
 				 $categories_array[ $category->name ] = $category->name;
 			}
@@ -295,7 +243,6 @@ class Admin_Properties_Controller extends Base_Controller {
 	*/
 	public function post_edit()
 	{
-		$state = State::where_name(Input::get('state'))->first();
 		$category = Category::where_name(Input::get('category'))->first();
 
 		// get the property model
@@ -307,7 +254,7 @@ class Admin_Properties_Controller extends Base_Controller {
 		$property->location = Input::get('location');
 		$property->rooms = Input::get('rooms');
 		$property->price = Input::get('price');
-		$property->state_id = $state->id;
+		$property->state = Input::get('state');
 		$property->category_id = $category->id;
 		$property->post_code = Input::get('post_code');
 
