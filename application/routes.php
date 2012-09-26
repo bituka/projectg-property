@@ -42,7 +42,7 @@ Route::controller( array(
 	'admin.dashboard',
 	'admin.properties',
 	'admin.categories',
-	'admin.states',
+	// 'admin.states',
 
 ) );
 // --- register NESTED controllers here ENDS --- //

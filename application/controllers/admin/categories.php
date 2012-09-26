@@ -48,7 +48,11 @@ class Admin_Categories_Controller extends Base_Controller {
 		$view = View::make('admin.categories.index');
 		$view['title']  = 'Linq Property: Admin Manage Categories';	
 		$view['current_page']  = 'manage-categories';
-		$view['categories'] = Category::paginate(10);
+
+		// do not show the uncategorized category to the user to disable editing and deleting it
+		$category = Category::where_name('uncategorized')->first();
+	
+		$view['categories'] = Category::where('id', '!=', $category->id)->paginate(10);
 		return $view;
 	}
 
@@ -91,6 +95,15 @@ class Admin_Categories_Controller extends Base_Controller {
 		if (is_null($category)) {
 			return Response::error('404');
 		}
+
+		// get the id of the uncategorized category
+		$uncategorized = Category::where_name('uncategorized')->first();
+
+		// change categories to uncategorized
+		$affected = DB::table('properties')
+		    ->where('category_id', '=', $category->id)
+		    ->update(array('category_id' => $uncategorized->id));
+
 
 		$category->delete();
 
