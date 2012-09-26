@@ -92,6 +92,13 @@ class Admin_Categories_Controller extends Base_Controller {
 			return Response::error('404');
 		}
 
+
+		// change categories to uncategorized
+		$affected = DB::table('properties')
+		    ->where('category_id', '=', $category->id)
+		    ->update(array('category_id' => '1'));
+
+
 		$category->delete();
 
 		return Redirect::back()->with('success', 'Category successfully deleted!');

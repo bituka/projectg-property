@@ -29,7 +29,13 @@
                     <td class="center">{{ $property->rooms }}</td>
                     <td class="center">{{ $property->price }}</td>
                     <td class="center">{{ $property->state }}</td>
-                    <td class="center">{{ $property->category->name }}</td>
+                    
+                    @if(! isset($property->category->name))
+                        <td class="center">Uncategorized</td>
+                    @else
+                        <td class="center">{{ $property->category->name }}</td>
+                    @endif
+
                     <td class="center">{{ $property->post_code }}</td>                                                       
                 </tr>
                             
@@ -73,8 +79,11 @@
                 
                 <input type="text" id="property-state-field" class="span4" name="state" value="{{ $property->state }}" placeholder="state">
 
-                <?php $category = Category::find($property->category_id); ?>
-                {{ Form::select('category', $categories_array, $category->name ) }}
+               
+                {{ Form::select('category', $categories_array, $property->category->name ) }}
+            
+
+               
 
                 <input type="text" id="property-name-field" class="span4" name="post_code" value="{{ $property->post_code }}" placeholder="new post code">
 
