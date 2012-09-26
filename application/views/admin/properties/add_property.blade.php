@@ -34,7 +34,7 @@
                 <input type="text" id="property-price-field" class="span4" name="price" placeholder="price">
                 <input type="text" id="property-state-field" class="span4" name="state" placeholder="state">
 
-                {{ Form::select('category', $categories_array) }}
+                {{ Form::select('category', $categories_array, '' , array('class' => 'span4')) }}
 
                 <input type="text" id="property-post-code-field" class="span4" name="post_code" placeholder="post code">
               
