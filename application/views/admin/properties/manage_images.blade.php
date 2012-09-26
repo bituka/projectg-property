@@ -8,12 +8,28 @@
 
 
     @if(Session::has('errors'))
-      
+        
+        @if(is_array($errors))
+             
+             @foreach($errors as $error)
+             
+                 <div class="alert alert-error">
+                    <a class="close" data-dismiss="alert" href="#">×</a>{{ $error }}
+                 </div>
+                 
+             @endforeach
+
+        @else
             <div class="alert alert-error">
                 <a class="close" data-dismiss="alert" href="#">×</a>{{ $errors }}
             </div>
+        @endif
+
+           
 
     @endif
+
+
 
 
    @if(Session::has('success'))  

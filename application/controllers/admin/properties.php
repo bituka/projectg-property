@@ -65,7 +65,10 @@ class Admin_Properties_Controller extends Base_Controller {
 			'state' => Input::get('state'),
 			'category_id' => $category->id,
 			'post_code' => Input::get('post_code'),
+	
 		);
+
+		 // return print_r(Input::file('picture'));
 
 		//print_r($input);
 
@@ -79,6 +82,7 @@ class Admin_Properties_Controller extends Base_Controller {
 			'state' => 'required|max:30',
 			'category_id' => 'required|integer|exists:categories,id',
 			'post_code' => 'required',
+
 		);
 
 		$validation = Validator::make($input, $rules);
@@ -327,8 +331,29 @@ class Admin_Properties_Controller extends Base_Controller {
 	*/
 	public function post_add_img()
 	{
+
 		// validate if the property id is valid
 		$property = Property::find(Input::get('property_id'));
+
+		//return print_r(Input::file('picture'));
+
+		$rules = array(
+			'picture' => 'mimes:jpg,gif,png',
+		);
+
+		$input = array(
+			'picture' => Input::file('picture'),
+		);
+
+
+		$validation = Validator::make($input, $rules);
+
+		if ($validation->fails())
+		{
+			// print_r($validation->errors);
+		    return Redirect::back()->with_errors( $validation->errors->all() );
+		}
+		
 
 		// kill the script if property id is invalid or doesn't exist
 		if (is_null($property)) {
