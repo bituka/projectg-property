@@ -28,10 +28,9 @@
                     <td class="center">{{ $property->location }}</td>
                     <td class="center">{{ $property->rooms }}</td>
                     <td class="center">{{ $property->price }}</td>
-                    <td class="center">{{ $property->state->name }}</td>
+                    <td class="center">{{ $property->state }}</td>
                     <td class="center">{{ $property->category->name }}</td>
-                    <td class="center">{{ $property->post_code }}</td>
-                                                        
+                    <td class="center">{{ $property->post_code }}</td>                                                       
                 </tr>
 
     
@@ -72,8 +71,7 @@
                 <input type="text" id="property-name-field" class="span4" name="rooms" value="{{ $property->rooms }}" placeholder="new rooms">
                 <input type="text" id="property-name-field" class="span4" name="price" value="{{ $property->price }}" placeholder="new price">
                 
-                <?php $state = State::find($property->state_id); ?>
-                {{ Form::select('state', $states_array, $state->name  ) }}
+                <input type="text" id="property-state-field" class="span4" name="state" placeholder="state">
 
                 <?php $category = Category::find($property->category_id); ?>
                 {{ Form::select('category', $categories_array, $category->name ) }}

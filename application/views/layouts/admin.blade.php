@@ -79,15 +79,7 @@
 
 		                </ul>
 		              </li><!-- dropdown -->
-		              <li class="dropdown">
-		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">States <b class="caret"></b></a>
-		                <ul class="dropdown-menu">
-		                  <li class="nav-header">Actions</li>
-		                  <li><a href="{{ url('admin/states/add') }}">Add</a></li>
-		                  <li><a href="{{ url('admin/states') }}">Manage</a></li>
-	  
-		                </ul>
-		              </li><!-- dropdown -->
+		              
 		            </ul>
 		            <form method="GET" action="{{ route('logout') }}" class="navbar-form pull-right">
 		              <button type="submit" class="btn btn-info">Logout</button>
