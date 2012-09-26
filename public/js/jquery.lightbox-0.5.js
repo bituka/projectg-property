@@ -132,12 +132,23 @@
 			// Get page sizes
 			var arrPageSizes = ___getPageSize();
 			// Style overlay and show it
+			// $('#jquery-overlay').css({
+			// 	backgroundColor:	settings.overlayBgColor,
+			// 	opacity:			settings.overlayOpacity,
+			// 	width:				arrPageSizes[0],
+			// 	height:				arrPageSizes[1]
+			// }).fadeIn();
+
+			// temporary fix for broken overlay in large image
 			$('#jquery-overlay').css({
-				backgroundColor:	settings.overlayBgColor,
-				opacity:			settings.overlayOpacity,
-				width:				arrPageSizes[0],
-				height:				arrPageSizes[1]
-			}).fadeIn();
+                backgroundColor: settings.overlayBgColor,
+                opacity: settings.overlayOpacity,
+                width: $(window).width(),
+                // height: arrPageSizes[1],
+                 height: $(document).height() * 1.5,
+                left: -(($(window).width() - $('body').width()) / 2)
+            }).fadeIn();
+
 			// Get page scroll
 			var arrPageScroll = ___getPageScroll();
 			// Calculate top and left offset for the jquery-lightbox div object and show it

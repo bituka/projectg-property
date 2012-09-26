@@ -150,6 +150,7 @@ class Admin_Properties_Controller extends Base_Controller {
 
 					// save the full image
 					$success = Resizer::open( $img )
+						// ->resize( 300 , 300 , 'auto' )
 						->save( 'public/uploads/properties/' . $new_file_name , 100 );
 
 				    if ( !$success ) {
@@ -370,6 +371,7 @@ class Admin_Properties_Controller extends Base_Controller {
 
 			// save the full image
 			$success = Resizer::open( $img )
+				//->resize( 500 , 500 , 'auto' )
 				->save( 'public/uploads/properties/' . $new_file_name , 100 );
 
 		    if ( !$success ) {
