@@ -32,7 +32,22 @@ class Site_Controller extends Base_Controller {
 		return $view;
 	 } 
 
-
+	public function get_contact() 
+	 {
+		$view = View::make('site.contact');
+		$view['title']  = 'Linq Property: Contact';
+		$view['current_page']  = 'contact us';		
+		return $view;
+	 } 
+	 
+	 public function get_news() 
+	 {
+		$view = View::make('site.news');
+		$view['title']  = 'Linq Property: News';
+		$view['current_page']  = 'property news';		
+		return $view;
+	 } 
+	 
 	/**
 	* render login page
 	*/

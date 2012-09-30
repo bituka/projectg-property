@@ -265,14 +265,60 @@ body {
 	width: 450px;
 	float: left;
 	display: block;
-	
+	height: 517px;
 }
 
 .right-btm-txt{
-	margin: 30px;
+	margin: 30px 30px 0px 30px;
 }
 
 #bottom-section{
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.right-btm-txt p{
+	margin: 15px 0px 25px 0px;
+	font-size: 11px;
+
+}
+
+.right-btm-txt h1{
+	margin-bottom: 10px;
+}
+
+.right-btm-txt ul{
+	list-style-type: disc;
+	margin-left: 25px;
+	font-size: 15px;
+	color: #f5a604;
+}
+
+.map-label{
+	float: right; margin-right:10px; background: url(../img/maplabel-bg.jpg) no-repeat; 
+	height: 20px;
+	width: 120px;
+	font-size: 10px;
+}
+
+#news_gallery{
+	display: block;
+	margin-top: 20px;
+}
+
+#news_gallery .entry{
+	display: block;
+	background: white;
+	color: black;
+	font-size: 12px;
+	width: 128px;
+	float: left;
+	margin: 10px 12px;
+}
+
+#news_gallery .label{
+	  font-size: 10px;
+    margin: 0 auto;
+    text-align: center;
+    width: 110px;
 }
