@@ -24,7 +24,6 @@
             @endif
 
             <form action="add" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
-            <!-- <form method="Post" action="add" accept-charset="UTF-8"> -->
 
                 {{ Form::token() }}
                 
@@ -33,12 +32,9 @@
                 <input type="text" id="property-location-field" class="span4" name="location" placeholder="location">
                 <input type="text" id="property-rooms-field" class="span4" name="rooms" placeholder="rooms">
                 <input type="text" id="property-price-field" class="span4" name="price" placeholder="price">
+                <input type="text" id="property-state-field" class="span4" name="state" placeholder="state">
 
-
-                {{ Form::select('state', $states_array) }}
-
-                {{ Form::select('category', $categories_array) }}
-
+                {{ Form::select('category', $categories_array, '' , array('class' => 'span4')) }}
 
                 <input type="text" id="property-post-code-field" class="span4" name="post_code" placeholder="post code">
               
@@ -47,7 +43,6 @@
                 {{ Form::file('picture[]') }}
                 {{ Form::file('picture[]') }}
                 {{ Form::file('picture[]') }}
-
 
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
             </form>    

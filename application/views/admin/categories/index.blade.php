@@ -42,7 +42,7 @@
 	        <td class="center">{{ $category->updated_at }}</td>
 	        <td class="center">
 	     
-	           <a href="{{ route('edit_category', array($category->id)) }}" class="btn btn-info">Edit</a>
+	           <a href="{{ url('admin/categories/edit/' . $category->id) }}" class="btn btn-info">Edit</a>
 	           
 	            <a href="#myModal-{{ $category->id }}" role="button" class="btn btn-danger" data-toggle="modal">Delete</a>
 
@@ -50,13 +50,13 @@
 				 
 				<div class="modal-header">
 				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				    <h3 id="myModalLabel">Are you sure you want to delete this?</h3>
+				    <h3 id="myModalLabel">WARNING: This will also delete all the properties under this category! Are you sure you want to delete this? </h3>
 				  </div>
 				
 				  <div class="modal-footer">
 				    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
 				   <!--  <button class="btn btn-primary">Save changes</button> -->
-				    <a href="{{ route('delete_category', array($category->id)) }}" class="btn btn-danger">Confirm Delete</a> 
+				    <a href="{{ url('admin/categories/delete/' . $category->id) }}" class="btn btn-danger">Confirm Delete</a> 
 				  </div>
 				</div>
 

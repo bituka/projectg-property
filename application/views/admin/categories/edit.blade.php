@@ -51,7 +51,7 @@
                 </div>
             @endif
 
-            <form method="Post" action="{{ url('categories/' . $category->id . '/edit') }}" accept-charset="UTF-8">
+            <form method="Post" action="{{ action('admin.categories@edit', array($category->id)) }}" accept-charset="UTF-8">
                 {{ Form::token() }}
                 <input type="hidden" name="id" value="{{ $category->id }}">
                 <input type="text" id="category-name-field" class="span4" name="name" value="{{ $category->name }}" placeholder="new name">

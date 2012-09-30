@@ -2,8 +2,18 @@
 
 class Admin_Properties_Controller extends Base_Controller {
 	
+	public function __construct()
+	{
+	    parent::__construct();
+	    $this->filter('before', 'csrf')->on('post');
+	    $this->filter('before', 'auth');
+	}
+
 	public $restful = true; 
 
+	/**
+	* render add property page
+	*/
 	public function get_add() 
 	{
 		$view = View::make('admin.properties.add_property');
@@ -11,27 +21,16 @@ class Admin_Properties_Controller extends Base_Controller {
 		$view['current_page']  = 'add-property';		
 		$view['categories'] = Category::all();
 
-		// states
-		$states_array = array();
-
 		// categories
 		$categories_array = array();
 
-		$states = State::all();
+		// $states = State::all();
 		$categories = Category::all();
 
-		// check if states and catogies exist, because if there is none, lets abort displaying the form
-		if (count($states) === 0) {
-			return 'no states in the database yet, please add a state first';
-		} elseif (count($categories) === 0) {
-			return 'no categories in the database yet, please add a state first';
+		// check if catogories exist, because if there is none, lets abort displaying the form
+		if (count($categories) === 0) {
+			return 'no categories in the database yet, please add a category first';
 		} else {
-
-			foreach ($states as $state) {
-				$states_array[ $state->name ] = $state->name;
-			}
-
-			$view['states_array'] = $states_array;
 
 			foreach ($categories as $category) {
 				 $categories_array[ $category->name ] = $category->name;
@@ -41,16 +40,15 @@ class Admin_Properties_Controller extends Base_Controller {
 
 			return $view;
 		}
-
-
-		
 	}
 
+	/**
+	* process add property
+	*/
 	public function post_add() 
 	{
 		$error_msgs = array(); // this will hold the error messages generated manually
 
-		$state = State::where_name(Input::get('state'))->first(); // retrieve the state model
 		$category = Category::where_name(Input::get('category'))->first(); // retrieve the category model
 
 		// -------------------------------------------------------------------------- //
@@ -64,23 +62,27 @@ class Admin_Properties_Controller extends Base_Controller {
 			'location' => Input::get('location'),
 			'rooms' => Input::get('rooms'),
 			'price' => Input::get('price'),
-			'state_id' => $state->id,
+			'state' => Input::get('state'),
 			'category_id' => $category->id,
 			'post_code' => Input::get('post_code'),
+	
 		);
+
+		 // return print_r(Input::file('picture'));
 
 		//print_r($input);
 
-		// manually add the rules for validating insert using create, because aware doesn't recognize it
+		// manually add the rules for validating insert using create, because aware bundle doesn't recognize it
 		$rules = array(
 		    'title' => 'required',
 			'description' => 'required',
 			'location' => 'required',
 			'rooms' => 'required|integer',
 			'price' => 'required|integer',
-			'state_id' => 'integer|integer|exists:states,id',
+			'state' => 'required|max:30',
 			'category_id' => 'required|integer|exists:categories,id',
 			'post_code' => 'required',
+
 		);
 
 		$validation = Validator::make($input, $rules);
@@ -103,7 +105,7 @@ class Admin_Properties_Controller extends Base_Controller {
 				'location' => Input::get('location'),
 				'rooms' => Input::get('rooms'),
 				'price' => Input::get('price'),
-				'state_id' => $state->id,
+				'state' => Input::get('state'),
 				'category_id' => $category->id,
 				'post_code' => Input::get('post_code'),
 			));
@@ -152,7 +154,8 @@ class Admin_Properties_Controller extends Base_Controller {
 
 					// save the full image
 					$success = Resizer::open( $img )
-						->save( 'uploads/properties/' . $new_file_name , 100 );
+						// ->resize( 300 , 300 , 'auto' )
+						->save( 'public/uploads/properties/' . $new_file_name , 100 );
 
 				    if ( !$success ) {
 				        // echo 'failed to upload the image! Property not saved!';
@@ -167,8 +170,7 @@ class Admin_Properties_Controller extends Base_Controller {
 
 				    	if ($property_image->save()) {
 				    		// saving the image record to the dbase success, so lets do nothing
-				    	}
-				    	else {
+				    	} else {
 				    		// delete the property that has been saved? or ignore it? undecided ryt now,
 				    		// maybe lets just deal w/ this next tym, so for now lets just redirect back and show some errors
 				    		// but the property recored is saved, not rollbacked, atleast FOR NOW.
@@ -197,50 +199,39 @@ class Admin_Properties_Controller extends Base_Controller {
 
 	}
 
+	/**
+	* render manage properties page
+	*/
 	public function get_index()
 	{
 		$view = View::make('admin.properties.index');
 		$view['title']  = 'Linq Property: Admin Manage properties';	
 		$view['current_page']  = 'manage-properties';
-		// $view['categories'] = DB::table('categories')->paginate(10);
 		$view['properties'] = Property::paginate(10);
 		return $view;
 	}
 
+	/**
+	* render edit property page
+	*/
 	public function get_edit($id)
 	{
-		//echo 'working';
-		//echo $id;
 		$view = View::make('admin.properties.edit');
 		$view['title']  = 'Linq Property: Admin Edit Property';	
 		$view['current_page']  = 'edit-property';
 		$view['property'] = Property::find($id);
 
-
-
 		$view['categories'] = Category::all();
-
-		// states
-		$states_array = array();
 
 		// categories
 		$categories_array = array();
 
-		$states = State::all();
 		$categories = Category::all();
 
-		// check if states and catogies exist, because if there is none, lets abort displaying the form
-		if (count($states) === 0) {
-			return 'no states in the database yet, please add a state first';
-		} elseif (count($categories) === 0) {
-			return 'no categories in the database yet, please add a state first';
+		// check if categories exist, because if there is none, lets abort displaying the form
+		if (count($categories) === 0) {
+			return 'no categories in the database yet, please add a category first';
 		} else {
-
-			foreach ($states as $state) {
-				$states_array[ $state->name ] = $state->name;
-			}
-
-			$view['states_array'] = $states_array;
 
 			foreach ($categories as $category) {
 				 $categories_array[ $category->name ] = $category->name;
@@ -252,9 +243,11 @@ class Admin_Properties_Controller extends Base_Controller {
 		return $view;
 	}
 
+	/**
+	* process edit property
+	*/
 	public function post_edit()
 	{
-		$state = State::where_name(Input::get('state'))->first();
 		$category = Category::where_name(Input::get('category'))->first();
 
 		// get the property model
@@ -266,7 +259,7 @@ class Admin_Properties_Controller extends Base_Controller {
 		$property->location = Input::get('location');
 		$property->rooms = Input::get('rooms');
 		$property->price = Input::get('price');
-		$property->state_id = $state->id;
+		$property->state = Input::get('state');
 		$property->category_id = $category->id;
 		$property->post_code = Input::get('post_code');
 
@@ -278,9 +271,19 @@ class Admin_Properties_Controller extends Base_Controller {
 		return Redirect::back()->with_errors( $property->errors->all() );
 	}
 
+	/**
+	* process delete property
+	* REMINDER: change this function to post instead of get to add security.
+	*/
 	public function get_delete($id)
 	{
 		$property = Property::find($id);
+
+		// delete all the images related to this property
+		foreach ($property->images as $img) {
+			$img->delete(); // delete image record 
+			File::delete('public/uploads/properties/' . $img->name); // delete the image
+		}
 
 		if (is_null($property)) {
 			return Response::error('404');
@@ -289,6 +292,140 @@ class Admin_Properties_Controller extends Base_Controller {
 		$property->delete();
 
 		return Redirect::back()->with('success', 'Property successfully deleted!');
+	}
+
+	/**
+	* render manage images page
+	*/
+	public function get_manage_imgs($id)
+	{
+		$view = View::make('admin.properties.manage_images');
+		$view['title']  = 'Linq Property: Admin Manage Images of Property';	
+		$view['current_page']  = 'manage-images-of-property';
+
+		$view['imgs']  = PropertyImage::where_property_id($id)->get();	
+
+		return $view;
+	}
+
+	/**
+	* process delete image
+	*/
+	public function post_delete_img()
+	{
+		$img = PropertyImage::find(Input::get('img_id'));
+
+		if (is_null($img)) {
+			return Response::error('404');
+		}
+
+		$img->delete();
+
+		File::delete('public/uploads/properties/' . $img->name);
+
+		return Redirect::back()->with('success', 'Image successfully deleted!');
+	}
+
+	/**
+	* process add image
+	*/
+	public function post_add_img()
+	{
+
+		// validate if the property id is valid
+		$property = Property::find(Input::get('property_id'));
+
+		//return print_r(Input::file('picture'));
+
+		$rules = array(
+			'picture' => 'mimes:jpg,gif,png',
+		);
+
+		$input = array(
+			'picture' => Input::file('picture'),
+		);
+
+
+		$validation = Validator::make($input, $rules);
+
+		if ($validation->fails())
+		{
+			// print_r($validation->errors);
+		    return Redirect::back()->with_errors( $validation->errors->all() );
+		}
+		
+
+		// kill the script if property id is invalid or doesn't exist
+		if (is_null($property)) {
+			return 'property id doesnt exist! are you cheating?!';
+		}
+
+
+		// check if there is a file in the array
+        if(!is_uploaded_file($_FILES['picture']['tmp_name']))
+        {
+			// no file upload so lets redirect them back with an error msg
+			//return Redirect::back();
+			//return Redirect::to_action('admin.properties@manage_imgs', array(Input::get('property_id')));
+        	return Redirect::back()->with('errors', 'Upload failed. You must choose an image to be uploaded');
+        }
+        else
+        {
+        	// pass the current array item to a associative array w/c will hold the current uploaded images
+        	// this is done because the resizer bundle only supports 1 image upload at a time
+        	// so we need to trick it ;)
+       		$converted_file['name'] = $_FILES['picture']['name'];
+       		$converted_file['type'] = $_FILES['picture']['type'];
+       		$converted_file['tmp_name'] = $_FILES['picture']['tmp_name'];
+       		$converted_file['error'] = $_FILES['picture']['error'];
+       		$converted_file['size'] = $_FILES['picture']['size'];
+
+       		// print_r($converted_file);
+
+         	// pass the current image
+			$img = $converted_file;
+
+			// print_r($img);
+
+		 	$file_type = File::extension($converted_file['name']);
+			$timestamp = date("m/d/Y h:i:s a", time());
+			$random_chars = Str::random(32);
+
+			// generate a unique filename
+			$new_file_name = md5($timestamp . $img['name'] . $random_chars) . '.' .$file_type;
+
+			// save the full image
+			$success = Resizer::open( $img )
+				//->resize( 500 , 500 , 'auto' )
+				->save( 'public/uploads/properties/' . $new_file_name , 100 );
+
+		    if ( !$success ) {
+		        // echo 'failed to upload the image! Property not saved!';
+		        echo 'FATAL ERROR: failed uploading the image!';
+		        $error_msgs[] = 'FATAL ERROR: failed uploading the image!';
+
+		    } else {
+		    	// if all goes well, lets save a record of the image in the database!
+		    	$property_image = new PropertyImage;
+		    	$property_image->name = $new_file_name;
+		    	$property_image->property_id = $property->id;
+
+		    	if ($property_image->save()) {
+		    		// saving the image record to the dbase success, so lets do nothing
+		    	}
+		    	else {
+		    		// delete the property that has been saved? or ignore it? undecided ryt now,
+		    		// maybe lets just deal w/ this next tym, so for now lets just redirect back and show some errors
+		    		// but the property recored is saved, not rollbacked, atleast FOR NOW.
+		    		$error_msgs[] = 'upload failed';
+		    	}
+
+		    	return Redirect::back()->with('success', 'Image successfully added!');
+
+		    }
+        }
+
+
 	}
 
 

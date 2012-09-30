@@ -45,13 +45,18 @@
 	        <td class="center">{{ $property->location }}</td>
 	        <td class="center">{{ $property->rooms }}</td>
 	        <td class="center">{{ $property->price }}</td>
-	        <td class="center">{{ $property->state_id }}</td>
-	        <td class="center">{{ $property->category_id }}</td>
+	        <td class="center">{{ $property->state }}</td>
+
+	       
+	        <td class="center">{{ $property->category->name }}</td>
+	       
+
 	        <td class="center">{{ $property->post_code }}</td>
+
 
 	        <td class="center">
 	     
-	           	<a href="{{ route('edit_property', array($property->id)) }}" class="btn btn-info">Edit</a>
+	           	<a href="{{ url('admin/properties/edit/' . $property->id) }}" class="btn btn-info">Edit</a>
 	            <a href="#myModal-{{ $property->id }}" role="button" class="btn btn-danger" data-toggle="modal">Delete</a>
 
 	            <div class="modal hide" id="myModal-{{ $property->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -64,7 +69,7 @@
 				  <div class="modal-footer">
 				    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
 				   <!--  <button class="btn btn-primary">Save changes</button> -->
-				    <a href="{{ route('delete_property', array($property->id)) }}" class="btn btn-danger">Confirm Delete</a> 
+				    <a href="{{ url('admin/properties/delete/' . $property->id) }}" class="btn btn-danger">Confirm Delete</a> 
 				  </div>
 				</div>
 
