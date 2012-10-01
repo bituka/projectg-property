@@ -39,13 +39,13 @@ class Admin_News_Controller extends Base_Controller {
 	}
 
 	/**
-	* render manage categories page
+	* render manage news page
 	*/
 	public function get_index()
 	{
-		$view = View::make('admin.categories.index');
-		$view['title']  = 'Linq Property: Admin Manage Categories';	
-		$view['current_page']  = 'manage-categories';
+		$view = View::make('admin.news.index');
+		$view['title']  = 'Linq Property: Admin Manage News';	
+		$view['current_page']  = 'manage-news';
 
 		// do not show the uncategorized category to the user to disable editing and deleting it
 		$category = Category::where_name('uncategorized')->first();
@@ -55,7 +55,7 @@ class Admin_News_Controller extends Base_Controller {
 	}
 
 	/**
-	* render edit category page
+	* render edit news page
 	*/
 	public function get_edit($id)
 	{
@@ -67,7 +67,7 @@ class Admin_News_Controller extends Base_Controller {
 	}
 
 	/**
-	* process edit category
+	* process news category
 	*/
 	public function post_edit()
 	{
