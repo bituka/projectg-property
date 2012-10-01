@@ -50,7 +50,7 @@
 				 
 				<div class="modal-header">
 				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				    <h3 id="myModalLabel">WARNING: This will also delete all the properties under this category! Are you sure you want to delete this? </h3>
+				    <h3 id="myModalLabel">Are you sure you want to delete this?</h3>
 				  </div>
 				
 				  <div class="modal-footer">
