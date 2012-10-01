@@ -4,15 +4,15 @@ class Admin_News_Controller extends Base_Controller {
 	
 	public function __construct()
 	{
-	   // parent::__construct();
-	  //  $this->filter('before', 'csrf')->on('post');
-	   // $this->filter('before', 'auth');
+	   parent::__construct();
+	   $this->filter('before', 'csrf')->on('post');
+	   $this->filter('before', 'auth');
 	}
 
 	public $restful = true; 
 
 	/**
-	* render add category page
+	* render add news page
 	*/
 	public function get_add() 
 	{
@@ -23,7 +23,7 @@ class Admin_News_Controller extends Base_Controller {
 	}
 
 	/**
-	* process add category
+	* process add news
 	*/
 	public function post_add() 
 	{
