@@ -79,6 +79,16 @@
 
 		                </ul>
 		              </li><!-- dropdown -->
+
+		              <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">News <b class="caret"></b></a>
+		                <ul class="dropdown-menu">
+		                  <li class="nav-header">Actions</li>
+		                  <li><a href="{{ url('admin/news/add') }}">Add</a></li>
+		                  <li><a href="{{ url('admin/categories') }}">Manage</a></li>
+
+		                </ul>
+		              </li><!-- dropdown -->
 		              
 		            </ul>
 		            <form method="GET" action="{{ route('logout') }}" class="navbar-form pull-right">

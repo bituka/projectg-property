@@ -24,7 +24,9 @@
 
             <form method="Post" action="add" accept-charset="UTF-8">
                 {{ Form::token() }} 
-                <input type="text" id="state-name-field" class="span4" name="name" placeholder="name">
+
+                <input type="text" class="span4" name="title" placeholder="title">
+                <textarea rows="3" class="span4" name="content" placeholder="content"></textarea>
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
             </form>    
         </div>

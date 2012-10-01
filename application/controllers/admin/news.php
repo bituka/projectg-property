@@ -4,9 +4,9 @@ class Admin_News_Controller extends Base_Controller {
 	
 	public function __construct()
 	{
-	    parent::__construct();
-	    $this->filter('before', 'csrf')->on('post');
-	    $this->filter('before', 'auth');
+	   // parent::__construct();
+	  //  $this->filter('before', 'csrf')->on('post');
+	   // $this->filter('before', 'auth');
 	}
 
 	public $restful = true; 
@@ -16,7 +16,7 @@ class Admin_News_Controller extends Base_Controller {
 	*/
 	public function get_add() 
 	{
-		$view = View::make('admin.news.add_news');
+		$view = View::make('admin.news.add');
 		$view['title']  = 'Linq Property: Admin Add News';	
 		$view['current_page']  = 'add-news';		
 		return $view;
@@ -27,16 +27,14 @@ class Admin_News_Controller extends Base_Controller {
 	*/
 	public function post_add() 
 	{
-		// get POST data
-	    $name = Input::get('name');
+	    $news = new News;
+		$news->title = Input::get('title');
+		$news->content = Input::get('content');
 
-	    $category = new Category;
-		$category->name = $name;
-
-		if ($category->save()) {
-			return Redirect::back()->with('success', 'Category successfuly added!');
+		if ($news->save()) {
+			return Redirect::back()->with('success', 'News successfuly added!');
 		} else {
-			return Redirect::back()->with_errors( $category->errors->all() );
+			return Redirect::back()->with_errors( $news->errors->all() );
 		}
 	}
 
