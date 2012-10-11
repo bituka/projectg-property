@@ -178,7 +178,7 @@ class Profiler {
 		// browser. This will display the profiler's nice toolbar.
 		Event::listen('laravel.done', function($response)
 		{
-			echo Profiler::render($response);
+	//		echo Profiler::render($response);
 		});
 	}
 

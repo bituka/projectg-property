@@ -28,7 +28,8 @@
 		</div>
 		<div class="map">
 		<div class="map-label"><span style="display: block; margin-top:8px; margin-left:30px;">< Location <strong>MAP</strong></span></div>
-		<img src="img/map.jpg" width="450px" height="215px;"/>
+		<!-- <img src="img/map.jpg" width="450px" height="215px;"/> -->
+		<iframe width="450" height="215" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Inkerman+Street,+St+Kilda+East,+Victoria,+Australia&amp;aq=0&amp;oq=inkerman+s&amp;sll=37.0625,-95.677068&amp;sspn=37.598824,73.300781&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=Inkerman+St,+St+Kilda+East+Victoria+3183,+Australia&amp;ll=-37.866553,145.00085&amp;spn=0.004303,0.008948&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Inkerman+Street,+St+Kilda+East,+Victoria,+Australia&amp;aq=0&amp;oq=inkerman+s&amp;sll=37.0625,-95.677068&amp;sspn=37.598824,73.300781&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=Inkerman+St,+St+Kilda+East+Victoria+3183,+Australia&amp;ll=-37.866553,145.00085&amp;spn=0.004303,0.008948&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
 		</div>
 	</section>
 </section>
