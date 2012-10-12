@@ -2,12 +2,12 @@
 
 @section('content')
 <div id="wrapper2">
-	<img src="img/aboutus-top.png" />
+	<img src="img/pic20.jpg" height="300px" width="680px"/>
 	
 <section id="bottom-section">
 	<section id="left-btm">
-		<img src="img/left_pic.jpg" />
-		<img src="img/left_pic2.jpg" />
+		<img src="img/image4.jpg" height="258px" width="225px" />
+		<img src="img/image3.jpg" height="258px" width="225px" />
 	</section>	
 	<section id="right-btm">
 		<div class="right-btm-txt">
@@ -28,7 +28,7 @@
 		</div>
 		<div class="map">
 		<div class="map-label"><span style="display: block; margin-top:8px; margin-left:30px;">< Location <strong>MAP</strong></span></div>
-		<iframe width="450" height="215" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=169%2F163+Inkerman+St,+St+Kilda+VIC,+Australia&amp;sll=37.0625,-95.677068&amp;sspn=40.001301,73.300781&amp;ie=UTF8&amp;split=0&amp;hq=&amp;hnear=169%2F163+Inkerman+St,+St+Kilda+Victoria+3182,+Australia&amp;t=m&amp;z=14&amp;ll=-37.864885,144.988965&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=169%2F163+Inkerman+St,+St+Kilda+VIC,+Australia&amp;sll=37.0625,-95.677068&amp;sspn=40.001301,73.300781&amp;ie=UTF8&amp;split=0&amp;hq=&amp;hnear=169%2F163+Inkerman+St,+St+Kilda+Victoria+3182,+Australia&amp;t=m&amp;z=14&amp;ll=-37.864885,144.988965" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+		<iframe width="450" height="215" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=169%2F163+Inkerman+St,+St+Kilda+VIC,+Australia&amp;sll=37.0625,-95.677068&amp;sspn=40.001301,73.300781&amp;ie=UTF8&amp;split=0&amp;hq=&amp;hnear=169%2F163+Inkerman+St,+St+Kilda+Victoria+3182,+Australia&amp;t=m&amp;z=14&amp;ll=-37.864885,144.988965&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=169%2F163+Inkerman+St,+St+Kilda+VIC,+Australia&amp;sll=37.0625,-95.677068&amp;sspn=40.001301,73.300781&amp;ie=UTF8&amp;split=0&amp;hq=&amp;hnear=169%2F163+Inkerman+St,+St+Kilda+Victoria+3182,+Australia&amp;t=m&amp;z=14&amp;ll=-37.864885,144.988965" style="color:#0000FF;text-align:left"></small>
 		
 		</div>
 	</section>

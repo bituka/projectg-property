@@ -2,12 +2,12 @@
 
 @section('content')
 <div id="wrapper2">
-	<img src="img/aboutus-top.png" />
+	<img src="img/image21.jpg" height="300px" width="680px"/>
 	
 <section id="bottom-section">
 	<section id="left-btm">
-		<img src="img/left_pic.jpg" />
-		<img src="img/left_pic2.jpg" />
+		<img src="img/image2.jpg" height="258px" width="225px" />
+		<img src="img/image5.jpg" height="258px" width="225px" />
 	</section>	
 	<section id="right-btm">
 		<div class="right-btm-txt">
