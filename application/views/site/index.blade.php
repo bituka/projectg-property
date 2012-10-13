@@ -6,6 +6,7 @@
 
 <div id="bottom-content">
 	<div id="image-001"></div>
+	<div id="image-002"></div>
 </div>
 
 @endsection

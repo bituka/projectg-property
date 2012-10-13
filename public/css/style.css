@@ -196,7 +196,8 @@ body {
 
 /* HOME PAGE -------------------------------------------- */
 #home #bottom-content { position: relative; height: 368px; /* background: red;*/ }
-#home #image-001 { position: absolute; top: 6px; left: 46px; background: url('../img/image-001.jpg') no-repeat; width: 221px; height: 362px; }
+#home #image-001 { position: absolute; top: 6px; left: 46px; background: url('../img/image-001.jpg') no-repeat; width: 221px; height: 181px; }
+#home #image-002 { position: absolute; top: 187px; left: 46px; background: url('../img/image-002.jpg') no-repeat; width: 221px; height: 181px; }
 
 .contact-header{
 	color: gray;
