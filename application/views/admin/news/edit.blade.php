@@ -24,7 +24,7 @@
             <form method="Post" action="{{ action('admin.news@edit', array($news->id)) }}" accept-charset="UTF-8">
                 {{ Form::token() }}
                 <input type="hidden" name="id" value="{{ $news->id }}">
-                <input type="text" id="category-name-field" class="span4" name="name" value="{{ $news->title }}" placeholder="new title">
+                <input type="text" id="category-name-field" class="span4" name="title" value="{{ $news->title }}" placeholder="new title">
                 {{ Form::textarea('content', $news->content) }}
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
             </form>    

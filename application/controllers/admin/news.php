@@ -68,15 +68,16 @@ class Admin_News_Controller extends Base_Controller {
 	*/
 	public function post_edit()
 	{
-		$category = Category::find(Input::get('id'));
+		$news = News::find(Input::get('id'));
 
-		$category->name = Input::get('name');
+		$news->title = Input::get('title');
+		$news->content = Input::get('content');
 
-		if ($category->save()) {
-			return Redirect::back()->with('success', 'Category successfully updated!');
+		if ($news->save()) {
+			return Redirect::back()->with('success', 'News successfully updated!');
 		}
 
-		return Redirect::back()->with_errors( $category->errors->all() );
+		return Redirect::back()->with_errors( $news->errors->all() );
 	}
 
 	/**
