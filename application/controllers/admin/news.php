@@ -46,11 +46,8 @@ class Admin_News_Controller extends Base_Controller {
 		$view = View::make('admin.news.index');
 		$view['title']  = 'Linq Property: Admin Manage News';	
 		$view['current_page']  = 'manage-news';
-
-		// do not show the uncategorized category to the user to disable editing and deleting it
-		$category = Category::where_name('uncategorized')->first();
 	
-		$view['categories'] = Category::where('id', '!=', $category->id)->paginate(10);
+		$view['news'] = News::paginate(10);
 		return $view;
 	}
 
@@ -59,10 +56,10 @@ class Admin_News_Controller extends Base_Controller {
 	*/
 	public function get_edit($id)
 	{
-		$view = View::make('admin.categories.edit');
-		$view['title']  = 'Linq Property: Admin Edit Category';	
-		$view['current_page']  = 'edit-category';
-		$view['category'] = Category::find($id);
+		$view = View::make('admin.news.edit');
+		$view['title']  = 'Linq Property: Admin Edit News';	
+		$view['current_page']  = 'edit-news';
+		$view['news'] = News::find($id);
 		return $view;
 	}
 
@@ -88,24 +85,16 @@ class Admin_News_Controller extends Base_Controller {
 	*/
 	public function get_delete($id)
 	{
-		$category = Category::find($id);
+		$news = News::find($id);
 
-		if (is_null($category)) {
+		if (is_null($news)) {
 			return Response::error('404');
 		}
 
-		// get the id of the uncategorized category
-		$uncategorized = Category::where_name('uncategorized')->first();
 
-		// change categories to uncategorized
-		$affected = DB::table('properties')
-		    ->where('category_id', '=', $category->id)
-		    ->update(array('category_id' => $uncategorized->id));
+		$news->delete();
 
-
-		$category->delete();
-
-		return Redirect::back()->with('success', 'Category successfully deleted!');
+		return Redirect::back()->with('success', 'News successfully deleted!');
 	}
 
 

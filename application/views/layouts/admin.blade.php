@@ -85,7 +85,7 @@
 		                <ul class="dropdown-menu">
 		                  <li class="nav-header">Actions</li>
 		                  <li><a href="{{ url('admin/news/add') }}">Add</a></li>
-		                  <li><a href="{{ url('admin/categories') }}">Manage</a></li>
+		                  <li><a href="{{ url('admin/news') }}">Manage</a></li>
 
 		                </ul>
 		              </li><!-- dropdown -->
