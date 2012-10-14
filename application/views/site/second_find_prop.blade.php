@@ -1,4 +1,4 @@
-@layout('layouts.master')
+@layout('layouts.second_master')
 
 @section('content')
 <div class="find_prop">
@@ -56,6 +56,7 @@
 	@endforeach
 </div>
 </div>
+
 
 {{ $properties->links() }}
 	

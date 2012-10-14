@@ -274,6 +274,15 @@ body {
 
 }
 
+	#filter-menu li a {
+		color: white;
+		text-decoration: none;
+	}
+
+	#filter-menu li a:hover {
+		text-decoration: underline;
+	}
+
 #left-btm{
   float:left;
   display: block;

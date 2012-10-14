@@ -71,7 +71,7 @@
 		                </ul>
 		              </li><!-- dropdown -->
 		              <li class="dropdown">
-		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Property Categories <b class="caret"></b></a>
 		                <ul class="dropdown-menu">
 		                  <li class="nav-header">Actions</li>
 		                  <li><a href="{{ url('admin/categories/add') }}">Add</a></li>
