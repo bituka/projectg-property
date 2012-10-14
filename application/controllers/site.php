@@ -30,7 +30,8 @@ class Site_Controller extends Base_Controller {
 	{
 		$view = View::make('site.find_prop');
 		$view['title']  = 'Linq Property: Find a Property';
-		$view['current_page']  = 'find a property';		
+		$view['current_page']  = 'find-a-property';		
+		$view['properties']  = Property::all();		
 		return $view;
 	}
 

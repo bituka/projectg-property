@@ -29,8 +29,29 @@
 </ul>
 </div> 
 
+<div id="properties-outer-con">
+<div id="properties-con">
+	@foreach($properties as $property)
+	
+		<div class="property-con">
 
+			
 
+		    @foreach($property->images as $image)
+		    
+		    	<img src="{{ asset('uploads/properties/' . $image->name); }}">
+
+		    	<h4>{{ $property->title }}</h4>
+
+		        <?php break; // get only 1 image of the property ?>
+		        
+		    @endforeach
+
+		</div>
+
+	@endforeach
+</div>
+</div>
 
 <div id="ecs-nav">
 		<button id="prev-btn" class="with-hover" data-dir="prev">&lt; previous</button>
