@@ -1,0 +1,277 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.5
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Oct 14, 2012 at 05:50 PM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `property_site`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'titless', '2012-09-26 04:13:12', '2012-10-13 09:29:40'),
+(40, 'cat1', '2012-09-26 12:32:39', '2012-09-26 12:32:39'),
+(41, 'cat12', '2012-09-26 12:32:41', '2012-09-26 12:32:41'),
+(42, 'cat13', '2012-09-26 12:32:43', '2012-09-26 12:32:43'),
+(43, 'cat14', '2012-09-26 12:32:48', '2012-09-26 12:32:48'),
+(44, 'cat15', '2012-09-26 12:32:50', '2012-09-26 12:32:50'),
+(45, 'cat16', '2012-09-26 12:32:52', '2012-09-26 12:32:52'),
+(46, 'cat1das', '2012-09-26 12:32:55', '2012-09-26 12:32:55'),
+(47, 'cat1sdsa', '2012-09-26 12:32:56', '2012-09-26 12:32:56'),
+(48, 'dasdasdas', '2012-09-26 12:32:57', '2012-09-26 12:32:57'),
+(49, 'dasdsagaga', '2012-09-26 12:33:00', '2012-09-26 12:33:00'),
+(50, 'dasdas', '2012-09-26 12:33:09', '2012-09-26 12:33:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `groups`
+--
+
+CREATE TABLE IF NOT EXISTS `groups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`,`name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `groups`
+--
+
+INSERT INTO `groups` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
+(6, 'admin', 'administrator', '2012-09-20 04:10:12', '2012-09-20 04:10:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `content`, `created_at`, `updated_at`) VALUES
+(1, 'title', 'content babdsadasy!dsadaafas', '2012-10-01 15:02:30', '2012-10-13 09:30:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `properties`
+--
+
+CREATE TABLE IF NOT EXISTS `properties` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `location` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `rooms` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `state` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `date_sold` datetime NOT NULL,
+  `post_code` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `state_id` (`state`),
+  KEY `category_id` (`category_id`),
+  KEY `state_id_2` (`state`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=62 ;
+
+--
+-- Dumping data for table `properties`
+--
+
+INSERT INTO `properties` (`id`, `title`, `description`, `location`, `rooms`, `price`, `state`, `category_id`, `date_sold`, `post_code`, `created_at`, `updated_at`) VALUES
+(50, 'property1', 'description to', 'legazpi, daraga', 3, 4500000, 'Albay', 41, '0000-00-00 00:00:00', '4501', '2012-10-13 08:23:55', '2012-10-13 08:23:55'),
+(51, 'prop2', 'de', 'asdas', 4, 4, '4', 43, '0000-00-00 00:00:00', 'q421', '2012-10-14 03:47:41', '2012-10-14 03:47:41'),
+(52, 'property3', 'dasdas', 'manila', 4, 4300000, 'legazpi', 1, '0000-00-00 00:00:00', '45601', '2012-10-14 09:40:50', '2012-10-14 09:40:50'),
+(53, 'property99', 'qwerty', 'manila', 5, 2147483647, '4600000', 1, '0000-00-00 00:00:00', '124', '2012-10-14 09:41:18', '2012-10-14 09:41:18'),
+(54, 'property title', 'cheap house located in dms', 'bicol', 6, 1500000, 'albay', 1, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:01', '2012-10-14 09:42:01'),
+(55, 'property title 4', 'cheap', 'bicol', 6, 1500000, 'albay', 1, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:56', '2012-10-14 09:42:56'),
+(56, 'property999', 'desc999', 'location999', 9, 9999000, 'arizona', 1, '0000-00-00 00:00:00', '98011', '2012-10-14 09:45:41', '2012-10-14 09:45:41'),
+(57, 'property8', 'desc8', 'manila', 8, 45000, 'legazpi', 1, '0000-00-00 00:00:00', '46001', '2012-10-14 09:46:05', '2012-10-14 09:46:05'),
+(58, 'property66', 'desc66', 'manila', 1, 1500000, 'legazpi', 1, '0000-00-00 00:00:00', '70111', '2012-10-14 09:46:48', '2012-10-14 09:46:48'),
+(59, 'house 4 sale', 'desc99', 'manila', 99, 151521555, 'legazpi', 1, '0000-00-00 00:00:00', '4504', '2012-10-14 09:47:25', '2012-10-14 09:47:25'),
+(60, 'property44', 'desc44', 'location99944', 414, 460010111, 'albay', 48, '0000-00-00 00:00:00', '99911', '2012-10-14 09:47:58', '2012-10-14 09:47:58'),
+(61, 'prop12', 'desc12', 'mania', 10, 5000000, 'masbate', 1, '0000-00-00 00:00:00', '412512', '2012-10-14 09:48:42', '2012-10-14 09:48:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `property_images`
+--
+
+CREATE TABLE IF NOT EXISTS `property_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `property_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `property_id` (`property_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=126 ;
+
+--
+-- Dumping data for table `property_images`
+--
+
+INSERT INTO `property_images` (`id`, `name`, `property_id`, `created_at`, `updated_at`) VALUES
+(87, '15be6fb300f86a2d388c3252c359029d.jpg', 50, '2012-10-13 08:23:55', '2012-10-13 08:23:55'),
+(88, 'd69c8054c32bef7d2ff8294f0e0d19c2.jpg', 50, '2012-10-13 08:23:55', '2012-10-13 08:23:55'),
+(89, 'b53dc05dc3660b3fc6f7caeaca9c5cf2.jpg', 50, '2012-10-13 08:23:55', '2012-10-13 08:23:55'),
+(90, 'ce66fe4d77d2e501c8cac4f84f839df0.jpg', 50, '2012-10-13 08:23:55', '2012-10-13 08:23:55'),
+(91, '930cf264f3c491150c8f51eaa7c2a476.jpg', 50, '2012-10-13 08:23:55', '2012-10-13 08:23:55'),
+(92, '90ca67227f5593d17b68a1618532dde4.jpg', 50, '2012-10-13 08:24:25', '2012-10-13 08:24:25'),
+(93, '72a0fcfcae7c1e2698da4747afd0bc00.jpg', 50, '2012-10-13 08:24:30', '2012-10-13 08:24:30'),
+(94, '8e8e7538d5223559a07f23d35b5bd407.jpg', 50, '2012-10-13 08:24:35', '2012-10-13 08:24:35'),
+(95, '7da0d42a64ba1a0ea1f78aa5b17bf608.jpg', 50, '2012-10-13 08:24:39', '2012-10-13 08:24:39'),
+(96, '714c308eab8ec3682ca4c039565216c6.jpg', 50, '2012-10-13 08:24:40', '2012-10-13 08:24:40'),
+(97, 'c4501be4d987feebfbccb391d56603c0.jpg', 50, '2012-10-13 08:24:45', '2012-10-13 08:24:45'),
+(98, '2490af37f07ce4ca1845c2cea6499494.jpg', 50, '2012-10-13 08:24:49', '2012-10-13 08:24:49'),
+(99, 'b3bb6010e4ca6eb141cd590ca0d7f5f7.jpg', 50, '2012-10-13 08:24:53', '2012-10-13 08:24:53'),
+(100, 'c28e1a21d9dbac3b07cedf7c9a7aadad.jpg', 50, '2012-10-13 08:25:06', '2012-10-13 08:25:06'),
+(101, '5b99b58c579357041873c362ccfe8f46.jpg', 50, '2012-10-13 08:25:10', '2012-10-13 08:25:10'),
+(102, '63e9035e22e29073c200490380f3aa1f.jpg', 50, '2012-10-13 08:25:14', '2012-10-13 08:25:14'),
+(103, 'd32c87c4ba466f317d730148048ae30b.jpg', 50, '2012-10-13 08:25:18', '2012-10-13 08:25:18'),
+(104, 'f222b2314978cba0dea1fabc32f39cf2.jpg', 50, '2012-10-13 08:30:37', '2012-10-13 08:30:37'),
+(105, '52ee3983801f5f77e3075051a0c0dae2.jpg', 50, '2012-10-13 08:30:43', '2012-10-13 08:30:43'),
+(106, 'b5afd9887cb312e1e6aa5dc80b28558a.jpg', 50, '2012-10-13 08:30:46', '2012-10-13 08:30:46'),
+(107, 'c6dceb1b207eb90c15cb70832fb610fe.jpg', 50, '2012-10-13 08:30:50', '2012-10-13 08:30:50'),
+(108, 'c5c1a8f8ec6eb002f36aa80fce53df56.jpg', 50, '2012-10-13 08:30:53', '2012-10-13 08:30:53'),
+(109, 'ae8e6d67992d4234b670ade808e858c9.jpg', 50, '2012-10-13 08:30:57', '2012-10-13 08:30:57'),
+(110, '460e3100b4c79095aedf6afd4a468fbd.jpg', 50, '2012-10-13 08:31:00', '2012-10-13 08:31:00'),
+(111, '119febd962f7d571cf4b97d6f0ab6e50.jpg', 51, '2012-10-14 03:47:41', '2012-10-14 03:47:41'),
+(112, '8fb9f42151abdb2172f0c08dea6d77a8.jpg', 51, '2012-10-14 03:47:42', '2012-10-14 03:47:42'),
+(113, '45a658f471c8dfcd1bce8747e20e956d.jpg', 51, '2012-10-14 03:47:42', '2012-10-14 03:47:42'),
+(114, '68e53859b1973168fb7e5c2a1d0c53b4.jpg', 52, '2012-10-14 09:40:50', '2012-10-14 09:40:50'),
+(115, '1ae29e706c7f904ff0679adc7ca6e8a6.jpg', 53, '2012-10-14 09:41:18', '2012-10-14 09:41:18'),
+(116, '2f546ba4d62d54b8d4423eba3adf3cf4.jpg', 54, '2012-10-14 09:42:01', '2012-10-14 09:42:01'),
+(117, 'f9849685bcba61bb7d470ea98b68a1f9.jpg', 54, '2012-10-14 09:42:01', '2012-10-14 09:42:01'),
+(118, 'fd366096552dc9a56de9b943253063b7.jpg', 55, '2012-10-14 09:42:56', '2012-10-14 09:42:56'),
+(119, '80e1c021ba8d4b7213748243dc83da64.jpg', 55, '2012-10-14 09:42:56', '2012-10-14 09:42:56'),
+(120, '9d9cf1d1de13bc1856f88810feaffd82.jpg', 56, '2012-10-14 09:45:42', '2012-10-14 09:45:42'),
+(121, 'cbabca28e2b2172c1396eda88e9a9548.jpg', 57, '2012-10-14 09:46:05', '2012-10-14 09:46:05'),
+(122, 'b9b70c0267dca52d4835600ddb52b132.jpg', 58, '2012-10-14 09:46:48', '2012-10-14 09:46:48'),
+(123, '2aaa7228eb05c1b198250357785e194b.jpg', 59, '2012-10-14 09:47:25', '2012-10-14 09:47:25'),
+(124, '46029d1d0ea2749680fd30bbfbb2d976.jpg', 60, '2012-10-14 09:47:59', '2012-10-14 09:47:59'),
+(125, '8ad21ea75291311861a9a0a3c04d184b.jpg', 61, '2012-10-14 09:48:43', '2012-10-14 09:48:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sessions`
+--
+
+CREATE TABLE IF NOT EXISTS `sessions` (
+  `id` varchar(40) NOT NULL,
+  `last_activity` int(10) NOT NULL,
+  `data` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sessions`
+--
+
+INSERT INTO `sessions` (`id`, `last_activity`, `data`) VALUES
+('q89M9Wz5M57PDU1S4KelJwdaHJdpwCBL35Hz6RKx', 1350208189, 'a:4:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"v39k37SczaEXso0vc7nPjAas9I9ADAnThBrpyDB1";s:35:"laravel_auth_drivers_eloquent_login";i:5;}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `group_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`,`email`),
+  KEY `group_id` (`group_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `first_name`, `last_name`, `group_id`, `created_at`, `updated_at`) VALUES
+(5, 'kebs', '$2a$08$ZWdpTWFmNXFwU3FXc3R6YOz39VoV7cpPAm/T2fWmagke8rIhsmXcu', 'kebs@gmail.com', 'kevin', 'basco', 6, '2012-09-20 15:34:37', '2012-09-20 15:34:37');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `properties`
+--
+ALTER TABLE `properties`
+  ADD CONSTRAINT `properties_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `property_images`
+--
+ALTER TABLE `property_images`
+  ADD CONSTRAINT `property_images_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `properties` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

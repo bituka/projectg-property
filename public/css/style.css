@@ -206,7 +206,7 @@ body {
 
 
 /* FIND A PROPERTY PAGE -------------------------------------------- */
-#find-a-property #properties-outer-con { position: relative; height: 540px; }
+#find-a-property #properties-outer-con { position: relative; height: 540px; width: 670px; margin: 0 auto; }
 #find-a-property #properties-con  { position: absolute; left: -6px; margin-top: 10px;  }
 	#find-a-property #properties-con .property-con { width: 163px; height: 170px; float: left; background: red; position: relative; margin-left: 6px; margin-bottom: 5px; }
 		#find-a-property #properties-con .property-con img { width: 163px; height: 170px; position: absolute; }
@@ -262,6 +262,9 @@ body {
 	border: 2px solid #bb8930;
 	font-size: 12px;
 	display:block;
+	width: 670px;
+	margin: 0 auto;
+	font-size: 11px;
 }
 
 #filter-menu li {
