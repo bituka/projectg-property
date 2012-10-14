@@ -196,8 +196,13 @@ body {
 
 /* HOME PAGE -------------------------------------------- */
 #home #bottom-content { position: relative; height: 368px; /* background: red;*/ }
-#home #image-001 { position: absolute; top: 6px; left: 46px; background: url('../img/image-001.jpg') no-repeat; width: 221px; height: 181px; }
-#home #image-002 { position: absolute; top: 187px; left: 46px; background: url('../img/image-002.jpg') no-repeat; width: 221px; height: 181px; }
+#home #image-001 { position: absolute; top: 6px; left: 46px; /*background: url('../img/image-001.jpg') no-repeat;*/ width: 221px; height: 181px; }
+#home #image-002 { position: absolute; top: 187px; left: 46px; /*background: url('../img/image-002.jpg') no-repeat;*/ width: 221px; height: 181px; }
+#home #image-009 { position: absolute; top: 6px; left: 267px; /*background: url('../img/img009.jpg') no-repeat;*/ width: 451px; height: 220px; }
+#home #text-con { position: absolute; width: 451px; height: 181px; background: black; opacity: .6; left: 267px; top: 187px; }
+	#home #text-con #text-inner { padding: 30px;  }
+		#home #text-con #text-inner p { font-size: 12px; margin-top: 15px; }
+		#home #text-con #text-inner p#first-text { margin-top: 0px; }
 
 .contact-header{
 	color: gray;
