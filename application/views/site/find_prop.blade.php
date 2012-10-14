@@ -16,8 +16,8 @@
 <br />
 <div id="filter-menu">
 <ul>
-	<span style="background-color: #f5a604;"><li>MOST RECENT</li></span>
-	<span style="background-color: white; color:#f5a604"><li>MOST POPULAR</li></span>
+	<li style="background: orange;">MOST RECENT</li>
+	<li style="background-color: white; color:#f5a604">MOST POPULAR</li>
 	<li>Filter by:</li>
 	<li>All</li> 
 	<li>House</li> 
@@ -27,6 +27,9 @@
 	<li>Villa</li>
 	<li>Block of Units</li>
 </ul>
+	
+	<div class="clear"></div>
+
 </div> 
 
 <div id="properties-outer-con">
