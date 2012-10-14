@@ -18,8 +18,8 @@
 <ul>
 	<li style="background: orange;">MOST RECENT</li>
 	<li style="background-color: white; color:#f5a604">MOST POPULAR</li>
-	<li>Filter by:</li>
-	<li>All</li> 
+	<li style="margin-left: 20px;">Filter by:</li>
+	<li style="background: red;">All</li> 
 	<li>House</li> 
 	<li>Apartment & Unit</li> 
 	<li>Apartment Unit</li> 
