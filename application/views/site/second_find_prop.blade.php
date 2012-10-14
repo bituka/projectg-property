@@ -7,7 +7,7 @@
 	<form method="get" id="searchform" action="#">
 		<div>
 			<label>Suburbs, States, or Postcodes</label><br /><br />
-			<input type="text" value="e.g. Melbourn City" name="f" id="f" onfocus="defaultInput(this)" 	="clearInput(this)">
+			<input type="text" value="e.g. Melbourn City" name="keyword" id="f" onfocus="defaultInput(this)" 	="clearInput(this)">
 			<br /><br />
 			<span style="color: #bb8930; float: right;"><input type="submit" id="playbutton" value="" /> SEARCH</span>
 		</div>
