@@ -23,7 +23,7 @@
 		<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/jquery.scrollTo-1.4.2-min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/jquery.cycle.all.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+		<!-- <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script> -->
 		
 	
 

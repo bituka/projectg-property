@@ -4,9 +4,9 @@
 <div class="find_prop">
 	<h1><span style="color: #bb8930;">Find A Property</span></h1>
 	<hr />
-	<form method="get" id="searchform" action="">
-		<div>
-			<label>Suburbs, States, or Postcodes</label><br /><br />
+	<form method="get" id="searchform" action="#">
+		<div  style="position: relative;">
+			<label>Search by States</label><br /><br />
 			<input type="text" value="e.g. Melbourn City" name="keyword" id="f" onfocus="defaultInput(this)" 	="clearInput(this)">
 			<br /><br />
 			<span style="color: #bb8930; float: right;"><input type="submit" id="playbutton" value="" /> SEARCH</span>
@@ -16,19 +16,19 @@
 <br />
 <div id="filter-menu">
 <ul>
-	<li style="background: orange;">MOST RECENT</li>
-	<li style="background-color: white; color:#f5a604">MOST POPULAR</li>
-	<li style="margin-left: 20px;"><a href="#">Filter by:<a/></li>
-	<li style="background: red;"><a href="<?php echo URL::to('find_prop'); ?>">All</a></li> 
-	<li><a href="{{ action('properties@search', array('house')) }}">House<a/></li> 
-	<li><a href="{{ action('properties@search', array('Apartment-and-Unit')) }}">Apartment & Unit<a/></li> 
-	<li><a href="{{ action('properties@search', array('Apartment')) }}">Apartment<a/></li> 
-	<li><a href="{{ action('properties@search', array('Unit')) }}">Unit<a/></li>
-	<li><a href="{{ action('properties@search', array('Townhouse')) }}">Townhouse<a/></li> 
-	<li><a href="{{ action('properties@search', array('Villa')) }}">Villa<a/></li>
-	<li><a href="{{ action('properties@search', array('Block-of-Units')) }}">Block of Units<a/></li>
+	<!-- <li style="background: orange;">MOST RECENT</li> -->
+	<!-- <li style="background-color: white; color:#f5a604">MOST POPULAR</li> -->
+	<li>Filter by:</li>
+	<li class="<?php echo (URI::segment(3, 'All') == 'All') ? 'active-filter' : ''  ?>"><a href="<?php echo URL::to('find_prop'); ?>">All</a></li> 
+	<li class="<?php echo (URI::segment(3, 'All') == 'house') ? 'active-filter' : ''  ?>"><a href="{{ action('properties@search', array('house')) }}">House</a></li> 
+	<li class="<?php echo (URI::segment(3, 'All') == 'apartment-and-unit') ? 'active-filter' : ''  ?>"><a href="{{ action('properties@search', array('apartment-and-unit')) }}">Apartment & Unit</a></li> 
+	<li class="<?php echo (URI::segment(3, 'All') == 'apartment') ? 'active-filter' : ''  ?>"><a href="{{ action('properties@search', array('apartment')) }}">Apartment</a></li> 
+	<li class="<?php echo (URI::segment(3, 'All') == 'unit') ? 'active-filter' : ''  ?>"><a href="{{ action('properties@search', array('unit')) }}">Unit</a></li>
+	<li class="<?php echo (URI::segment(3, 'All') == 'townhouse') ? 'active-filter' : ''  ?>"><a href="{{ action('properties@search', array('townhouse')) }}">Townhouse</a></li> 
+	<li class="<?php echo (URI::segment(3, 'All') == 'villa') ? 'active-filter' : ''  ?>"><a href="{{ action('properties@search', array('villa')) }}">Villa</a></li>
+	<li class="<?php echo (URI::segment(3, 'All') == 'block-of-units') ? 'active-filter' : ''  ?>"><a href="{{ action('properties@search', array('block-of-units')) }}">Block of Units</a></li>
 </ul>
-	
+
 	<div class="clear"></div>
 
 </div> 

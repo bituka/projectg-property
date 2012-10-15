@@ -207,11 +207,16 @@ body {
 /* FIND A PROPERTY PAGE -------------------------------------------- */
 #find-a-property #properties-outer-con { position: relative; height: 540px; width: 670px; margin: 0 auto; }
 #find-a-property #properties-con  { position: absolute; left: -6px; margin-top: 10px;  }
-	#find-a-property #properties-con .property-con { width: 163px; height: 170px; float: left; background: red; position: relative; margin-left: 6px; margin-bottom: 5px; }
+	#find-a-property #properties-con .property-con { width: 163px; height: 170px; float: left; /*background: red;*/ position: relative; margin-left: 6px; margin-bottom: 5px; }
 		#find-a-property #properties-con .property-con img { width: 163px; height: 170px; position: absolute; }
 		#find-a-property #properties-con .property-con h4 { position: absolute; bottom: 0; font-size: 12px; text-align: center; background: white; height: 25px; color: gray; line-height: 25px; width: 163px; }
 
+#find-a-property #filter-menu ul { margin-left: 90px; }
+#find-a-property .active-filter { background: red; }
+#find-a-property #playbutton {  position: absolute; left: 478px; width: 20px; height: 20px; top: 78px; }
+#find-a-property #playbutton-label { position: absolute; left: 597px; color: yellow; }
 
+#find-a-property .pagination { margin-left: 50px; font-size:12px; }
 
 .contact-header{
 	color: gray;
@@ -352,3 +357,5 @@ body {
     text-align: center;
     width: 110px;
 }
+
+
