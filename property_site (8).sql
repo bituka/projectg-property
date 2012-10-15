@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 14, 2012 at 05:50 PM
+-- Generation Time: Oct 15, 2012 at 11:51 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -33,25 +33,21 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59 ;
 
 --
 -- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'titless', '2012-09-26 04:13:12', '2012-10-13 09:29:40'),
-(40, 'cat1', '2012-09-26 12:32:39', '2012-09-26 12:32:39'),
-(41, 'cat12', '2012-09-26 12:32:41', '2012-09-26 12:32:41'),
-(42, 'cat13', '2012-09-26 12:32:43', '2012-09-26 12:32:43'),
-(43, 'cat14', '2012-09-26 12:32:48', '2012-09-26 12:32:48'),
-(44, 'cat15', '2012-09-26 12:32:50', '2012-09-26 12:32:50'),
-(45, 'cat16', '2012-09-26 12:32:52', '2012-09-26 12:32:52'),
-(46, 'cat1das', '2012-09-26 12:32:55', '2012-09-26 12:32:55'),
-(47, 'cat1sdsa', '2012-09-26 12:32:56', '2012-09-26 12:32:56'),
-(48, 'dasdasdas', '2012-09-26 12:32:57', '2012-09-26 12:32:57'),
-(49, 'dasdsagaga', '2012-09-26 12:33:00', '2012-09-26 12:33:00'),
-(50, 'dasdas', '2012-09-26 12:33:09', '2012-09-26 12:33:09');
+(51, 'uncategorized', '2012-10-14 10:23:13', '2012-10-14 10:23:13'),
+(52, 'House', '2012-10-14 10:25:21', '2012-10-14 10:25:21'),
+(53, 'Apartment-and-Unit', '2012-10-14 10:25:26', '2012-10-14 11:15:27'),
+(54, 'Apartment', '2012-10-14 10:25:32', '2012-10-14 10:25:32'),
+(55, 'Unit', '2012-10-14 10:25:35', '2012-10-14 10:25:35'),
+(56, 'Townhouse', '2012-10-14 10:25:39', '2012-10-14 10:25:39'),
+(57, 'Villa', '2012-10-14 10:25:41', '2012-10-14 10:25:41'),
+(58, 'Block-of-Units', '2012-10-14 10:25:48', '2012-10-14 11:17:16');
 
 -- --------------------------------------------------------
 
@@ -120,25 +116,26 @@ CREATE TABLE IF NOT EXISTS `properties` (
   KEY `state_id` (`state`),
   KEY `category_id` (`category_id`),
   KEY `state_id_2` (`state`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=62 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=63 ;
 
 --
 -- Dumping data for table `properties`
 --
 
 INSERT INTO `properties` (`id`, `title`, `description`, `location`, `rooms`, `price`, `state`, `category_id`, `date_sold`, `post_code`, `created_at`, `updated_at`) VALUES
-(50, 'property1', 'description to', 'legazpi, daraga', 3, 4500000, 'Albay', 41, '0000-00-00 00:00:00', '4501', '2012-10-13 08:23:55', '2012-10-13 08:23:55'),
-(51, 'prop2', 'de', 'asdas', 4, 4, '4', 43, '0000-00-00 00:00:00', 'q421', '2012-10-14 03:47:41', '2012-10-14 03:47:41'),
-(52, 'property3', 'dasdas', 'manila', 4, 4300000, 'legazpi', 1, '0000-00-00 00:00:00', '45601', '2012-10-14 09:40:50', '2012-10-14 09:40:50'),
-(53, 'property99', 'qwerty', 'manila', 5, 2147483647, '4600000', 1, '0000-00-00 00:00:00', '124', '2012-10-14 09:41:18', '2012-10-14 09:41:18'),
-(54, 'property title', 'cheap house located in dms', 'bicol', 6, 1500000, 'albay', 1, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:01', '2012-10-14 09:42:01'),
-(55, 'property title 4', 'cheap', 'bicol', 6, 1500000, 'albay', 1, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:56', '2012-10-14 09:42:56'),
-(56, 'property999', 'desc999', 'location999', 9, 9999000, 'arizona', 1, '0000-00-00 00:00:00', '98011', '2012-10-14 09:45:41', '2012-10-14 09:45:41'),
-(57, 'property8', 'desc8', 'manila', 8, 45000, 'legazpi', 1, '0000-00-00 00:00:00', '46001', '2012-10-14 09:46:05', '2012-10-14 09:46:05'),
-(58, 'property66', 'desc66', 'manila', 1, 1500000, 'legazpi', 1, '0000-00-00 00:00:00', '70111', '2012-10-14 09:46:48', '2012-10-14 09:46:48'),
-(59, 'house 4 sale', 'desc99', 'manila', 99, 151521555, 'legazpi', 1, '0000-00-00 00:00:00', '4504', '2012-10-14 09:47:25', '2012-10-14 09:47:25'),
-(60, 'property44', 'desc44', 'location99944', 414, 460010111, 'albay', 48, '0000-00-00 00:00:00', '99911', '2012-10-14 09:47:58', '2012-10-14 09:47:58'),
-(61, 'prop12', 'desc12', 'mania', 10, 5000000, 'masbate', 1, '0000-00-00 00:00:00', '412512', '2012-10-14 09:48:42', '2012-10-14 09:48:42');
+(50, 'property1', 'description to', 'legazpi, daraga', 3, 4500000, 'Albay', 52, '0000-00-00 00:00:00', '4501', '2012-10-13 08:23:55', '2012-10-14 10:25:54'),
+(51, 'prop2', 'de', 'asdas', 4, 4, '4', 52, '0000-00-00 00:00:00', 'q421', '2012-10-14 03:47:41', '2012-10-14 10:26:04'),
+(52, 'property3', 'dasdas', 'manila', 4, 4300000, 'legazpi', 53, '0000-00-00 00:00:00', '45601', '2012-10-14 09:40:50', '2012-10-14 10:26:10'),
+(53, 'property99', 'qwerty', 'manila', 5, 2147483647, '4600000', 53, '0000-00-00 00:00:00', '124', '2012-10-14 09:41:18', '2012-10-14 10:26:15'),
+(54, 'property title', 'cheap house located in dms', 'bicol', 6, 1500000, 'albay', 54, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:01', '2012-10-14 10:26:21'),
+(55, 'property title 4', 'cheap', 'bicol', 6, 1500000, 'albay', 54, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:56', '2012-10-14 10:26:26'),
+(56, 'property999', 'desc999', 'location999', 9, 9999000, 'arizona', 55, '0000-00-00 00:00:00', '98011', '2012-10-14 09:45:41', '2012-10-14 10:26:33'),
+(57, 'property8', 'desc8', 'manila', 8, 45000, 'legazpi', 55, '0000-00-00 00:00:00', '46001', '2012-10-14 09:46:05', '2012-10-14 10:26:39'),
+(58, 'property66', 'desc66', 'manila', 1, 1500000, 'legazpi', 56, '0000-00-00 00:00:00', '70111', '2012-10-14 09:46:48', '2012-10-14 10:26:44'),
+(59, 'house 4 sale', 'desc99', 'manila', 99, 151521555, 'legazpi', 56, '0000-00-00 00:00:00', '4504', '2012-10-14 09:47:25', '2012-10-14 10:26:49'),
+(60, 'property44', 'desc44', 'location99944', 414, 460010111, 'albay', 57, '0000-00-00 00:00:00', '99911', '2012-10-14 09:47:58', '2012-10-14 10:26:57'),
+(61, 'prop12', 'desc12', 'mania', 10, 5000000, 'masbate', 58, '0000-00-00 00:00:00', '412512', '2012-10-14 09:48:42', '2012-10-14 10:27:04'),
+(62, 'property1000', 'desc', 'dasdsa', 41, 41241, 'legazpi', 51, '0000-00-00 00:00:00', '4151', '2012-10-14 11:19:51', '2012-10-14 11:19:51');
 
 -- --------------------------------------------------------
 
@@ -155,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `property_images` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `property_id` (`property_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=126 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=127 ;
 
 --
 -- Dumping data for table `property_images`
@@ -200,7 +197,8 @@ INSERT INTO `property_images` (`id`, `name`, `property_id`, `created_at`, `updat
 (122, 'b9b70c0267dca52d4835600ddb52b132.jpg', 58, '2012-10-14 09:46:48', '2012-10-14 09:46:48'),
 (123, '2aaa7228eb05c1b198250357785e194b.jpg', 59, '2012-10-14 09:47:25', '2012-10-14 09:47:25'),
 (124, '46029d1d0ea2749680fd30bbfbb2d976.jpg', 60, '2012-10-14 09:47:59', '2012-10-14 09:47:59'),
-(125, '8ad21ea75291311861a9a0a3c04d184b.jpg', 61, '2012-10-14 09:48:43', '2012-10-14 09:48:43');
+(125, '8ad21ea75291311861a9a0a3c04d184b.jpg', 61, '2012-10-14 09:48:43', '2012-10-14 09:48:43'),
+(126, '2926189df8fffb958a14764526dc5b8e.jpg', 62, '2012-10-14 11:19:51', '2012-10-14 11:19:51');
 
 -- --------------------------------------------------------
 
@@ -220,7 +218,12 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `last_activity`, `data`) VALUES
-('q89M9Wz5M57PDU1S4KelJwdaHJdpwCBL35Hz6RKx', 1350208189, 'a:4:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"v39k37SczaEXso0vc7nPjAas9I9ADAnThBrpyDB1";s:35:"laravel_auth_drivers_eloquent_login";i:5;}');
+('3YIucU2NzOErPzg4bgnF1qCiQfZhpFrc13QBu7Zd', 1350262716, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"MmdgboomxGR96pANyQFzwZFjBTLJDTZiKoL5ff8V";}'),
+('DsB8AeKpN1g20KQbK0sH0Wp0zHZQpGrEeFm2JgZd', 1350273061, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"mt8Y3MFQpb7ehTDbyp3qgM4kk9sdsoT1j5JFUCf3";}'),
+('es1ASb208OqiEMlcnlWotY5kEB7ZcZbKQoujpCW3', 1350263612, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"VUteITH2KvA8MTB7o4YWorMmsRQKrIDL3wk1F1bo";}'),
+('jI9ypswgWf1tPJzJSLB4xopXGEYWlMbT0Ne9Hody', 1350264775, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"1aKHuyeWrQPC074KfmUYcdGcgsVkyQsEBJU5WYL8";}'),
+('TfZkhrT6sHdngQW9zJBWZTCi05PEKcYnQNfaRyG4', 1350265085, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"HUHULJbsMCN9qg5jVnedLqCX66e30PAmF77JczV7";}'),
+('y5gGiSh7fvK6FksaXTbdpCimoBNMUV2gzcu1Qb5E', 1350263608, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"MA4bJfuw6pCb4wyFLlPdXDGHmvhqKno9z3rA0OtK";}');
 
 -- --------------------------------------------------------
 
