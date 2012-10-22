@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="find_prop">
-	<h1><span style="color: #bb8930;">Find A Property</span></h1>
+	<h1><span style="color: #bb8930;">Find A Property News</span></h1>
 	<hr />
 	<form method="get" id="searchform" action="#">
 		<div>
@@ -16,8 +16,8 @@
 <br />
 <div id="filter-menu">
 <ul>
-	<span style="background-color: #f5a604;"><li>MOST RECENT</li></span>
-	<span style="background-color: white; color:#f5a604"><li>MOST POPULAR</li></span>
+	<li style="background-color: #f5a604; height: 5px;">MOST RECENT</li>
+	<li style="background-color: white; color:#f5a604; height: 5px;" >MOST POPULAR</li>
 	<li>Filter by:</li>
 	<li>All</li> 
 	<li>House</li> 
@@ -29,6 +29,54 @@
 </ul>
 </div> 
 <div id="news_gallery">
+	<div class="entry">
+		<div class="pic">
+			<img src="img/pic1.jpg" />
+		</div>
+		<div class="label">
+			Southbank, Victoria 
+		</div>
+	</div>
+	<div class="entry">
+		<div class="pic">
+			<img src="img/pic1.jpg" />
+		</div>
+		<div class="label">
+			Southbank, Victoria 
+		</div>
+	</div>
+	<div class="entry">
+		<div class="pic">
+			<img src="img/pic1.jpg" />
+		</div>
+		<div class="label">
+			Southbank, Victoria 
+		</div>
+	</div>
+	<div class="entry">
+		<div class="pic">
+			<img src="img/pic1.jpg" />
+		</div>
+		<div class="label">
+			Southbank, Victoria 
+		</div>
+	</div>
+	<div class="entry">
+		<div class="pic">
+			<img src="img/pic1.jpg" />
+		</div>
+		<div class="label">
+			Southbank, Victoria 
+		</div>
+	</div>
+	<div class="entry">
+		<div class="pic">
+			<img src="img/pic1.jpg" />
+		</div>
+		<div class="label">
+			Southbank, Victoria 
+		</div>
+	</div>
 	<div class="entry">
 		<div class="pic">
 			<img src="img/pic1.jpg" />

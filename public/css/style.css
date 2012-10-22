@@ -269,6 +269,7 @@ body {
 	width: 670px;
 	margin: 0 auto;
 	font-size: 11px;
+	height: 26px;
 }
 
 #filter-menu li {
@@ -339,6 +340,9 @@ body {
 #news_gallery{
 	display: block;
 	margin-top: 20px;
+	margin-left: 47px;
+	height: 282px;
+	overflow:hidden; 
 }
 
 #news_gallery .entry{
@@ -348,7 +352,8 @@ body {
 	font-size: 12px;
 	width: 128px;
 	float: left;
-	margin: 10px 12px;
+	margin-right: 8px;
+	margin-top: 8px;
 }
 
 #news_gallery .label{
