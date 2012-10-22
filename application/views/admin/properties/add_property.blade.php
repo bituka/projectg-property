@@ -38,6 +38,8 @@
 
                 <input type="text" id="property-post-code-field" class="span4" name="post_code" placeholder="post code">
               
+                <input type="text" class="span4" name="ranking" placeholder="ranking, this is optional">
+              
                 {{ Form::file('picture[]') }}
                 {{ Form::file('picture[]') }}
                 {{ Form::file('picture[]') }}

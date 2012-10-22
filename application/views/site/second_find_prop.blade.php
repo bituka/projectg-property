@@ -7,11 +7,11 @@
 	<form method="get" id="searchform" action="#">
 		<div  style="position: relative;">
 			<label>Search by States</label><br /><br />
-			<input type="text" value="" name="keyword" id="f" onfocus="defaultInput(this)" 	="clearInput(this)">
+			<input type="text" value="" name="keyword" id="f">
 			
 			<!-- watermark script -->
 			<script type="text/javascript">
-				$('#f').watermark('e.g. Melbourn City');
+				$('#f').watermark('e.g. Alabama');
 			</script>
 			<!-- watermark script ends -->
 

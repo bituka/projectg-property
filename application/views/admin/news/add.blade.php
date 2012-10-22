@@ -22,11 +22,19 @@
                 </div>
             @endif
 
-            <form method="Post" action="add" accept-charset="UTF-8">
+            <!-- <form method="Post" action="add" accept-charset="UTF-8"> -->
+            <form action="{{ action('admin.news@add'); }}" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+                
                 {{ Form::token() }} 
 
                 <input type="text" class="span4" name="title" placeholder="title">
+
                 <textarea rows="3" class="span4" name="content" placeholder="content"></textarea>
+
+                <input type="text" class="span4" name="ranking" placeholder="ranking, this is optional">
+
+                {{ Form::file('picture[]') }}
+
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
             </form>    
         </div>

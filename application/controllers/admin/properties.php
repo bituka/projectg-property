@@ -82,6 +82,7 @@ class Admin_Properties_Controller extends Base_Controller {
 			'state' => 'required|max:30',
 			'category_id' => 'required|integer|exists:categories,id',
 			'post_code' => 'required',
+			'ranking' => 'integer',
 
 		);
 
@@ -108,6 +109,7 @@ class Admin_Properties_Controller extends Base_Controller {
 				'state' => Input::get('state'),
 				'category_id' => $category->id,
 				'post_code' => Input::get('post_code'),
+				'ranking' => Input::get('ranking'),
 			));
 
 		// if saving the property is successful, lets save the uploaded image in the uploads folder
@@ -262,6 +264,7 @@ class Admin_Properties_Controller extends Base_Controller {
 		$property->state = Input::get('state');
 		$property->category_id = $category->id;
 		$property->post_code = Input::get('post_code');
+		$property->ranking = Input::get('ranking');
 
 		// save
 		if ($property->save()) {

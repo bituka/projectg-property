@@ -16,6 +16,7 @@ class Property extends Aware {
 		'state_id' => 'integer|integer|exists:states,id',
 		'category_id' => 'required|integer|exists:categories,id',
 		'post_code' => 'required|max:30',
+		'ranking' => 'integer',
 	);
 
 	public function state()

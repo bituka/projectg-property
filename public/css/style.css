@@ -359,3 +359,7 @@ body {
 }
 
 
+	#prop-nav { position: absolute; right: 50px; top: -50px; z-index: 12; }
+	#prop-nav > a { text-decoration: none; cursor: pointer; font-family: arial; font-size: 15px; text-transform: uppercase; outline: none; border: none; color: #b9b9b9; background: black; font-weight: bold; }
+		/*#prop-nav > a:.with-hover:hover { color: red; }*/
+	#prop-nav > span.disabled { visibility: hidden; }

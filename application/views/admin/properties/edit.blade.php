@@ -71,20 +71,32 @@
                 {{ Form::token() }}
 
                 <input type="hidden" name="id" value="{{ $property->id }}">
+                
+                <label for="title">Title</label>
                 <input type="text" id="property-name-field" class="span4" name="title" value="{{ $property->title }}" placeholder="new title">
+                
+                <label for="description">Description</label>
                 <input type="text" id="property-name-field" class="span4" name="description" value="{{ $property->description }}" placeholder="new description">
+                
+                <label for="location">Location</label>
                 <input type="text" id="property-name-field" class="span4" name="location" value="{{ $property->location }}" placeholder="new location">
+                
+                <label for="rooms">Number of Rooms</label>
                 <input type="text" id="property-name-field" class="span4" name="rooms" value="{{ $property->rooms }}" placeholder="new rooms">
+                
+                <label for="price">Price</label>
                 <input type="text" id="property-name-field" class="span4" name="price" value="{{ $property->price }}" placeholder="new price">
                 
+                <label for="state">State</label>
                 <input type="text" id="property-state-field" class="span4" name="state" value="{{ $property->state }}" placeholder="state">
 
-               
+                <label for="category">Category</label>
                 {{ Form::select('category', $categories_array, $property->category->name ) }}
             
+                <label for="ranking">Ranking</label>
+                <input type="text" id="category-name-field" class="span4" name="ranking" value="{{ $property->ranking }}" placeholder="new ranking">
 
-               
-
+                <label for="post_code">Post Code</label>
                 <input type="text" id="property-name-field" class="span4" name="post_code" value="{{ $property->post_code }}" placeholder="new post code">
 
                 <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
