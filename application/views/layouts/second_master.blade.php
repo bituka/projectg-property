@@ -25,6 +25,7 @@
 		<script type="text/javascript" src="{{ asset('js/jquery.cycle.all.js') }}"></script>
 		<!-- <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script> -->
 		
+		<script type="text/javascript" src="{{ asset('js/jquery.watermark.min.js') }}"></script>
 	
 
 	</head>

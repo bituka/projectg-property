@@ -30,8 +30,17 @@ class Site_Controller extends Base_Controller {
 	{
 		$view = View::make('site.find_prop');
 		$view['title']  = 'Linq Property: Find a Property';
-		$view['current_page']  = 'find-a-property';		
-		$view['properties']  = Property::paginate(12);		
+		$view['current_page']  = 'find-a-property';	
+
+		$keyword = Input::get('keyword');
+
+		if (!empty($keyword)) {
+			$properties = Property::where_state($keyword)->paginate(12);
+		} else {
+			$properties = Property::paginate(12);
+		}
+
+		$view['properties']  = $properties;	
 		return $view;
 	}
 
