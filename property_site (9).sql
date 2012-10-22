@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 15, 2012 at 11:51 AM
+-- Generation Time: Oct 22, 2012 at 06:36 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -83,15 +83,40 @@ CREATE TABLE IF NOT EXISTS `news` (
   `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
+  `ranking` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `title`, `content`, `created_at`, `updated_at`) VALUES
-(1, 'title', 'content babdsadasy!dsadaafas', '2012-10-01 15:02:30', '2012-10-13 09:30:33');
+INSERT INTO `news` (`id`, `title`, `content`, `created_at`, `updated_at`, `ranking`) VALUES
+(27, 'fasfasfa', 'fsaf', '2012-10-22 07:49:42', '2012-10-22 07:49:42', 33),
+(28, 'fas', 'fsaf', '2012-10-22 07:50:02', '2012-10-22 07:50:02', 33);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news_images`
+--
+
+CREATE TABLE IF NOT EXISTS `news_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `news_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+
+--
+-- Dumping data for table `news_images`
+--
+
+INSERT INTO `news_images` (`id`, `name`, `news_id`, `created_at`, `updated_at`) VALUES
+(9, '85e17f92667b5fa75293fa43fdd3ffca.JPG', 20, '2012-10-22 07:23:54', '2012-10-22 07:23:54');
 
 -- --------------------------------------------------------
 
@@ -112,30 +137,32 @@ CREATE TABLE IF NOT EXISTS `properties` (
   `post_code` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
+  `ranking` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `state_id` (`state`),
   KEY `category_id` (`category_id`),
   KEY `state_id_2` (`state`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=64 ;
 
 --
 -- Dumping data for table `properties`
 --
 
-INSERT INTO `properties` (`id`, `title`, `description`, `location`, `rooms`, `price`, `state`, `category_id`, `date_sold`, `post_code`, `created_at`, `updated_at`) VALUES
-(50, 'property1', 'description to', 'legazpi, daraga', 3, 4500000, 'Albay', 52, '0000-00-00 00:00:00', '4501', '2012-10-13 08:23:55', '2012-10-14 10:25:54'),
-(51, 'prop2', 'de', 'asdas', 4, 4, '4', 52, '0000-00-00 00:00:00', 'q421', '2012-10-14 03:47:41', '2012-10-14 10:26:04'),
-(52, 'property3', 'dasdas', 'manila', 4, 4300000, 'legazpi', 53, '0000-00-00 00:00:00', '45601', '2012-10-14 09:40:50', '2012-10-14 10:26:10'),
-(53, 'property99', 'qwerty', 'manila', 5, 2147483647, '4600000', 53, '0000-00-00 00:00:00', '124', '2012-10-14 09:41:18', '2012-10-14 10:26:15'),
-(54, 'property title', 'cheap house located in dms', 'bicol', 6, 1500000, 'albay', 54, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:01', '2012-10-14 10:26:21'),
-(55, 'property title 4', 'cheap', 'bicol', 6, 1500000, 'albay', 54, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:56', '2012-10-14 10:26:26'),
-(56, 'property999', 'desc999', 'location999', 9, 9999000, 'arizona', 55, '0000-00-00 00:00:00', '98011', '2012-10-14 09:45:41', '2012-10-14 10:26:33'),
-(57, 'property8', 'desc8', 'manila', 8, 45000, 'legazpi', 55, '0000-00-00 00:00:00', '46001', '2012-10-14 09:46:05', '2012-10-14 10:26:39'),
-(58, 'property66', 'desc66', 'manila', 1, 1500000, 'legazpi', 56, '0000-00-00 00:00:00', '70111', '2012-10-14 09:46:48', '2012-10-14 10:26:44'),
-(59, 'house 4 sale', 'desc99', 'manila', 99, 151521555, 'legazpi', 56, '0000-00-00 00:00:00', '4504', '2012-10-14 09:47:25', '2012-10-14 10:26:49'),
-(60, 'property44', 'desc44', 'location99944', 414, 460010111, 'albay', 57, '0000-00-00 00:00:00', '99911', '2012-10-14 09:47:58', '2012-10-14 10:26:57'),
-(61, 'prop12', 'desc12', 'mania', 10, 5000000, 'masbate', 58, '0000-00-00 00:00:00', '412512', '2012-10-14 09:48:42', '2012-10-14 10:27:04'),
-(62, 'property1000', 'desc', 'dasdsa', 41, 41241, 'legazpi', 51, '0000-00-00 00:00:00', '4151', '2012-10-14 11:19:51', '2012-10-14 11:19:51');
+INSERT INTO `properties` (`id`, `title`, `description`, `location`, `rooms`, `price`, `state`, `category_id`, `date_sold`, `post_code`, `created_at`, `updated_at`, `ranking`) VALUES
+(50, 'property122', 'description togas', 'legazpi, daragaas', 344, 450000044, 'Albaydsada', 55, '0000-00-00 00:00:00', '450144', '2012-10-13 08:23:55', '2012-10-22 07:37:13', 33),
+(51, 'prop2', 'de', 'asdas', 4, 4, '4', 52, '0000-00-00 00:00:00', 'q421', '2012-10-14 03:47:41', '2012-10-14 10:26:04', 0),
+(52, 'property3', 'dasdas', 'manila', 4, 4300000, 'legazpi', 53, '0000-00-00 00:00:00', '45601', '2012-10-14 09:40:50', '2012-10-14 10:26:10', 0),
+(53, 'property99', 'qwerty', 'manila', 5, 2147483647, '4600000', 53, '0000-00-00 00:00:00', '124', '2012-10-14 09:41:18', '2012-10-14 10:26:15', 0),
+(54, 'property title', 'cheap house located in dms', 'bicol', 6, 1500000, 'albay', 54, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:01', '2012-10-14 10:26:21', 0),
+(55, 'property title 4', 'cheap', 'bicol', 6, 1500000, 'albay', 54, '0000-00-00 00:00:00', '4701', '2012-10-14 09:42:56', '2012-10-14 10:26:26', 0),
+(56, 'property999', 'desc999', 'location999', 9, 9999000, 'arizona', 55, '0000-00-00 00:00:00', '98011', '2012-10-14 09:45:41', '2012-10-14 10:26:33', 0),
+(57, 'property8', 'desc8', 'manila', 8, 45000, 'legazpi', 55, '0000-00-00 00:00:00', '46001', '2012-10-14 09:46:05', '2012-10-14 10:26:39', 0),
+(58, 'property66', 'desc66', 'manila', 1, 1500000, 'legazpi', 56, '0000-00-00 00:00:00', '70111', '2012-10-14 09:46:48', '2012-10-14 10:26:44', 0),
+(59, 'house 4 sale', 'desc99', 'manila', 99, 151521555, 'legazpi', 56, '0000-00-00 00:00:00', '4504', '2012-10-14 09:47:25', '2012-10-14 10:26:49', 0),
+(60, 'property44', 'desc44', 'location99944', 414, 460010111, 'albay', 57, '0000-00-00 00:00:00', '99911', '2012-10-14 09:47:58', '2012-10-14 10:26:57', 0),
+(61, 'prop12', 'desc12', 'mania', 10, 5000000, 'masbate', 58, '0000-00-00 00:00:00', '412512', '2012-10-14 09:48:42', '2012-10-14 10:27:04', 0),
+(62, 'property1000', 'desc', 'dasdsa', 41, 41241, 'legazpi', 51, '0000-00-00 00:00:00', '4151', '2012-10-14 11:19:51', '2012-10-14 11:19:51', 0),
+(63, 'fasfasf', 'fasfas', 'fasf', 4, 4, 'fa', 52, '0000-00-00 00:00:00', '33', '2012-10-22 07:33:14', '2012-10-22 07:33:14', 33);
 
 -- --------------------------------------------------------
 
@@ -152,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `property_images` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `property_id` (`property_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=127 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=130 ;
 
 --
 -- Dumping data for table `property_images`
@@ -198,7 +225,10 @@ INSERT INTO `property_images` (`id`, `name`, `property_id`, `created_at`, `updat
 (123, '2aaa7228eb05c1b198250357785e194b.jpg', 59, '2012-10-14 09:47:25', '2012-10-14 09:47:25'),
 (124, '46029d1d0ea2749680fd30bbfbb2d976.jpg', 60, '2012-10-14 09:47:59', '2012-10-14 09:47:59'),
 (125, '8ad21ea75291311861a9a0a3c04d184b.jpg', 61, '2012-10-14 09:48:43', '2012-10-14 09:48:43'),
-(126, '2926189df8fffb958a14764526dc5b8e.jpg', 62, '2012-10-14 11:19:51', '2012-10-14 11:19:51');
+(126, '2926189df8fffb958a14764526dc5b8e.jpg', 62, '2012-10-14 11:19:51', '2012-10-14 11:19:51'),
+(127, 'dc4298d40631ddf13263aa993ba728d7.JPG', 63, '2012-10-22 07:33:16', '2012-10-22 07:33:16'),
+(128, 'c28b9779f9ce270b48289b33aedc5a6a.JPG', 63, '2012-10-22 07:33:17', '2012-10-22 07:33:17'),
+(129, 'cc30aba43a75ba21a2bdca49e6cc6802.JPG', 63, '2012-10-22 07:33:19', '2012-10-22 07:33:19');
 
 -- --------------------------------------------------------
 
@@ -218,12 +248,10 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `last_activity`, `data`) VALUES
-('3YIucU2NzOErPzg4bgnF1qCiQfZhpFrc13QBu7Zd', 1350262716, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"MmdgboomxGR96pANyQFzwZFjBTLJDTZiKoL5ff8V";}'),
-('DsB8AeKpN1g20KQbK0sH0Wp0zHZQpGrEeFm2JgZd', 1350273061, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"mt8Y3MFQpb7ehTDbyp3qgM4kk9sdsoT1j5JFUCf3";}'),
-('es1ASb208OqiEMlcnlWotY5kEB7ZcZbKQoujpCW3', 1350263612, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"VUteITH2KvA8MTB7o4YWorMmsRQKrIDL3wk1F1bo";}'),
-('jI9ypswgWf1tPJzJSLB4xopXGEYWlMbT0Ne9Hody', 1350264775, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"1aKHuyeWrQPC074KfmUYcdGcgsVkyQsEBJU5WYL8";}'),
-('TfZkhrT6sHdngQW9zJBWZTCi05PEKcYnQNfaRyG4', 1350265085, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"HUHULJbsMCN9qg5jVnedLqCX66e30PAmF77JczV7";}'),
-('y5gGiSh7fvK6FksaXTbdpCimoBNMUV2gzcu1Qb5E', 1350263608, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"MA4bJfuw6pCb4wyFLlPdXDGHmvhqKno9z3rA0OtK";}');
+('6hELGkTzbGJXvYQsqHSo6yn4e3C2xfOjxDOtHFFe', 1350898722, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"h6a5zFTl2TsPDuUlANwJcmjc9kxR3twZtdB3FTEL";}'),
+('EaZLmWvFH2ImA3FAJYUCULgo1GBrua58UOJNwJNH', 1350900744, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"UkvbnsdH4ZivoZo8hfm17tzJndqbRNgCcBsLucQU";}'),
+('JPFgIEBu49foUCtKMkMjPIWD4i6R2stGvpYYqjgU', 1350900387, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"mpKN9fjcwiXPk0z8I4xPAp7NrEp0BfzyixGCoyD5";}'),
+('sHSx7MWojQ3nV16qNez0XFgudU4PUCov6xf7Dy9H', 1350900246, 'a:3:{s:5:":new:";a:0:{}s:5:":old:";a:0:{}s:10:"csrf_token";s:40:"A8gqUjaaVYXBZrhM9pxkMq2Jk6pnrdcLThEa3V3Q";}');
 
 -- --------------------------------------------------------
 
