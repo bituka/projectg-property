@@ -43,5 +43,13 @@ class Properties_Controller extends Base_Controller{
 		return $view;
 	}
 
+	public function get_property($id)
+	{
+		return View::make('properties.single')
+			->with('property', Property::find($id))
+			->with('title', 'Linq Property: Property')
+			->with('current_page', 'property');
+	}
+
   	
 }
