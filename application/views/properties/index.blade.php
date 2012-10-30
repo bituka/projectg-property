@@ -55,9 +55,14 @@
 
 		    @foreach($property->images as $image)
 		    
-		    	<img src="{{ asset('uploads/properties/' . $image->name); }}">
+		    	<!-- <img src="{{ asset('uploads/properties/' . $image->name); }}">
 
-		    	<h4>{{ $property->location }}</h4>
+		    	<h4>{{ $property->location }}</h4> -->
+
+		    	<a href="{{ action('properties@property', array($image->property->id)) }}">
+		    		<img src="{{ asset('uploads/properties/' . $image->name); }}">
+		    		<h4>{{ $property->location }}</h4>
+		    	</a>
 
 		        <?php break; // get only 1 image of the property ?>
 		        
