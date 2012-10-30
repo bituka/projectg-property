@@ -18,7 +18,7 @@ class Site_Controller extends Base_Controller {
 		$view = View::make('site.index');
 		$view['title']  = 'Linq Property: Home';	
 		$view['current_page']  = 'home';
-		$view['property_images'] = PropertyImage::take(24)->get();	
+		$view['property_images'] = PropertyImage::with('property')->take(24)->order_by('created_at', 'desc')->get();	
 			
 		return $view;
 	}

@@ -15,7 +15,7 @@
 				@endif
 
 			    <div class="images <?php echo ($count === 1 || $count === 5 || $count === 9 || $count === 13 || $count === 17 || $count === 21 ? 'first-image' : ''); ?>   ">
-					<a href="#">
+					<a href="{{ action('properties@property', array($property_image->property->id)) }}">
 						<img src="{{ asset('uploads/properties/' . $property_image->name); }}" width="163" height="163">
 					</a>
 				</div>
