@@ -23,26 +23,26 @@ class Site_Controller extends Base_Controller {
 		return $view;
 	}
 	
-	/**
-	 * render find property page
-	 */
-	public function get_find_prop() 
-	{
-		$view = View::make('site.find_prop');
-		$view['title']  = 'Linq Property: Find a Property';
-		$view['current_page']  = 'find-a-property';	
+	// /**
+	//  * render find property page
+	//  */
+	// public function get_find_prop() 
+	// {
+	// 	$view = View::make('site.find_prop');
+	// 	$view['title']  = 'Linq Property: Find a Property';
+	// 	$view['current_page']  = 'find-a-property';	
 
-		$keyword = Input::get('keyword');
+	// 	$keyword = Input::get('keyword');
 
-		if (!empty($keyword)) {
-			$properties = Property::where_state($keyword)->paginate(12);
-		} else {
-			$properties = Property::paginate(12);
-		}
+	// 	if (!empty($keyword)) {
+	// 		$properties = Property::where_state($keyword)->paginate(12);
+	// 	} else {
+	// 		$properties = Property::paginate(12);
+	// 	}
 
-		$view['properties']  = $properties;	
-		return $view;
-	}
+	// 	$view['properties']  = $properties;	
+	// 	return $view;
+	// }
 
 	/**
 	 * render about page

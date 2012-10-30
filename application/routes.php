@@ -90,7 +90,7 @@ Route::controller( array(
  */
 
 // find property
-Route::get('find_prop', array('uses' => 'site@find_prop'));
+// Route::get('find_prop', array('uses' => 'site@find_prop'));
 Route::get('about', array('uses' => 'site@about'));
 Route::get('contact', array('uses' => 'site@contact'));
 Route::get('news', array('uses' => 'site@news'));

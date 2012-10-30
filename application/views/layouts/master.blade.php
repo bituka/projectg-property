@@ -83,7 +83,7 @@
 			<!-- Navigation -->
 				<ul id="nav" class="sf-menu">
 					<li><a class="with-hover <?php echo ( $current_page === 'home' ? 'current-menu-item' : '' ); ?>" href="<?php echo URL::to('/'); ?>">HOME PAGE</a></li>
-					<li><a class="with-hover <?php echo ( $current_page === 'find a property' ? 'current-menu-item' : '' ); ?>" href="<?php echo URL::to('find_prop'); ?>">FIND A PROPERTY</a></li>
+					<li><a class="with-hover <?php echo ( $current_page === 'find a property' ? 'current-menu-item' : '' ); ?>" href="{{ action('properties@index') }}">FIND A PROPERTY</a></li>
 					<li><a class="with-hover <?php echo ( $current_page === 'about us' ? 'current-menu-item' : '' ); ?>" href="<?php echo URL::to('about'); ?>">ABOUT US</a></li>
 					<li><a class="with-hover <?php echo ( $current_page === 'property news' ? 'current-menu-item' : '' ); ?>" href="<?php echo URL::to('news'); ?>">PROPERTY NEWS</a></li>
 					<li><a class="with-hover <?php echo ( $current_page === 'contact us' ? 'current-menu-item' : '' ); ?>" href="<?php echo URL::to('contact'); ?>">CONTACT US</a></li>
